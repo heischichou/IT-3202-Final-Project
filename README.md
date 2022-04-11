@@ -1,4 +1,4 @@
-# sample-vuedocker
+# pantonialdev-examplevue
 
 ## Project setup
 ```
