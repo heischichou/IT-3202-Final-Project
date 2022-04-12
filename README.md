@@ -1,34 +1,19 @@
-# pantonialdev-examplevue
+# Pantonial.Dev - Sample Project
 
 ## Project setup
+1. Install node modules
 ```
 npm install
 ```
+2. Dockerize (https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
+### Unit tests
 ```
 npm run test:unit
 ```
 
-### Run your end-to-end tests
+### Integration tests
+Note: Reserve port `8081` for integration testing
 ```
 npm run test:e2e
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
