@@ -9,7 +9,7 @@
       >.
     </p>
     <h3>Installed CLI Plugins</h3>
-    <ul>
+    <ul data-cy="plugins">
       <li>
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa"
@@ -68,7 +68,7 @@
       </li>
     </ul>
     <h3>Essential Links</h3>
-    <ul>
+    <ul data-cy="essential">
       <li>
         <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
       </li>
@@ -92,7 +92,7 @@
       </li>
     </ul>
     <h3>Ecosystem</h3>
-    <ul>
+    <ul data-cy="eco">
       <li>
         <a href="https://router.vuejs.org" target="_blank" rel="noopener"
           >vue-router</a
