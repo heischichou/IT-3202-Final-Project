@@ -1,0 +1,6 @@
+pipelines:
+  default:
+    -step:
+      name: Pipeline test.
+      script:
+        - echo "This is a sample script for pipeline."
