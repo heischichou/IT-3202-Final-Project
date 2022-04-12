@@ -3,7 +3,7 @@
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
 
-image: atlassian/default-image:3
+image: caerfyre/pantonialdev-examplevue
 
 pipelines:
   default:
@@ -11,11 +11,11 @@ pipelines:
         - step:
             name: 'Build and Test'
             script:
-              - echo "Your build and test goes here..."
+              - echo "Build and Testing scripts...."
         - step:
             name: 'Lint'
             script:
-              - echo "Your linting goes here..."
+              - echo "Linting scripts..."
         - step:
             name: 'Security scan'
             script:
