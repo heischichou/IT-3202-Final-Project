@@ -19,7 +19,7 @@ pipelines:
               - npm run test:unit
         - step:
             services:
-              - cypressImg
+              - cypress-img
             name: 'Integration Tests (E2E)'
             caches:
               - yarn
@@ -54,7 +54,7 @@ definitions:
   services:
     node:
       image: node:latest
-    cypressImg:
+    cypress-img:
       image: cypress/base:10
   caches:
     yarn: $HOME/.cache
