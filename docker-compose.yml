@@ -1,0 +1,11 @@
+version: "2"
+services:
+  # name of the server you want to run is "main" or whatever
+  main:
+    container_name: pantonialdev-examplevue-main
+    image: pantonialdev-examplevue:latest
+    volumes:
+      - ".:/app"
+    ports:
+      # external_port:internal_port
+      - "8080:80"
