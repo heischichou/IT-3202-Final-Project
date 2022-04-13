@@ -9,9 +9,28 @@ pipelines:
   default:
     - parallel:
         - step:
-            name: 'Build and Test'
+            image: node
+            services:
+              - node
+            name: 'Unit Tests'
+            caches:
+              - node
             script:
-              - echo "Build and Testing scripts...."
+              - npm install
+              - npm run test:unit
+        - step:
+            image: cypress-img
+            services:
+              - cypress-img
+            name: 'Integration Tests (E2E)'
+            caches:
+              - yarn
+              - cypress
+              - node
+              - npm
+            script:
+              - npm ci
+              - npm run test:e2e
         - step:
             name: 'Lint'
             script:
@@ -33,3 +52,14 @@ pipelines:
         trigger: 'manual'
         script:
           - echo "Your deployment to production script goes here..."
+
+definitions:
+  services:
+    node:
+      image: node:latest
+    cypress-img:
+      image: cypress/base:10
+  caches:
+    yarn: $HOME/.cache
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress
