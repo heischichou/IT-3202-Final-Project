@@ -12,6 +12,8 @@ pipelines:
             name: 'Build and Test'
             script:
               - echo "Build and Testing scripts...."
+              - npm run test:unit
+              - npm run test:e2e
         - step:
             name: 'Lint'
             script:
