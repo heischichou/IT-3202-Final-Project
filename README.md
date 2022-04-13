@@ -2,12 +2,16 @@
 
 ## Project setup
 ### Docker
-1. Download Docker image
+1. Install node modules
+```
+npm install
+```
+2. Download Docker image
 ```
 docker pull teddzyb/pantonialdev
 ```
-2. Run services on `docker-compose.yml`
-3. Access on http://localhost:8080/
+2. Run services in `docker-compose.yml`
+3. Access app on http://localhost:8080/
 
 ### Node
 1. Install node modules
@@ -18,7 +22,7 @@ npm install
 ```
 npm serve -- --port 8080
 ```
-3. Access on http://localhost:8080/
+3. Access app on http://localhost:8080/
 
 ## Testing
 ### Unit tests
