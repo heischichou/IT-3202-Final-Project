@@ -10,8 +10,11 @@ pipelines:
     - parallel:
         - step:
             name: 'Build and Test'
+            caches:
+              - node
             script:
               - echo "Build and Testing scripts...."
+              - npm install
               - npm run test:unit
               - npm run test:e2e
         - step:
