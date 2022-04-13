@@ -29,6 +29,7 @@ pipelines:
               - node
             script:
               - npm install
+              - npm cypress install
               - npm run test:e2e
         - step:
             name: 'Lint'
