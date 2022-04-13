@@ -9,6 +9,7 @@ pipelines:
   default:
     - parallel:
         - step:
+            image: node:latest
             name: 'Build and Test'
             caches:
               - node
