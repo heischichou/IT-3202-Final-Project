@@ -27,6 +27,7 @@ pipelines:
               - yarn
               - cypress
               - node
+              - npm
             script:
               - npm ci
               - npm run test:e2e
