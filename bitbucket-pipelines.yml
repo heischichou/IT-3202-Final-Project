@@ -19,15 +19,14 @@ pipelines:
               - npm install
               - npm run test:unit
         - step:
-            image: cypress-img
+            image: node
             services:
-              - cypress-img
+              - node
             name: 'Integration Tests (E2E)'
             caches:
               - yarn
               - cypress
               - node
-              - npm
             script:
               - npm ci
               - npm run test:e2e
@@ -61,5 +60,4 @@ definitions:
       image: cypress/base:10
   caches:
     yarn: $HOME/.cache
-    npm: $HOME/.npm
     cypress: $HOME/.cache/Cypress
