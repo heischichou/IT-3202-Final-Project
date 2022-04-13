@@ -1,19 +1,33 @@
 # Pantonial.Dev - Sample Project
 
 ## Project setup
+### Docker
+1. Download Docker image
+```
+docker pull teddzyb/pantonialdev
+```
+2. Run services on `docker-compose.yml`
+3. Access on http://localhost:8080/
+
+### Node
 1. Install node modules
 ```
 npm install
 ```
-2. Dockerize on port `8080` (https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html#Real-World-Example)
+2. Run development server
+```
+npm serve -- --port 8080
+```
+3. Access on http://localhost:8080/
 
+## Testing
 ### Unit tests
 ```
 npm run test:unit
 ```
 
 ### Integration tests
-Note: Use port `8081` for integration testing.
+Note: Integration testing uses port `8081`.
 ```
 npm run test:e2e
 ```
