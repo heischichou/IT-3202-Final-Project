@@ -27,9 +27,8 @@ pipelines:
               - yarn
               - cypress
               - node
-              - npm
             script:
-              - npm ci
+              - npm install cypress --save-dev
               - npm run test:e2e
         - step:
             name: 'Lint'
@@ -61,5 +60,4 @@ definitions:
       image: cypress/base:10
   caches:
     yarn: $HOME/.cache
-    npm: $HOME/.npm
     cypress: $HOME/.cache/Cypress
