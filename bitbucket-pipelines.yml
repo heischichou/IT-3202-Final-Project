@@ -57,7 +57,7 @@ definitions:
     node:
       image: node:latest
     cypress-img:
-      image: cypress/base:10
+      image: cypress/base:12
   caches:
     yarn: $HOME/.cache
     cypress: $HOME/.cache/Cypress
