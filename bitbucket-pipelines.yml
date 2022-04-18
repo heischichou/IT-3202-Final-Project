@@ -19,9 +19,9 @@ pipelines:
               - npm install
               - npm run test:unit
         - step:
-            image: cypress-img
+            image: node
             services:
-              - cypress-img
+              - node
             name: 'Integration Tests (E2E)'
             caches:
               - yarn
@@ -30,6 +30,7 @@ pipelines:
             script:
               - npm ci cypress --save-dev
               - npx cypress install
+              - apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
               - npm run test:e2e
         - step:
             name: 'Lint'
