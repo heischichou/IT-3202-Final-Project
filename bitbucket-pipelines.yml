@@ -19,9 +19,9 @@ pipelines:
               - npm install
               - npm run test:unit
         - step:
-            image: node
+            image: cypress-img
             services:
-              - node
+              - cypress-img
             name: 'Integration Tests (E2E)'
             caches:
               - yarn
@@ -29,7 +29,6 @@ pipelines:
               - node
             script:
               - npm ci
-              - npm run start:ci &
               - npm run test:e2e
         - step:
             name: 'Lint'
