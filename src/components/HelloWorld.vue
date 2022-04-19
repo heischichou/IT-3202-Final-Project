@@ -8,7 +8,7 @@
         >vue-cli documentation</a
       >.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3 class="text-info">Installed CLI Plugins</h3>
     <ul data-cy="plugins">
       <li>
         <a
@@ -67,7 +67,7 @@
         >
       </li>
     </ul>
-    <h3>Essential Links</h3>
+    <h3 class="text-danger">Essential Links</h3>
     <ul data-cy="essential">
       <li>
         <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
@@ -91,7 +91,7 @@
         <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
       </li>
     </ul>
-    <h3>Ecosystem</h3>
+    <h3 class="text-warning">Ecosystem</h3>
     <ul data-cy="eco">
       <li>
         <a href="https://router.vuejs.org" target="_blank" rel="noopener"
