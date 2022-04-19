@@ -26,8 +26,11 @@ pipelines:
               - node
             script:
               - npm ci
-              - npx cypress run
+              - npm run start:ci &
               - npm run test:e2e
+            artifacts:
+              - cypress/screenshots/**
+              - cypress/videos/**
         - step:
             name: 'Lint'
             script:
