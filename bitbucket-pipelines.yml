@@ -19,14 +19,13 @@ pipelines:
               - npm install
               - npm run test:unit
         - step:
-            image: cypress/base:10
+            image: cypress/base:latest
             name: 'Integration Tests (E2E)'
             caches:
               - cypress
               - node
             script:
               - npm ci
-              - npm run start:ci &
               - npm run test:e2e
             artifacts:
               - cypress/screenshots/**
