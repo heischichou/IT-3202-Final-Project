@@ -3,7 +3,7 @@
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
 
-image: caerfyre/pantonialdev-examplevue
+image: teddzyb/pantonialdev:latest
 
 pipelines:
   default:
@@ -19,16 +19,14 @@ pipelines:
               - npm install
               - npm run test:unit
         - step:
-            image: cypress-img
-            services:
-              - cypress-img
+            image: cypress/base:10
             name: 'Integration Tests (E2E)'
             caches:
-              - yarn
               - cypress
               - node
             script:
               - npm ci
+              - npx cypress run
               - npm run test:e2e
         - step:
             name: 'Lint'
@@ -56,8 +54,6 @@ definitions:
   services:
     node:
       image: node:latest
-    cypress-img:
-      image: cypress/base:10
   caches:
-    yarn: $HOME/.cache
+    npm: $HOME/.npm
     cypress: $HOME/.cache/Cypress
