@@ -1,0 +1,79 @@
+// CUSTOM VARIABLES - edit variables here (get variables you want to change from _variables.scss)
+
+$enable-negative-margins: true;
+
+// Colors
+$primary:         #5A6ABF;
+$secondary:       #82B1FF;
+$light:           #F8F9FA;
+$dark:            #C9CFE1;
+$body:            #6D6D6D;
+$darkblue:        #23408E;
+$periwinkle-1:    #B8B9C8;
+$periwinkle-2:    #B9BFE1;
+$lightblue-1:     #B9D0FC;
+$lightblue-2:     #B4C9E7;
+
+$theme-colors: (
+  "primary":        $primary,
+  "secondary":      $secondary,
+  "light":          $light,
+  "dark":           $dark,
+  "body":           $body,
+  "darkblue":       $darkblue,
+  "periwinkle-1":   $periwinkle-1,
+  "periwinkle-2":   $periwinkle-2,
+  "lightblue-1":    $lightblue-1,
+  "lightblue-2":    $lightblue-2,
+);
+
+// Fonts
+$font-family-sans-serif:    "Poppins";
+
+$font-weight-lighter:       200;
+$font-weight-light:         300;
+$font-weight-normal:        400;
+$font-weight-bold:          500;
+$font-weight-bolder:        600;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4.5
+);
+
+// Links
+$link-color:  $secondary;
+
+// Body
+html, body, div {
+  background-color: $light;
+  color: $body;
+  font-family: 'Poppins', sans-serif;
+}
+
+// Scrollbar
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 100px;
+}
+
+// Main SCSS
+@import "~bootstrap/scss/bootstrap";
+
+// font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
