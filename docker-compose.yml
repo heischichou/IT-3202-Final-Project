@@ -1,11 +1,18 @@
 version: "2"
 services:
-  # name of the server you want to run is "main" or whatever
   main:
     container_name: pantonialdev-examplevue-main
-    image: teddzyb/pantonialdev:latest
+    image: node:lts-alpine
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
     volumes:
-      - ".:/app"
+      - ./:/home/node/app
+    expose:
+      - "8080"
     ports:
-      # external_port:internal_port
-      - "8080:80"
+      - "8080:8080"
+    command: "npm run serve -- --port 8080"
+    stdin_open: true
+    tty: true
