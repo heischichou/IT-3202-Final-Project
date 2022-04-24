@@ -13,26 +13,26 @@
         <em class="bi bi-list text-primary d-flex fs-3"></em>
       </button>
       <div
-        class="collapse navbar-collapse text-center bg-dark m-3"
+        class="flex-row-reverse collapse navbar-collapse text-center bg-dark m-3"
         id="navbarNav"
       >
-        <ul class="navbar-nav">
-          <li class="nav-item">
+        <ul class="row navbar-nav mx-n4">
+          <li class="col-auto nav-item px-4">
             <router-link to="/" class="nav-link text-black"
               >ABOUT ME</router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="col-auto nav-item px-4">
             <router-link to="/projects" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="col-auto nav-item px-4">
             <router-link to="/skills" class="nav-link text-black"
               >SKILLS</router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="col-auto nav-item px-4">
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
