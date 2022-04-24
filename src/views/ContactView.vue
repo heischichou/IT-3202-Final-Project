@@ -1,5 +1,7 @@
 <template>
-  <h2>Contact View</h2>
+  <div class="container">
+    <h2>Contact View</h2>
+  </div>
 </template>
 
 <script>
