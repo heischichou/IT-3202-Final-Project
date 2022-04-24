@@ -17,22 +17,54 @@
         id="navbarNav"
       >
         <ul class="row navbar-nav mx-n4">
-          <li class="col-auto nav-item px-4">
+          <li
+            class="col-auto text-decoration-underline nav-item px-4"
+            v-if="$route.path === '/' || $route.path === '/about'"
+          >
             <router-link to="/" class="nav-link text-black"
               >ABOUT ME</router-link
             >
           </li>
-          <li class="col-auto nav-item px-4">
+          <li class="col-auto nav-item px-4" v-else>
+            <router-link to="/" class="nav-link text-black"
+              >ABOUT ME</router-link
+            >
+          </li>
+          <li
+            class="col-auto text-decoration-underline nav-item px-4"
+            v-if="$route.path === '/projects'"
+          >
             <router-link to="/projects" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
-          <li class="col-auto nav-item px-4">
+          <li class="col-auto nav-item px-4" v-else>
+            <router-link to="/projects" class="nav-link text-black"
+              >PROJECTS</router-link
+            >
+          </li>
+          <li
+            class="col-auto text-decoration-underline nav-item px-4"
+            v-if="$route.path === '/skills'"
+          >
             <router-link to="/skills" class="nav-link text-black"
               >SKILLS</router-link
             >
           </li>
-          <li class="col-auto nav-item px-4">
+          <li class="col-auto nav-item px-4" v-else>
+            <router-link to="/skills" class="nav-link text-black"
+              >SKILLS</router-link
+            >
+          </li>
+          <li
+            class="col-auto text-decoration-underline nav-item px-4"
+            v-if="$route.path === '/contact'"
+          >
+            <router-link to="/contact" class="nav-link text-black"
+              >CONTACT</router-link
+            >
+          </li>
+          <li class="col-auto nav-item px-4" v-else>
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
