@@ -1,4 +1,4 @@
-package com.myorg;
+package dev.pantonial.myorg;
 
 import software.constructs.Construct;
 import software.amazon.awscdk.*;

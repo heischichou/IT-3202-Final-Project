@@ -1,10 +1,8 @@
-package com.myorg;
+package dev.pantonial.myorg;
 
 import software.amazon.awscdk.App;
 import software.amazon.awscdk.Environment;
 import software.amazon.awscdk.StackProps;
-
-import java.util.Arrays;
 
 public class AwsCdkApp {
     public static void main(final String[] args) {
