@@ -6,7 +6,6 @@ describe("Footer Content", () => {
     cy.get("footer").should("be.visible");
   });
   it("should check text content within footer", function () {
-    cy.get("footer").contains("h6", "Designed in Figma. With Love");
-    cy.get("footer").contains("h6", "Ednifran . 2022");
+    cy.get("footer").contains("h6", "Developed by Team Ednifran");
   });
 });
