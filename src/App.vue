@@ -74,6 +74,16 @@
     </div>
   </nav>
   <router-view />
+  <footer
+    class="navbar navbar-expand-md navbar-dark bg-dark bottom-0 end-0 w-100 position-absolute"
+  >
+    <div
+        class="container d-flex flex-column bg-dark align-items-center justify-content-center"
+    >
+      <h6 class="mt-3">Designed in Figma. With Love</h6>
+      <h6 class="mb-3 mt-3">Ednifran . 2022</h6>
+    </div>
+  </footer>
 </template>
 
 <!-- Global styles -->
