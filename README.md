@@ -15,7 +15,7 @@ Note: `serve` uses port `8080` by default.
 3. Access app on http://localhost:8080/
 
 ### Docker [deprecated]
-Note: Docker is deprecated due to unresolved issue of Vue hot reload not working inside Docker container.<br>
+###### Note: Docker is deprecated due to unresolved issue of Vue hot reload not working inside Docker container.
 1. Install node modules
 ```
 npm install
