@@ -3,7 +3,7 @@ package dev.pantonial.cdk;
 import java.util.Collections;
 import java.util.List;
 import software.amazon.awscdk.*;
-//import software.amazon.awscdk.services.certificatemanager.DnsValidatedCertificate;
+import software.amazon.awscdk.services.certificatemanager.DnsValidatedCertificate;
 import software.amazon.awscdk.services.cloudfront.*;
 import software.amazon.awscdk.services.route53.*;
 import software.amazon.awscdk.services.route53.targets.CloudFrontTarget;
@@ -27,7 +27,7 @@ public class AwsCdkStack extends Stack {
 
             // S3 Bucket Creation
             Bucket bucket = Bucket.Builder.create(this, "PantonialDevBucket")
-                    .bucketName("pantonial-dev-cdk")
+                    .bucketName("pantonial.dev")
                     .websiteIndexDocument("index.html")
                     .publicReadAccess(false)
                     .removalPolicy(RemovalPolicy.DESTROY)
@@ -36,16 +36,17 @@ public class AwsCdkStack extends Stack {
             // CloudFront Distribution
             CloudFrontWebDistribution cloudFrontDistribution = CloudFrontWebDistribution.Builder.create(this, "PantonialDevCloudfrontDistrib")
                     .defaultRootObject("index.html")
-//                .viewerCertificate(ViewerCertificate.fromAcmCertificate(
-//                        DnsValidatedCertificate.Builder.create(this, "SiteCertificate")
-//                                .domainName("pantonial.dev")
-//                                .hostedZone(zone)
-//                                .build()
-//                        , ViewerCertificateOptions.builder()
-//                                .sslMethod(SSLMethod.SNI)
+                .viewerCertificate(ViewerCertificate.fromAcmCertificate(
+                        DnsValidatedCertificate.Builder.create(this, "SiteCertificate")
+                                .domainName("pantonial.dev")
+                                .hostedZone(zone)
+                                .build()
+                        , ViewerCertificateOptions.builder()
+//                                .aliases("pantonial.dev")
+                                .sslMethod(SSLMethod.SNI)
 //                                .securityPolicy(SecurityPolicyProtocol.TLS_V1_1_2016)
-//                                .build()
-//                ))
+                                .build()
+                ))
                     .originConfigs(List.of(
                             SourceConfiguration.builder()
                                     .s3OriginSource(S3OriginConfig.builder()
@@ -61,7 +62,7 @@ public class AwsCdkStack extends Stack {
 
             // Route 53 Record
             ARecord.Builder.create(this, "PantonialDevRecord")
-                    .recordName("pantonial.dev")
+                    .recordName("example.pantonial.dev")
                     .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
                     .zone(zone)
                     .build();
