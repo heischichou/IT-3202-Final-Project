@@ -40,8 +40,11 @@
         </div>
       </div>
     </div>
-    <div class="bg-transparent">
-      <button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button>
+    <div class="row bg-transparent">
+      <div class="col-1 me-md-6 bg-transparent"></div>
+      <div class="col bg-transparent">
+        <button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button>
+      </div>
     </div>
   </div>
 </template>
@@ -53,9 +56,9 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid black;
-}
+/*div {*/
+/*  border: 1px solid black;*/
+/*}*/
 .social-link:hover {
   text-decoration: underline !important;
 }
