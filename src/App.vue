@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container d-flex flex-row flex-row-reverse bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+    <div class="container d-flex flex-row flex-row-reverse bg-transparent">
       <button
         class="navbar-toggler border-primary mt-3 me-3"
         type="button"
@@ -13,7 +13,7 @@
         <em class="bi bi-list text-primary d-flex fs-3"></em>
       </button>
       <div
-        class="flex-row-reverse collapse navbar-collapse text-center bg-dark m-3"
+        class="flex-row-reverse collapse navbar-collapse text-center bg-transparent m-3"
         id="navbarNav"
       >
         <ul class="row navbar-nav mx-n4">
