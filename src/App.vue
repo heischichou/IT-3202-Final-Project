@@ -57,14 +57,14 @@
             >
           </li>
           <li
-            class="col-auto text-decoration-underline nav-item px-4"
+            class="col-auto text-decoration-underline nav-item px-4 pe-md-0"
             v-if="$route.path === '/contact'"
           >
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
           </li>
-          <li class="col-auto nav-item px-4" v-else>
+          <li class="col-auto nav-item px-4 pe-md-0" v-else>
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
