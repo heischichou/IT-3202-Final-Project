@@ -18,7 +18,7 @@
         </div>
       </div>
       <!-- column -->
-      <div class="col-md container-fluid bg-transparent ms-md-5">
+      <div class="col-md container-fluid bg-transparent ms-md-6">
         <div class="row bg-transparent my-3">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
