@@ -1,4 +1,5 @@
 <template>
+  <!-- Header -->
   <div class="container-fluid d-flex flex-row p-0">
     <div class="col-md-3"></div>
     <div
@@ -17,9 +18,8 @@
           </h1>
         </div>
       </div>
-      <!-- column -->
       <div class="col-md container-fluid bg-transparent ms-md-6">
-        <div class="row bg-transparent my-3">
+        <div class="row bg-transparent my-2">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -27,7 +27,7 @@
             aliquip ex ea commodo consequa.
           </p>
         </div>
-        <div class="row gap-4 fw-bold bg-transparent my-3">
+        <div class="row gap-4 fw-bold bg-transparent mt-2 my-md-4">
           <a class="col-1 text-decoration-none text-body social-link" href="#"
             >TW.</a
           >
@@ -47,11 +47,19 @@
       </div>
     </div>
   </div>
+  <!-- Experience Component -->
+  <div class="container my-6">
+    <ExperienceList />
+  </div>
 </template>
 
 <script>
+import ExperienceList from "../components/AboutMe/ExperienceList";
 export default {
   name: "AboutMeView",
+  components: {
+    ExperienceList,
+  },
 };
 </script>
 
