@@ -1,10 +1,13 @@
 <template>
-  <h3>Experience Component</h3>
+  <p>Web Developer</p>
 </template>
 
 <script>
 export default {
   name: "ExperienceList",
+  props: {
+    item: Object,
+  },
 };
 </script>
 

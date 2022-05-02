@@ -49,7 +49,8 @@
   </div>
   <!-- Experience Component -->
   <div class="container my-6">
-    <ExperienceList />
+    <h1 class="text-primary fw-bolder fs-l">Experience</h1>
+    <ExperienceList v-for="item in experience" :key="item.experience_id" />
   </div>
 </template>
 
@@ -59,6 +60,88 @@ export default {
   name: "AboutMeView",
   components: {
     ExperienceList,
+  },
+  data() {
+    return {
+      experience: [
+        {
+          experience_id: 1,
+          title: "Web Developer",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          organization: "Xlr8 Ventures Inc",
+          roles: [
+            "AWS Infrastructure",
+            "AWS Lambda System",
+            "Central Event Manager for Postnord",
+            "Create Unit Tests",
+            "Retro Planning",
+            "Systems Development",
+          ],
+          year: "PRESENT",
+        },
+        {
+          experience_id: 2,
+          title: "Team Leader",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          organization: "Flat X Realty Services",
+          roles: [
+            "SEO",
+            "Code Optimization",
+            "Code Review",
+            "GraphQL Implementation",
+            "Microservices Deployment",
+            "Research Technology",
+            "Features Planning",
+            "Design Planning",
+            "Allocation of Tasks",
+            "Project Planning",
+            "Database Design",
+            "Scrum Leader",
+          ],
+          year: "2018",
+        },
+        {
+          experience_id: 3,
+          title: "Senior Programmer",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          organization: "Helpmate Incorporated",
+          roles: [
+            "Company Website",
+            "IT Support",
+            "DB Admin",
+            "Network Security",
+            "System Security",
+            "Accounting System Maintenance",
+            "Server Virtualization",
+            "Rack Server Deployment",
+            "Raid Z2 NAS Server Deployment",
+            "Water System",
+            "Network Wiring",
+            "Android Meter Reader Maintenance",
+            "Accounting System ERP Planning",
+          ],
+          year: "2015",
+        },
+        {
+          experience_id: 4,
+          title: "Junior Programmer",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+          organization: "Azeus",
+          roles: [
+            "Apply Software Engineering",
+            "Resource Sharing System",
+            "Oracle Database Management",
+            "Create JSP Pages",
+            "Study Proprietary Java Technology",
+          ],
+          year: "2014",
+        },
+      ],
+    };
   },
 };
 </script>
