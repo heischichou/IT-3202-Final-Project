@@ -15,8 +15,15 @@
 </template>
 
 <script>
+// Commented out the components for now since they'll be used in developing the project pages
+// import ProjectComponent from "../components/ProjectComponent";
+// import ProjectTag from "../components/ProjectTag";
 export default {
   name: "ProjectsView",
+  components: {
+    // ProjectComponent,
+    // ProjectTag,
+  },
 };
 </script>
 
