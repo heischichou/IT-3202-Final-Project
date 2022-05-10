@@ -49,9 +49,11 @@
   </div>
   <!-- Experience Component -->
   <div class="container my-6">
-    <h1 class="text-primary fw-bolder fs-l mb-5">Experience</h1>
+    <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-5">
+      Experience
+    </h1>
     <ExperienceList
-      class="mb-4"
+      class="mb-5 mb-md-4"
       v-for="item in experience"
       :key="item.experience_id"
       :item="item"
