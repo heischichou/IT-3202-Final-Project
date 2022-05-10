@@ -7,7 +7,7 @@
       :class="item.expertise_id % 2 !== 0 ? 'order-first' : 'order-last'"
     >
       <div
-        class="expertise-image bg-subtitle"
+        class="expertise-image w-50 my-0 mx-auto rounded-pill bg-subtitle"
         :style="{
           'background-image': 'url(' + item.image_url + ');',
         }"
@@ -18,7 +18,9 @@
       :class="item.expertise_id % 2 === 0 ? 'order-first' : 'order-last'"
     >
       <h1 class="text-secondary fw-bold">{{ item.title }}</h1>
-      <p class="text-wrap">{{ item.description }}</p>
+      <p class="text-wrap" style="text-align: justify">
+        {{ item.description }}
+      </p>
     </div>
   </div>
 </template>
@@ -34,11 +36,8 @@ export default {
 
 <style scoped>
 .expertise-image {
-  width: 50%;
   min-width: 200px !important;
   min-height: 200px !important;
-  margin: 0 auto !important;
-  border-radius: 50% !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -81,33 +81,6 @@ export default {
     ExperienceList,
     ExpertiseList,
   },
-  methods: {
-    enableSideScroll(list) {
-      const slider = document.querySelector(list);
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener("mouseleave", () => {
-        isDown = false;
-      });
-      slider.addEventListener("mouseup", () => {
-        isDown = false;
-      });
-      slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = x - startX;
-        slider.scrollLeft = scrollLeft - walk;
-      });
-    },
-  },
   data() {
     return {
       experience: [
@@ -221,21 +194,49 @@ export default {
     };
   },
   methods: {
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    },
     onResize() {
       var rows = document.getElementsByClassName("expertise");
       if (window.innerWidth < 768) {
         for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-row", "flex-column");
           let cols = rows[i].children;
+          let h1 = cols[1].getElementsByTagName("h1")[0];
           cols[0].classList.replace("order-last", "order-first");
           cols[1].classList.replace("order-first", "order-last");
           cols[0].classList.add("mb-5");
           cols[1].classList.add("mx-1");
+          h1.classList.add("text-center");
         }
       } else {
         for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-column", "flex-row");
           let cols = rows[i].children;
+          let h1 = cols[1].getElementsByTagName("h1")[0];
           i % 2 !== 0
             ? cols[0].classList.replace("order-first", "order-last")
             : cols[0].classList.replace("order-last", "order-first");
@@ -244,6 +245,7 @@ export default {
             : cols[1].classList.replace("order-first", "order-last");
           cols[0].classList.remove("mb-5");
           cols[1].classList.remove("mx-1");
+          h1.classList.remove("text-center");
         }
       }
     },
