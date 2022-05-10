@@ -190,6 +190,40 @@ export default {
       ],
     };
   },
+  methods: {
+    onResize() {
+      var rows = document.getElementsByClassName("expertise");
+      if (window.innerWidth < 768) {
+        for (let i = 0, count = rows.length; i < count; i++) {
+          rows[i].classList.replace("flex-row", "flex-column");
+          let cols = rows[i].children;
+          cols[0].classList.replace("order-last", "order-first");
+          cols[1].classList.replace("order-first", "order-last");
+          cols[0].classList.add("mb-5");
+          cols[1].classList.add("mx-1");
+        }
+      } else {
+        for (let i = 0, count = rows.length; i < count; i++) {
+          rows[i].classList.replace("flex-column", "flex-row");
+          let cols = rows[i].children;
+          i % 2 !== 0
+            ? cols[0].classList.replace("order-first", "order-last")
+            : cols[0].classList.replace("order-last", "order-first");
+          i % 2 !== 0
+            ? cols[1].classList.replace("order-last", "order-first")
+            : cols[1].classList.replace("order-first", "order-last");
+          cols[0].classList.remove("mb-5");
+          cols[1].classList.remove("mx-1");
+        }
+      }
+    },
+  },
+  created() {
+    window.addEventListener("resize", this.onResize);
+  },
+  mounted() {
+    this.onResize();
+  },
 };
 </script>
 

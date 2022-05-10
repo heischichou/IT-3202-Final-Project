@@ -1,5 +1,7 @@
 <template>
-  <div class="row justify-content-center align-items-center flex-nowrap">
+  <div
+    class="expertise row flex-row flex-nowrap justify-content-center align-items-center"
+  >
     <div
       class="col"
       :class="item.expertise_id % 2 !== 0 ? 'order-first' : 'order-last'"
@@ -32,14 +34,19 @@ export default {
 
 <style scoped>
 .expertise-image {
-  width: 55%;
-  min-width: 225px !important;
-  min-height: 225px !important;
+  width: 50%;
+  min-width: 200px !important;
+  min-height: 200px !important;
   margin: 0 auto !important;
-  padding-bottom: 55%;
   border-radius: 50% !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.expertise-image:after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
 }
 </style>
