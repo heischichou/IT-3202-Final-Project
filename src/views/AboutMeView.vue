@@ -57,14 +57,26 @@
       :item="item"
     />
   </div>
+  <!-- Expertise Component -->
+  <div class="container my-7">
+    <h1 class="text-primary fw-bolder fs-l mb-5">Expertise</h1>
+    <ExpertiseList
+      class="mb-6"
+      v-for="item in expertise"
+      :key="item.expertise_id"
+      :item="item"
+    />
+  </div>
 </template>
 
 <script>
 import ExperienceList from "../components/AboutMe/ExperienceList";
+import ExpertiseList from "../components/AboutMe/ExpertiseList";
 export default {
   name: "AboutMeView",
   components: {
     ExperienceList,
+    ExpertiseList,
   },
   data() {
     return {
@@ -144,6 +156,36 @@ export default {
             "Study Proprietary Java Technology",
           ],
           year: "2014",
+        },
+      ],
+      expertise: [
+        {
+          expertise_id: 1,
+          title: "Networking Training",
+          description:
+            "Studied protocols like RIP and VOIP. Implemented Subnetworking and Fire wall Techniques. Deployed the technology learned to the company network. Studied VPN and applied to inter-branch communication.",
+          image_url: "",
+        },
+        {
+          expertise_id: 2,
+          title: "Advanced Project Management",
+          description:
+            "Applied soft tools to create the right mix of team members in a project. Learned how to use Project Libre advance techniques to track project costs. Used WBS to manage an ongoing project. Determined the effects of corporate decisions on a current project.",
+          image_url: "",
+        },
+        {
+          expertise_id: 3,
+          title: "Big Data Analytics Training 101",
+          description:
+            "Used PostgreSQL to analyze big data sets. Combined multiple data sources into one dashboard. Converted corporate data into readily readable KPIS.",
+          image_url: "",
+        },
+        {
+          expertise_id: 4,
+          title: "Financial Statement Analysis",
+          description:
+            "Learned how to create a financial statement based on a transaction table. Optimize the cost of company taxes through correct labelling of transactions. Learned techniques to optimize the chart of accounts, Applied seminar to current project.",
+          image_url: "",
         },
       ],
     };
