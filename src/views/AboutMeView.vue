@@ -55,6 +55,7 @@
       v-for="item in experience"
       :key="item.experience_id"
       :item="item"
+      @mouseenter="enableSideScroll('#roles' + item.experience_id)"
     />
   </div>
 </template>
@@ -65,6 +66,33 @@ export default {
   name: "AboutMeView",
   components: {
     ExperienceList,
+  },
+  methods: {
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    },
   },
   data() {
     return {

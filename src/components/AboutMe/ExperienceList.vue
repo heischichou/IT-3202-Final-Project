@@ -4,11 +4,15 @@
       <h5 class="fw-bold">{{ item.title }}</h5>
       <p class="text-subtitle">{{ item.organization }}</p>
     </div>
-    <div class="col-7 overflow-hidden">
+    <div class="col-7">
       <p>{{ item.description }}</p>
-      <div class="text-nowrap">
+      <div
+        :id="'roles' + item.experience_id"
+        class="text-nowrap overflow-hidden"
+      >
         <div
           class="d-inline bg-backdrop rounded-pill me-2 px-2 py-1"
+          style="cursor: default"
           v-for="(role, index) in item.roles"
           :key="index"
         >
