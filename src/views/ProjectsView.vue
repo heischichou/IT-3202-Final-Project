@@ -12,6 +12,26 @@
     class="container-lg bg-dark me-0 mb-3 rounded-start"
     style="height: 150px; margin-top: -100px"
   ></div>
+  <div class="container mb-5">
+    <div class="d-flex flex-column">
+      <div>
+        <p class="text-center">
+          I'd be delighted to answer any questions,<br />
+          plan collaborations, or collaborate on new projects with you.
+        </p>
+      </div>
+      <div class="d-flex justify-content-center mb-5">
+        <button
+          class="bg-secondary border-secondary mt-3 me-3 mb-5 p-3"
+          type="button"
+        >
+          <router-link to="/contact" class="nav-link text-body"
+            >CONTACT ME</router-link
+          >
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
