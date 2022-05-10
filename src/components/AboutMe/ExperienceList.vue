@@ -1,14 +1,24 @@
 <template>
-  <div class="row flex-nowrap">
-    <div class="col-5">
-      <h5 class="fw-bold">{{ item.title }}</h5>
-      <p class="text-subtitle">{{ item.organization }}</p>
+  <div class="d-flex flex-column flex-md-row flex-nowrap">
+    <div class="col-md-5">
+      <h5 class="fw-bold text-center text-md-start mb-3 mb-md-2">
+        {{ item.title }}
+      </h5>
+      <p class="text-subtitle text-center text-md-start">
+        {{ item.organization + " • " + item.year }}
+      </p>
     </div>
-    <div class="col-7 overflow-hidden">
-      <p>{{ item.description }}</p>
-      <div class="text-nowrap">
+    <div class="col-md-7">
+      <p class="text-center text-md-start mb-4 mb-md-3">
+        {{ item.description }}
+      </p>
+      <div
+        :id="'roles' + item.experience_id"
+        class="text-nowrap overflow-hidden"
+      >
         <div
           class="d-inline bg-backdrop rounded-pill me-2 px-2 py-1"
+          style="cursor: default"
           v-for="(role, index) in item.roles"
           :key="index"
         >
