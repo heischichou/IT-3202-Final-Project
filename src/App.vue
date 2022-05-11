@@ -93,4 +93,8 @@ export default {
 </script>
 
 <!-- Global styles -->
-<style lang="scss"></style>
+<style lang="scss">
+.nav-link:hover {
+  text-decoration: underline !important;
+}
+</style>
