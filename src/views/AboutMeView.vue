@@ -48,7 +48,7 @@
     </div>
   </div>
   <!-- Experience Component -->
-  <div class="container my-6">
+  <div class="container py-5">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-5">
       Experience
     </h1>
@@ -61,7 +61,7 @@
     />
   </div>
   <!-- Expertise Component -->
-  <div class="container my-7">
+  <div class="container py-5">
     <h1 class="text-primary text-center fw-bolder text-md-start fs-l mb-5">
       Expertise
     </h1>
