@@ -62,7 +62,9 @@
   </div>
   <!-- Expertise Component -->
   <div class="container my-7">
-    <h1 class="text-primary fw-bolder fs-l mb-5">Expertise</h1>
+    <h1 class="text-primary text-center fw-bolder text-md-start fs-l mb-5">
+      Expertise
+    </h1>
     <ExpertiseList
       class="mb-6"
       v-for="item in expertise"
@@ -225,18 +227,15 @@ export default {
         for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-row", "flex-column");
           let cols = rows[i].children;
-          let h1 = cols[1].getElementsByTagName("h1")[0];
           cols[0].classList.replace("order-last", "order-first");
           cols[1].classList.replace("order-first", "order-last");
           cols[0].classList.add("mb-5");
           cols[1].classList.add("mx-1");
-          h1.classList.add("text-center");
         }
       } else {
         for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-column", "flex-row");
           let cols = rows[i].children;
-          let h1 = cols[1].getElementsByTagName("h1")[0];
           i % 2 !== 0
             ? cols[0].classList.replace("order-first", "order-last")
             : cols[0].classList.replace("order-last", "order-first");
@@ -245,7 +244,6 @@ export default {
             : cols[1].classList.replace("order-first", "order-last");
           cols[0].classList.remove("mb-5");
           cols[1].classList.remove("mx-1");
-          h1.classList.remove("text-center");
         }
       }
     },

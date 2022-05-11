@@ -17,7 +17,9 @@
       class="col"
       :class="item.expertise_id % 2 === 0 ? 'order-first' : 'order-last'"
     >
-      <h1 class="text-secondary fw-bold">{{ item.title }}</h1>
+      <h1 class="text-secondary text-center text-md-start fw-bold">
+        {{ item.title }}
+      </h1>
       <p class="text-wrap" style="text-align: justify">
         {{ item.description }}
       </p>
