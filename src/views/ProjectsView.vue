@@ -13,7 +13,7 @@
     style="height: 150px; margin-top: -100px"
   ></div>
 
-  <div class="container">
+  <div class="container my-5">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div class="container d-flex flex-row flex-row-reverse bg-transparent">
@@ -34,17 +34,29 @@
         >
           <ul class="row navbar-nav mx-n4">
             <li class="col-auto nav-item px-4">
-              <button class="btn btn-link text-decoration-underline text-black">
+              <button
+                @click="showProjectDiv(true, false, false)"
+                class="btn btn-link text-decoration-none text-black"
+                :class="[major === true ? showLine : noLine]"
+              >
                 MAJOR PROJECTS
               </button>
             </li>
             <li class="col-auto nav-item px-4">
-              <button class="btn btn-link text-decoration-none text-black">
+              <button
+                @click="showProjectDiv(false, true, false)"
+                class="btn btn-link text-decoration-none text-black"
+                :class="[minor === true ? showLine : noLine]"
+              >
                 MINOR PROJECTS
               </button>
             </li>
             <li class="col-auto nav-item px-4">
-              <button class="btn btn-link text-decoration-none text-black">
+              <button
+                @click="showProjectDiv(false, false, true)"
+                class="btn btn-link text-decoration-none text-black"
+                :class="[personal === true ? showLine : noLine]"
+              >
                 PERSONAL PROJECTS
               </button>
             </li>
@@ -52,6 +64,12 @@
         </div>
       </div>
     </nav>
+    <!--  MAJOR PROJECTS DIV  -->
+    <div v-show="major">show major projects</div>
+    <!--  MINOR PROJECTS DIV  -->
+    <div v-show="minor">show minor projects</div>
+    <!--  PERSONAL PROJECTS DIV  -->
+    <div v-show="personal">show personal projects</div>
   </div>
 
   <!-- Contacts Section -->
@@ -87,6 +105,22 @@ export default {
     // ProjectComponent,
     // ProjectTag,
   },
+  data: function () {
+    return {
+      major: true,
+      minor: false,
+      personal: false,
+      showLine: "text-decoration-underline",
+      noLine: "text-decoration-none",
+    };
+  },
+  methods: {
+    showProjectDiv(majorVal, minorVal, personalVal) {
+      this.major = majorVal;
+      this.minor = minorVal;
+      this.personal = personalVal;
+    },
+  },
 };
 </script>
 
@@ -96,8 +130,8 @@ export default {
 /*  outline: solid black;*/
 /*}*/
 
-/*.btn:focus {*/
-/*  outline: none;*/
-/*  box-shadow: none;*/
-/*}*/
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
 </style>
