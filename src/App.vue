@@ -80,5 +80,17 @@
   </footer>
 </template>
 
+<script>
+import OverlayScrollbars from "overlayscrollbars/js/OverlayScrollbars.js";
+
+export default {
+  mounted() {
+    document.addEventListener("DOMContentLoaded", function () {
+      OverlayScrollbars(document.querySelectorAll("body"), {});
+    });
+  },
+};
+</script>
+
 <!-- Global styles -->
 <style lang="scss"></style>
