@@ -12,6 +12,49 @@
     class="container-lg bg-dark me-0 mb-3 rounded-start"
     style="height: 150px; margin-top: -100px"
   ></div>
+
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+      <div class="container d-flex flex-row flex-row-reverse bg-transparent">
+        <button
+          class="navbar-toggler border-primary mt-3 me-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <em class="bi bi-list text-primary d-flex fs-3"></em>
+        </button>
+        <div
+          class="d-flex justify-content-center collapse navbar-collapse text-center bg-transparent m-3"
+          id="navbarNav"
+        >
+          <ul class="row navbar-nav mx-n4">
+            <li class="col-auto nav-item px-4">
+              <button class="btn btn-link text-decoration-underline text-black">
+                MAJOR PROJECTS
+              </button>
+            </li>
+            <li class="col-auto nav-item px-4">
+              <button class="btn btn-link text-decoration-none text-black">
+                MINOR PROJECTS
+              </button>
+            </li>
+            <li class="col-auto nav-item px-4">
+              <button class="btn btn-link text-decoration-none text-black">
+                PERSONAL PROJECTS
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Contacts Section -->
   <div class="container mb-5">
     <div class="d-flex flex-column">
       <div>
@@ -51,5 +94,10 @@ export default {
 /*div {*/
 /*  border: 1px;*/
 /*  outline: solid black;*/
+/*}*/
+
+/*.btn:focus {*/
+/*  outline: none;*/
+/*  box-shadow: none;*/
 /*}*/
 </style>
