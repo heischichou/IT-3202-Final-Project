@@ -60,41 +60,28 @@
       @mouseenter="enableSideScroll('#roles' + item.experience_id)"
     />
   </div>
+  <!-- Expertise Component -->
+  <div class="container my-7">
+    <h1 class="text-primary text-center fw-bolder text-md-start fs-l mb-5">
+      Expertise
+    </h1>
+    <ExpertiseList
+      class="mb-6"
+      v-for="item in expertise"
+      :key="item.expertise_id"
+      :item="item"
+    />
+  </div>
 </template>
 
 <script>
 import ExperienceList from "../components/AboutMe/ExperienceList";
+import ExpertiseList from "../components/AboutMe/ExpertiseList";
 export default {
   name: "AboutMeView",
   components: {
     ExperienceList,
-  },
-  methods: {
-    enableSideScroll(list) {
-      const slider = document.querySelector(list);
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener("mouseleave", () => {
-        isDown = false;
-      });
-      slider.addEventListener("mouseup", () => {
-        isDown = false;
-      });
-      slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = x - startX;
-        slider.scrollLeft = scrollLeft - walk;
-      });
-    },
+    ExpertiseList,
   },
   data() {
     return {
@@ -176,7 +163,96 @@ export default {
           year: "2014",
         },
       ],
+      expertise: [
+        {
+          expertise_id: 1,
+          title: "Networking Training",
+          description:
+            "Studied protocols like RIP and VOIP. Implemented Subnetworking and Fire wall Techniques. Deployed the technology learned to the company network. Studied VPN and applied to inter-branch communication.",
+          image_url: "",
+        },
+        {
+          expertise_id: 2,
+          title: "Advanced Project Management",
+          description:
+            "Applied soft tools to create the right mix of team members in a project. Learned how to use Project Libre advance techniques to track project costs. Used WBS to manage an ongoing project. Determined the effects of corporate decisions on a current project.",
+          image_url: "",
+        },
+        {
+          expertise_id: 3,
+          title: "Big Data Analytics Training 101",
+          description:
+            "Used PostgreSQL to analyze big data sets. Combined multiple data sources into one dashboard. Converted corporate data into readily readable KPIS.",
+          image_url: "",
+        },
+        {
+          expertise_id: 4,
+          title: "Financial Statement Analysis",
+          description:
+            "Learned how to create a financial statement based on a transaction table. Optimize the cost of company taxes through correct labelling of transactions. Learned techniques to optimize the chart of accounts, Applied seminar to current project.",
+          image_url: "",
+        },
+      ],
     };
+  },
+  methods: {
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    },
+    onResize() {
+      var rows = document.getElementsByClassName("expertise");
+      if (window.innerWidth < 768) {
+        for (let i = 0, count = rows.length; i < count; i++) {
+          rows[i].classList.replace("flex-row", "flex-column");
+          let cols = rows[i].children;
+          cols[0].classList.replace("order-last", "order-first");
+          cols[1].classList.replace("order-first", "order-last");
+          cols[0].classList.add("mb-5");
+          cols[1].classList.add("mx-1");
+        }
+      } else {
+        for (let i = 0, count = rows.length; i < count; i++) {
+          rows[i].classList.replace("flex-column", "flex-row");
+          let cols = rows[i].children;
+          i % 2 !== 0
+            ? cols[0].classList.replace("order-first", "order-last")
+            : cols[0].classList.replace("order-last", "order-first");
+          i % 2 !== 0
+            ? cols[1].classList.replace("order-last", "order-first")
+            : cols[1].classList.replace("order-first", "order-last");
+          cols[0].classList.remove("mb-5");
+          cols[1].classList.remove("mx-1");
+        }
+      }
+    },
+  },
+  created() {
+    window.addEventListener("resize", this.onResize);
+  },
+  mounted() {
+    this.onResize();
   },
 };
 </script>
