@@ -4,6 +4,7 @@
     <div class="col-md-3"></div>
     <div
       class="col bg-dark me-0"
+      id="main"
       style="height: 520px; margin-top: -100px; margin-bottom: -410px"
     ></div>
   </div>
@@ -253,14 +254,39 @@ export default {
   },
   mounted() {
     this.onResize();
+    let toggler = document.getElementById("navbarNav");
+    let main = document.getElementById("main");
+
+    toggler.addEventListener("show.bs.collapse", function () {
+      main.style.transition = "none";
+      main.classList.add("mt-0");
+    });
+    toggler.addEventListener("hidden.bs.collapse", function () {
+      main.style.transition = "all .5s";
+      main.classList.remove("mt-0");
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 768) {
+        if (
+          main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.remove("mt-0");
+        }
+      } else {
+        if (
+          !main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.add("mt-0");
+        }
+      }
+    });
   },
 };
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*}*/
 .social-link:hover {
   text-decoration: underline !important;
 }
