@@ -6,6 +6,6 @@ describe("Footer Content", () => {
     cy.get("footer").should("be.visible");
   });
   it("should check text content within footer", function () {
-    cy.get("footer").contains("p", "Developed by Team Ednifran");
+    cy.get("footer").contains("h6", "Developed by Team Ednifran");
   });
 });
