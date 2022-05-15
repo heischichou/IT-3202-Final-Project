@@ -14,7 +14,7 @@
       </p>
       <div
         :id="'roles' + item.experience_id"
-        class="text-nowrap overflow-hidden"
+        class="text-nowrap overflow-hidden py-1"
       >
         <div
           class="d-inline bg-backdrop rounded-pill me-2 px-2 py-1"
