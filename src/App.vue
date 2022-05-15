@@ -75,10 +75,26 @@
   </nav>
   <router-view />
   <footer class="bg-dark text-center p-3">
-    <h6 class="mt-3">Developed by <strong>Team Ednifran</strong></h6>
-    <h6 class="my-3">&copy; 2022</h6>
+    <p class="mt-3">Developed by <strong>Team Ednifran</strong></p>
+    <p class="my-3">&copy; 2022</p>
   </footer>
 </template>
 
+<script>
+import OverlayScrollbars from "overlayscrollbars/js/OverlayScrollbars.js";
+
+export default {
+  mounted() {
+    document.addEventListener("DOMContentLoaded", function () {
+      OverlayScrollbars(document.querySelectorAll("body"), {});
+    });
+  },
+};
+</script>
+
 <!-- Global styles -->
-<style lang="scss"></style>
+<style lang="scss">
+.nav-link:hover {
+  text-decoration: underline !important;
+}
+</style>
