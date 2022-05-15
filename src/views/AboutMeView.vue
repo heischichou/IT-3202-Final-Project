@@ -62,7 +62,7 @@
     />
   </div>
   <!-- Expertise Component -->
-  <div class="container py-5">
+  <div class="container py-5" id="expertise-section">
     <h1 class="text-primary text-center fw-bolder text-md-start fs-l mb-5">
       Expertise
     </h1>
