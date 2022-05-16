@@ -13,7 +13,7 @@
     style="height: 150px; margin-top: -100px"
   ></div>
 
-  <div class="container my-5">
+  <div class="container my-5" style="width: 1100px">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div class="container d-flex flex-row flex-row-reverse bg-transparent">
@@ -64,8 +64,17 @@
         </div>
       </div>
     </nav>
+
     <!--  MAJOR PROJECTS DIV  -->
-    <div v-show="major">show major projects</div>
+    <div v-show="major" class="row justify-content-start">
+      <div
+        class="col-xl-6 col-md-6 col-sm-12 d-flex justify-content-center py-5"
+        v-for="project in projects"
+        :key="project.project_id"
+      >
+        <ProjectComponent projectColor="bg-primary" :projectItem="project" />
+      </div>
+    </div>
     <!--  MINOR PROJECTS DIV  -->
     <div v-show="minor">show minor projects</div>
     <!--  PERSONAL PROJECTS DIV  -->
@@ -96,14 +105,11 @@
 </template>
 
 <script>
-// Commented out the components for now since they'll be used in developing the project pages
-// import ProjectComponent from "../components/ProjectComponent";
-// import ProjectTag from "../components/ProjectTag";
+import ProjectComponent from "../components/ProjectComponent";
 export default {
   name: "ProjectsView",
   components: {
-    // ProjectComponent,
-    // ProjectTag,
+    ProjectComponent,
   },
   data: function () {
     return {
@@ -112,7 +118,60 @@ export default {
       personal: false,
       showLine: "text-decoration-underline",
       noLine: "text-decoration-none",
+      projects: [],
     };
+  },
+  created() {
+    this.projects = [
+      {
+        project_id: 1,
+        project_name: "Project 1",
+        project_img:
+          "https://assets.asana.biz/m/5d7a4c4d0c33d68/original/article-project-management-how-project-status-reports-2x.png",
+        description: "Project 1 sample description...",
+        project_tags: ["HTML", "CSS", "Javascript"],
+      },
+      {
+        project_id: 2,
+        project_name: "Project 2",
+        project_img:
+          "https://images.ctfassets.net/gg4ddi543f5b/6KSggHBfL67iQEcIXYS1vO/ace931866fe1adea8f584e6cedec90c8/project-management-methodologies-lean-methodology.png",
+        description: "Project 2 sample description...",
+        project_tags: ["HTML", "CSS", "Vue"],
+      },
+      {
+        project_id: 3,
+        project_name: "Project 3",
+        project_img:
+          "https://www.proofhub.com/wp-content/uploads/2017/10/Project-Manager-Roles-And-Responsibilities.jpg",
+        description: "Project 3 sample description...",
+        project_tags: ["HTML", "CSS", "PHP", "MySQL"],
+      },
+      {
+        project_id: 4,
+        project_name: "Project 4",
+        project_img:
+          "https://idapgroup.com/blog/blog/wp-content/uploads/2018/07/PM-01-1.jpg",
+        description: "Project 1 sample description...",
+        project_tags: ["HTML", "CSS", "Laravel", "Vue"],
+      },
+      {
+        project_id: 5,
+        project_name: "Project 5",
+        project_img:
+          "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvamVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
+        description: "Project 2 sample description...",
+        project_tags: ["HTML", "React", "Bootstrap"],
+      },
+      {
+        project_id: 6,
+        project_name: "Project 6",
+        project_img:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
+        description: "Project 3 sample description...",
+        project_tags: ["HTML", "CSS", "Kotlin", "SQL"],
+      },
+    ];
   },
   methods: {
     showProjectDiv(majorVal, minorVal, personalVal) {
