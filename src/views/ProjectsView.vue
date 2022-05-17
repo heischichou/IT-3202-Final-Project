@@ -3,7 +3,7 @@
     <div class="row mt-5 pt-5">
       <div class="col-md-3"></div>
       <div
-        class="col-9 bg-dark me-0 mb-3 rounded-start"
+        class="col bg-dark me-0 mb-3 rounded-start"
         style="height: 300px; margin-top: -100px"
       ></div>
     </div>
