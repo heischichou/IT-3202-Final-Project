@@ -15,5 +15,6 @@ export default {
 .p-tag {
   position: static;
   border-radius: 16px;
+  font-size: smaller;
 }
 </style>
