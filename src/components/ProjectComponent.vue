@@ -39,7 +39,7 @@ export default {
 /*}*/
 
 .project-card {
-  width: 464px;
+  width: 264px;
   height: 100%;
   mix-blend-mode: normal;
   border-radius: 24px;
@@ -47,7 +47,7 @@ export default {
 
 .project-image {
   width: 100%;
-  height: 484px;
+  height: 284px;
 
   align-self: center;
   object-fit: cover;
