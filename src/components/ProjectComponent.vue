@@ -1,5 +1,5 @@
 <template>
-  <div class="card project-card" :class="projectColor">
+  <div class="card project-card" :style="{ background: projectColor }">
     <div class="container no-bgColor">
       <img
         class="card-img project-image mt-4 mb-4 bg-light"
