@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card project-card shadow border-0"
+    class="card project-card pull-up shadow border-0"
     :style="{ background: projectColor }"
   >
     <div class="container no-bgColor">
@@ -58,5 +58,16 @@ export default {
 
 .no-bgColor {
   background: none;
+}
+
+.pull-up {
+  transition: all 0.25s ease;
+}
+
+.pull-up:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+  filter: brightness(105%);
+  z-index: 999;
 }
 </style>
