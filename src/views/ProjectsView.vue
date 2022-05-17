@@ -57,10 +57,13 @@
     <div v-show="major" class="row justify-content-start pt-2 pb-4">
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         :key="project.project_id"
       >
-        <ProjectComponent projectColor="bg-primary" :projectItem="project" />
+        <ProjectComponent
+          :projectColor="selectColor(index)"
+          :projectItem="project"
+        />
       </div>
     </div>
     <!--  MINOR PROJECTS DIV  -->
@@ -107,6 +110,7 @@ export default {
       showLine: "text-decoration-underline",
       noLine: "text-decoration-none",
       projects: [],
+      project_colors: ["#B8B9C8", "#B9BFE1", "#B9D0FC", "#B4C9E7"],
     };
   },
   created() {
@@ -166,6 +170,12 @@ export default {
       this.major = majorVal;
       this.minor = minorVal;
       this.personal = personalVal;
+    },
+    selectColor(index) {
+      while (index > 3) {
+        index -= 4;
+      }
+      return this.project_colors[index];
     },
   },
 };
