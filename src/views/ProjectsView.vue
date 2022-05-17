@@ -17,20 +17,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div class="container d-flex flex-row flex-row-reverse bg-transparent">
-        <button
-          class="navbar-toggler border-primary mt-3 me-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <em class="bi bi-list text-primary d-flex fs-3"></em>
-        </button>
         <div
           class="d-flex justify-content-center collapse navbar-collapse text-center bg-transparent m-3"
-          id="navbarNav"
         >
           <ul class="row navbar-nav mx-n4">
             <li class="col-auto nav-item px-4">
