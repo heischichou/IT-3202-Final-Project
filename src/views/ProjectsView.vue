@@ -13,7 +13,7 @@
     style="height: 150px; margin-top: -100px"
   ></div>
 
-  <div class="container my-5" style="width: 1100px">
+  <div class="container my-5" style="width: 1000px">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div class="container d-flex flex-row flex-row-reverse bg-transparent">
@@ -66,9 +66,9 @@
     </nav>
 
     <!--  MAJOR PROJECTS DIV  -->
-    <div v-show="major" class="row justify-content-start">
+    <div v-show="major" class="row justify-content-start pt-2 pb-4">
       <div
-        class="col-xl-6 col-md-6 col-sm-12 d-flex justify-content-center py-5"
+        class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="project in projects"
         :key="project.project_id"
       >
