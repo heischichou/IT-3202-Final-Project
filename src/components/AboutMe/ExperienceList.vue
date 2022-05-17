@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column flex-md-row flex-nowrap">
+  <div class="experience d-flex flex-column flex-md-row flex-nowrap">
     <div class="col-md-5">
       <h5 class="fw-bold text-center text-md-start mb-3 mb-md-2">
         {{ item.title }}
@@ -14,7 +14,7 @@
       </p>
       <div
         :id="'roles' + item.experience_id"
-        class="text-nowrap overflow-hidden py-1"
+        class="roles text-nowrap overflow-hidden py-1"
       >
         <div
           class="d-inline bg-backdrop rounded-pill me-2 px-2 py-1"

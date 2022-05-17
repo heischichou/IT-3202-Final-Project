@@ -49,7 +49,7 @@
     </div>
   </div>
   <!-- Experience Component -->
-  <div class="container py-5">
+  <div class="container py-5" id="experience-section">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-5">
       Experience
     </h1>
