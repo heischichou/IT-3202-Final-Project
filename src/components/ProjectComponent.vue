@@ -1,24 +1,22 @@
 <template>
-  <div class="card project-card" :class="projectColor">
-    <!--  There's currently no image yet  -->
-    <img
-      class="card-img project-image mt-4 mb-4 bg-light"
-      src=""
-      alt="No Image"
-    />
-    <div
-      class="row justify-content-start align-self-center no-bgColor pb-3"
-      style="width: 315px"
-    >
-      <!-- The tags are also static/temporary for now -->
-      <div class="col-sm-auto no-bgColor px-1 pb-2">
-        <ProjectTag text="HTML" />
-      </div>
-      <div class="col-sm-auto no-bgColor px-1 pb-2">
-        <ProjectTag text="Javascript" />
-      </div>
-      <div class="col-sm-auto no-bgColor px-1 pb-2">
-        <ProjectTag text="CSS" />
+  <div
+    class="card project-card pull-up shadow border-0"
+    :style="{ background: projectColor }"
+  >
+    <div class="container no-bgColor">
+      <img
+        class="card-img project-image mt-4 mb-4 bg-light"
+        :src="projectItem.project_img"
+        :alt="projectItem.project_name"
+      />
+      <div class="row justify-content-start no-bgColor pb-3">
+        <div
+          class="col-sm-auto no-bgColor px-1 pb-2"
+          v-for="(tag, index) in projectItem.project_tags"
+          :key="index"
+        >
+          <ProjectTag :text="tag" />
+        </div>
       </div>
     </div>
   </div>
@@ -33,6 +31,7 @@ export default {
   },
   props: {
     projectColor: String,
+    projectItem: Object,
   },
 };
 </script>
@@ -43,22 +42,32 @@ export default {
 /*}*/
 
 .project-card {
-  width: 364px;
-  height: 480px;
-  left: 220px;
-  top: 0;
+  width: 264px;
+  height: 100%;
   mix-blend-mode: normal;
   border-radius: 24px;
 }
 
 .project-image {
-  width: 315px;
-  height: 364px;
+  width: 100%;
+  height: 284px;
+
   align-self: center;
   object-fit: cover;
 }
 
 .no-bgColor {
   background: none;
+}
+
+.pull-up {
+  transition: all 0.25s ease;
+}
+
+.pull-up:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+  filter: brightness(105%);
+  z-index: 999;
 }
 </style>

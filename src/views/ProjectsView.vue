@@ -16,24 +16,12 @@
       My<br />Projects
     </h1>
   </div>
-  <div class="container my-5">
+  <div class="container my-5" style="width: 1000px">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div class="container d-flex flex-row flex-row-reverse bg-transparent">
-        <button
-          class="navbar-toggler border-primary mt-3 me-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <em class="bi bi-list text-primary d-flex fs-3"></em>
-        </button>
         <div
           class="d-flex justify-content-center collapse navbar-collapse text-center bg-transparent m-3"
-          id="navbarNav"
         >
           <ul class="row navbar-nav mx-n4">
             <li class="col-auto nav-item px-4">
@@ -67,8 +55,20 @@
         </div>
       </div>
     </nav>
+
     <!--  MAJOR PROJECTS DIV  -->
-    <div v-show="major">show major projects</div>
+    <div v-show="major" class="row justify-content-start pt-2 pb-4">
+      <div
+        class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
+        v-for="(project, index) in majorProjects"
+        :key="project.project_id"
+      >
+        <ProjectComponent
+          :projectColor="selectColor(index)"
+          :projectItem="project"
+        />
+      </div>
+    </div>
     <!--  MINOR PROJECTS DIV  -->
     <div v-show="minor">show minor projects</div>
     <!--  PERSONAL PROJECTS DIV  -->
@@ -99,14 +99,11 @@
 </template>
 
 <script>
-// Commented out the components for now since they'll be used in developing the project pages
-// import ProjectComponent from "../components/ProjectComponent";
-// import ProjectTag from "../components/ProjectTag";
+import ProjectComponent from "../components/ProjectComponent";
 export default {
   name: "ProjectsView",
   components: {
-    // ProjectComponent,
-    // ProjectTag,
+    ProjectComponent,
   },
   data: function () {
     return {
@@ -115,13 +112,86 @@ export default {
       personal: false,
       showLine: "text-decoration-underline",
       noLine: "text-decoration-none",
+      projects: [],
+      project_colors: ["#B8B9C8", "#B9BFE1", "#B9D0FC", "#B4C9E7"],
     };
+  },
+  created() {
+    this.projects = [
+      {
+        project_id: 1,
+        project_name: "Project 1",
+        project_img:
+          "https://assets.asana.biz/m/5d7a4c4d0c33d68/original/article-project-management-how-project-status-reports-2x.png",
+        description: "Project 1 sample description...",
+        project_tags: ["HTML", "CSS", "Javascript"],
+        project_type: "Major",
+      },
+      {
+        project_id: 2,
+        project_name: "Project 2",
+        project_img:
+          "https://images.ctfassets.net/gg4ddi543f5b/6KSggHBfL67iQEcIXYS1vO/ace931866fe1adea8f584e6cedec90c8/project-management-methodologies-lean-methodology.png",
+        description: "Project 2 sample description...",
+        project_tags: ["HTML", "CSS", "Vue"],
+        project_type: "Major",
+      },
+      {
+        project_id: 3,
+        project_name: "Project 3",
+        project_img:
+          "https://www.proofhub.com/wp-content/uploads/2017/10/Project-Manager-Roles-And-Responsibilities.jpg",
+        description: "Project 3 sample description...",
+        project_tags: ["HTML", "CSS", "PHP", "MySQL"],
+        project_type: "Minor",
+      },
+      {
+        project_id: 4,
+        project_name: "Project 4",
+        project_img:
+          "https://idapgroup.com/blog/blog/wp-content/uploads/2018/07/PM-01-1.jpg",
+        description: "Project 1 sample description...",
+        project_tags: ["HTML", "CSS", "Laravel", "Vue"],
+        project_type: "Minor",
+      },
+      {
+        project_id: 5,
+        project_name: "Project 5",
+        project_img:
+          "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvamVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
+        description: "Project 2 sample description...",
+        project_tags: ["HTML", "React", "Bootstrap"],
+        project_type: "Personal",
+      },
+      {
+        project_id: 6,
+        project_name: "Project 6",
+        project_img:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
+        description: "Project 3 sample description...",
+        project_tags: ["HTML", "CSS", "Kotlin", "SQL"],
+        project_type: "Major",
+      },
+    ];
   },
   methods: {
     showProjectDiv(majorVal, minorVal, personalVal) {
       this.major = majorVal;
       this.minor = minorVal;
       this.personal = personalVal;
+    },
+    selectColor(index) {
+      while (index > 3) {
+        index -= 4;
+      }
+      return this.project_colors[index];
+    },
+  },
+  computed: {
+    majorProjects: function () {
+      return this.projects.filter(function (project) {
+        return project.project_type === "Major";
+      });
     },
   },
 };
