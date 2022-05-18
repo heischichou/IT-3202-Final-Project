@@ -47,6 +47,43 @@ export default {
   components: {
     SkillsComponent,
   },
+  data() {
+    return {
+      skills: [
+        {
+          skill_id: 1,
+          skill_name: "Personal Skills",
+          skill_list: [
+            "Understand the business requirements",
+            "Communicate client's needs to the team",
+            "Determine the needed tasks to be done",
+            "Follow up on each member's progress",
+            "Create a team from prospective candidates",
+            "Collaborate with team on blocking issues",
+            "Basic skills in project management",
+          ],
+          image_url: "null",
+        },
+        {
+          skill_id: 2,
+          skill_name: "Technical Skills",
+          skill_list: [
+            "Inter-branch VPN Configuration",
+            "Linux Server Administration",
+            "NAS Server Deployment",
+            "Reactive Programming",
+            "Rack Mounted Server Deployment",
+            "Cisco Networking",
+            "PFSense Network Configuration",
+            "Functional Programming",
+            "GitFlow and Semantic Versioning",
+            "Subversion",
+          ],
+          image_url: "null",
+        },
+      ],
+    };
+  },
 };
 </script>
 
