@@ -72,9 +72,31 @@
       </div>
     </div>
     <!--  MINOR PROJECTS DIV  -->
-    <div v-show="minor">show minor projects</div>
+    <div v-show="minor" class="row justify-content-start pt-2 pb-4">
+      <div
+        class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
+        v-for="(project, index) in minorProjects"
+        :key="project.project_id"
+      >
+        <ProjectComponent
+          :projectColor="selectColor(index)"
+          :projectItem="project"
+        />
+      </div>
+    </div>
     <!--  PERSONAL PROJECTS DIV  -->
-    <div v-show="personal">show personal projects</div>
+    <div v-show="personal">
+      <div
+        class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
+        v-for="(project, index) in personalProjects"
+        :key="project.project_id"
+      >
+        <ProjectComponent
+          :projectColor="selectColor(index)"
+          :projectItem="project"
+        />
+      </div>
+    </div>
   </div>
 
   <!-- Contacts Section -->
@@ -193,6 +215,16 @@ export default {
     majorProjects: function () {
       return this.projects.filter(function (project) {
         return project.project_type === "Major";
+      });
+    },
+    minorProjects: function () {
+      return this.projects.filter(function (project) {
+        return project.project_type === "Minor";
+      });
+    },
+    personalProjects: function () {
+      return this.projects.filter(function (project) {
+        return project.project_type === "Personal";
       });
     },
   },
