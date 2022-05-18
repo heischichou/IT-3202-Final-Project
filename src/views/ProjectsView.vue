@@ -57,7 +57,7 @@
     <div v-show="major" class="row justify-content-start pt-2 pb-4">
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
-        v-for="(project, index) in projects"
+        v-for="(project, index) in majorProjects"
         :key="project.project_id"
       >
         <ProjectComponent
@@ -122,6 +122,7 @@ export default {
           "https://assets.asana.biz/m/5d7a4c4d0c33d68/original/article-project-management-how-project-status-reports-2x.png",
         description: "Project 1 sample description...",
         project_tags: ["HTML", "CSS", "Javascript"],
+        project_type: "Major",
       },
       {
         project_id: 2,
@@ -130,6 +131,7 @@ export default {
           "https://images.ctfassets.net/gg4ddi543f5b/6KSggHBfL67iQEcIXYS1vO/ace931866fe1adea8f584e6cedec90c8/project-management-methodologies-lean-methodology.png",
         description: "Project 2 sample description...",
         project_tags: ["HTML", "CSS", "Vue"],
+        project_type: "Major",
       },
       {
         project_id: 3,
@@ -138,6 +140,7 @@ export default {
           "https://www.proofhub.com/wp-content/uploads/2017/10/Project-Manager-Roles-And-Responsibilities.jpg",
         description: "Project 3 sample description...",
         project_tags: ["HTML", "CSS", "PHP", "MySQL"],
+        project_type: "Minor",
       },
       {
         project_id: 4,
@@ -146,6 +149,7 @@ export default {
           "https://idapgroup.com/blog/blog/wp-content/uploads/2018/07/PM-01-1.jpg",
         description: "Project 1 sample description...",
         project_tags: ["HTML", "CSS", "Laravel", "Vue"],
+        project_type: "Minor",
       },
       {
         project_id: 5,
@@ -154,6 +158,7 @@ export default {
           "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvamVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
         description: "Project 2 sample description...",
         project_tags: ["HTML", "React", "Bootstrap"],
+        project_type: "Personal",
       },
       {
         project_id: 6,
@@ -162,6 +167,7 @@ export default {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
         description: "Project 3 sample description...",
         project_tags: ["HTML", "CSS", "Kotlin", "SQL"],
+        project_type: "Major",
       },
     ];
   },
@@ -176,6 +182,13 @@ export default {
         index -= 4;
       }
       return this.project_colors[index];
+    },
+  },
+  computed: {
+    majorProjects: function () {
+      return this.projects.filter(function (project) {
+        return project.project_type === "Major";
+      });
     },
   },
 };
