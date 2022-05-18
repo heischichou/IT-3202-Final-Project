@@ -4,14 +4,13 @@
     <div class="col-md-3"></div>
     <div
       class="col bg-dark rounded-1 me-0"
-      id="main"
-      style="height: 400px; margin-top: 80px; margin-bottom: -410px"
+      style="height: 360px; margin-top: 80px; margin-bottom: -410px"
     ></div>
   </div>
   <div class="container bg-transparent mb-5">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
-        <div class="row bg-transparent mt-n5">
+        <div class="row bg-transparent mt-n4">
           <h1 class="text-primary text-center text-md-start fw-bolder fs-xxl">
             My <br />
             Technical <br />
@@ -22,7 +21,7 @@
       <div
         class="col-md container-fluid bg-transparent ms-md-6 mt-3 mt-md-auto"
       >
-        <div class="row bg-transparent my-2">
+        <div class="row bg-transparent my-2 my-md-4">
           <p class="text-center text-md-start">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
