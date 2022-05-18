@@ -7,7 +7,7 @@
       style="height: 360px; margin-top: 80px; margin-bottom: -410px"
     ></div>
   </div>
-  <div class="container bg-transparent mb-5">
+  <div class="container bg-transparent mb-5 pb-5">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
         <div class="row bg-transparent mt-n4">
@@ -35,13 +35,18 @@
       </div>
     </div>
   </div>
-  <!-- This is just to add space between the footer and content; delete later. -->
-  <div class="my-5">&nbsp;</div>
+  <!-- Skills Component -->
+  <SkillsComponent class="mb-5 mb-md-4" />
 </template>
 
 <script>
+import SkillsComponent from "../components/SkillsList/SkillsComponent";
+
 export default {
   name: "SkillsView",
+  components: {
+    SkillsComponent,
+  },
 };
 </script>
 
