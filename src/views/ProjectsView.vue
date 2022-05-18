@@ -19,11 +19,13 @@
   <div class="container my-5" style="width: 1000px">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-      <div class="container d-flex flex-row flex-row-reverse bg-transparent">
+      <div
+        class="container d-flex flex-row flex-row-reverse bg-transparent mt-5"
+      >
         <div
-          class="d-flex justify-content-center collapse navbar-collapse text-center bg-transparent m-3"
+          class="d-flex justify-content-center collapse navbar-collapse text-center bg-transparent m-3 mt-5"
         >
-          <ul class="row navbar-nav mx-n4">
+          <ul class="row navbar-nav mx-n4 mt-3">
             <li class="col-auto nav-item px-4">
               <button
                 @click="showProjectDiv(true, false, false)"
