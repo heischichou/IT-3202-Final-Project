@@ -1,18 +1,21 @@
 <template>
-  <div
-    class="container-lg bg-dark me-0 mt-3 rounded-start"
-    style="height: 150px; margin-bottom: -100px"
-  ></div>
+  <div class="container-fluid">
+    <div class="row mt-5 pt-5">
+      <div class="col-md-3"></div>
+      <div
+        class="col bg-dark me-0 mb-3 rounded-start"
+        style="height: 300px; margin-top: -100px"
+      ></div>
+    </div>
+  </div>
   <div class="container text-end bg-transparent">
-    <h1 class="text-primary font-weight-bolder" style="font-size: 4.5rem">
+    <h1
+      class="text-primary font-weight-bolder"
+      style="font-size: 4.5rem; margin-top: -250px"
+    >
       My<br />Projects
     </h1>
   </div>
-  <div
-    class="container-lg bg-dark me-0 mb-3 rounded-start"
-    style="height: 150px; margin-top: -100px"
-  ></div>
-
   <div class="container my-5" style="width: 1000px">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
