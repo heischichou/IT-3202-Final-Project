@@ -30,8 +30,4 @@ export default {
   margin-left: 3rem !important;
   margin-right: 3rem !important;
 }
-
-/*
-flex-column flex-sm-row flex-md-row flex-xl-row
- */
 </style>
