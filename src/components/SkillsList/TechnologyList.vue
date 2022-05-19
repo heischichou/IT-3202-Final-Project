@@ -1,12 +1,14 @@
 <template>
-  <div class="technology row justify-content-center align-items-center">
-    <div class="col">
-      <h2>{{ item.name }}</h2>
+  <div class="technology row justify-content-between align-items-center">
+    <div class="col col-md-12 col-lg order-first">
+      <h3>{{ item.name }}</h3>
     </div>
-    <div class="col d-flex justify-content-between align-items-center">
+    <div
+      class="col col-md-12 col-lg order-last d-flex justify-content-between align-items-center"
+    >
       <div
         class="bg-darkblue rounded-pill"
-        style="width: 25px; height: 25px"
+        style="width: 27.5px; height: 27.5px"
         v-for="i in item.scale"
         :key="i"
       ></div>
@@ -24,7 +26,12 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*}*/
+.technology {
+  margin-left: 3rem !important;
+  margin-right: 3rem !important;
+}
+
+/*
+flex-column flex-sm-row flex-md-row flex-xl-row
+ */
 </style>

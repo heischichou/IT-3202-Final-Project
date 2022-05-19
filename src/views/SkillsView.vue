@@ -37,26 +37,33 @@
     </div>
   </div>
   <!-- Technology Stack Component -->
+  <div class="my-3 py-3 my-md-5 py-md-5"></div>
   <div class="container py-5" id="tech-skill-section">
-    <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-5">
+    <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-3">
       Technology Stack
     </h1>
-    <div class="row">
+    <div class="row flex-column-xl">
       <div class="col">
-        <h1 class="text-secondary text-center text-md-start fw-bolder mb-4">
+        <h1
+          class="d-block text-secondary text-center text-md-start fw-bolder my-4"
+        >
           Languages
         </h1>
         <TechnologyList
+          class="my-3 my-md-4 my-lg-3"
           v-for="item in languages"
           :key="item.tech_skill_id"
           :item="item"
         />
       </div>
       <div class="col">
-        <h1 class="text-secondary text-center text-md-start fw-bolder mb-4">
+        <h1
+          class="d-block text-secondary text-center text-md-start fw-bolder my-4"
+        >
           Frameworks
         </h1>
         <TechnologyList
+          class="my-3 my-md-4 my-lg-3"
           v-for="item in frameworks"
           :key="item.tech_skill_id"
           :item="item"
@@ -226,7 +233,7 @@ export default {
       ],
     };
   },
-  mounted() {
+  beforeMount() {
     this.languages = this.tech_skills.filter(function (item) {
       return item.type.localeCompare("Language") === 0;
     });
@@ -234,11 +241,24 @@ export default {
       return item.type.localeCompare("Framework") === 0;
     });
   },
+  mounted() {
+    let skills = document.getElementsByClassName("technology");
+    for (let x = 0, count = skills.length; x < count; x++) {
+      let scales = skills[x].lastChild;
+      for (let y = scales.children.length; y < 5; y++) {
+        const scale = document.createElement("div");
+        scale.className = "bg-secondary rounded-pill";
+        scale.style.width = "27.5px";
+        scale.style.height = "27.5px";
+        scales.appendChild(scale);
+      }
+    }
+  },
 };
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*}*/
+#tech-skill-section > .row > .col {
+  background: none;
+}
 </style>
