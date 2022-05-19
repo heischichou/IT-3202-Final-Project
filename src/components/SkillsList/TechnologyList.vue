@@ -1,6 +1,8 @@
 <template>
-  <div class="technology row justify-content-between align-items-center">
-    <div class="col col-md-12 col-lg order-first">
+  <div
+    class="technology row justify-content-between align-items-center my-3 my-md-4 my-lg-3 mx-3 mx-md-5"
+  >
+    <div class="col-6 col-md-12 col-lg order-first">
       <h3>{{ item.name }}</h3>
     </div>
     <div
@@ -25,9 +27,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.technology {
-  margin-left: 3rem !important;
-  margin-right: 3rem !important;
-}
-</style>
+<style scoped></style>

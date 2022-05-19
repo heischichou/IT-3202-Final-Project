@@ -11,7 +11,7 @@
   <div class="container bg-transparent mb-5">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
-        <div class="row bg-transparent mt-n5">
+        <div class="row bg-transparent mt-5">
           <h1 class="text-primary text-center text-md-start fw-bolder fs-xxl">
             My <br />
             Technical <br />
@@ -37,33 +37,31 @@
     </div>
   </div>
   <!-- Technology Stack Component -->
-  <div class="my-3 py-3 my-md-5 py-md-5"></div>
+  <div class="my-0 py-0 my-md-3 py-md-3"></div>
   <div class="container py-5" id="tech-skill-section">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-3">
       Technology Stack
     </h1>
-    <div class="row flex-column-xl">
-      <div class="col">
+    <div class="row">
+      <div class="col-12 col-md">
         <h1
           class="d-block text-secondary text-center text-md-start fw-bolder my-4"
         >
           Languages
         </h1>
         <TechnologyList
-          class="my-3 my-md-4 my-lg-3"
           v-for="item in languages"
           :key="item.tech_skill_id"
           :item="item"
         />
       </div>
-      <div class="col">
+      <div class="col-12 col-md">
         <h1
           class="d-block text-secondary text-center text-md-start fw-bolder my-4"
         >
           Frameworks
         </h1>
         <TechnologyList
-          class="my-3 my-md-4 my-lg-3"
           v-for="item in frameworks"
           :key="item.tech_skill_id"
           :item="item"
@@ -258,7 +256,7 @@ export default {
 </script>
 
 <style scoped>
-#tech-skill-section > .row > .col {
+#tech-skill-section > .row > div {
   background: none;
 }
 </style>
