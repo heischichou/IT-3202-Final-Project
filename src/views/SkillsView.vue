@@ -36,7 +36,12 @@
     </div>
   </div>
   <!-- Skills Component -->
-  <SkillsComponent class="mb-5 mb-md-4" />
+  <SkillsComponent
+    class="mb-5 mb-md-4"
+    v-for="item in skills"
+    :key="item.skill_id"
+    :item="item"
+  />
 </template>
 
 <script>

@@ -1,10 +1,13 @@
 <template>
-  <div class="mt-5">Hello</div>
+  <div class="mt-5 container">{{ item.skill_id }}</div>
 </template>
 
 <script>
 export default {
   name: "SkillsComponent",
+  props: {
+    item: Object,
+  },
 };
 </script>
 
