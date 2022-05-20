@@ -38,9 +38,10 @@
   <!-- Skills Component -->
   <SkillsComponent
     class="mb-5 mb-md-4"
-    v-for="item in skills"
+    v-for="(item, index) in skills"
     :key="item.skill_id"
     :item="item"
+    :index="index"
   />
 </template>
 
