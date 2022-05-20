@@ -9,7 +9,7 @@
   </div>
   <div class="container bg-transparent mb-5 pb-5">
     <div class="row align-items-end bg-transparent mb-4">
-      <div class="col-md-auto container-fluid bg-transparent">
+      <div class="col-md-auto container-fluid bg-transparent mt-5 mt-lg-0">
         <div class="row bg-transparent mt-n4">
           <h1 class="text-primary text-center text-md-start fw-bolder fs-xxl">
             My <br />
