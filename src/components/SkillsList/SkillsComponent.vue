@@ -4,8 +4,8 @@
     :class="index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'"
   >
     <div
-      class="col-5 d-flex flex-row align-items-center"
-      :class="index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'"
+      class="d-flex flex-row align-items-center"
+      :class="index % 2 === 0 ? 'col-6' : 'col-auto'"
     >
       <img
         class="rounded-2"
@@ -14,7 +14,10 @@
         alt="Skill Image"
       />
     </div>
-    <div class="col-5 d-flex flex-row align-items-center">
+    <div
+      class="d-flex flex-row align-items-center"
+      :class="index % 2 === 0 ? 'col-auto' : 'col-6'"
+    >
       <ul class="m-0">
         <li class="py-1" v-for="(skill, index) in item.skill_list" :key="index">
           {{ skill }}
