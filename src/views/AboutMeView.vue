@@ -68,9 +68,10 @@
     </h1>
     <ExpertiseList
       class="mb-6"
-      v-for="item in expertise"
-      :key="item.expertise_id"
+      v-for="(item, index) in expertise"
+      :key="index"
       :item="item"
+      :item_id="index"
     />
   </div>
 </template>
@@ -223,7 +224,7 @@ export default {
       });
     },
     onResize() {
-      var rows = document.getElementsByClassName("expertise");
+      let rows = document.getElementsByClassName("expertise");
       if (window.innerWidth < 768) {
         for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-row", "flex-column");

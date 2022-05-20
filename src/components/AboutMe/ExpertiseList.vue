@@ -2,10 +2,7 @@
   <div
     class="expertise row flex-row flex-nowrap justify-content-center align-items-center"
   >
-    <div
-      class="col"
-      :class="item.expertise_id % 2 !== 0 ? 'order-first' : 'order-last'"
-    >
+    <div class="col" :class="item_id % 2 !== 0 ? 'order-first' : 'order-last'">
       <div
         class="expertise-image w-50 my-0 mx-auto rounded-pill bg-subtitle"
         :style="{
@@ -13,10 +10,7 @@
         }"
       ></div>
     </div>
-    <div
-      class="col"
-      :class="item.expertise_id % 2 === 0 ? 'order-first' : 'order-last'"
-    >
+    <div class="col" :class="item_id % 2 === 0 ? 'order-first' : 'order-last'">
       <h1 class="text-secondary text-center text-md-start fw-bold">
         {{ item.title }}
       </h1>
@@ -32,6 +26,7 @@ export default {
   name: "ExpertiseList",
   props: {
     item: Object,
+    item_id: Number,
   },
 };
 </script>
