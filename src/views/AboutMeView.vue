@@ -44,7 +44,9 @@
     <div class="row bg-transparent">
       <div class="col-md-1 bg-transparent"></div>
       <div class="col-auto bg-transparent">
-        <button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button>
+        <a href="resume.pdf" download="Pantonial Resume.pdf"
+          ><button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button></a
+        >
       </div>
     </div>
   </div>
