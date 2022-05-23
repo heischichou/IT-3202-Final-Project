@@ -28,31 +28,29 @@
   </div>
   <div class="container mt-5 pt-5">
     <div class="row justify-content-center">
-      <div class="col offset-sm-3">
-        <div class="card bg-dark" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      <div class="col-4">
+        <div class="container d-flex justify-content-end">
+          <div class="card bg-dark rounded-2" style="width: 18rem">
+            <div class="card-body rounded-2 bg-lightblue-1">
+              <div
+                class="container d-flex justify-content-center bg-transparent"
+              >
+                <h1>
+                  <em class="bi bi-telephone"></em>
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card bg-dark" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      <div class="col-4">
+        <div class="card bg-dark rounded-2" style="width: 18rem">
+          <div class="card-body rounded-2 bg-lightblue-1">
+            <div class="container d-flex justify-content-center bg-transparent">
+              <h1>
+                <em class="bi bi-envelope"></em>
+              </h1>
+            </div>
           </div>
         </div>
       </div>
