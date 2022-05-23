@@ -12,8 +12,7 @@
         :class="index % 2 === 0 ? 'col-auto col-md-5' : 'col-auto'"
       >
         <img
-          class="rounded-2"
-          style="height: 420px"
+          class="rounded-2 skill-image"
           src="../../../src/assets/logo.png"
           alt="Skill Image"
         />
@@ -50,4 +49,21 @@ export default {
 /*div {*/
 /*  border: 1px solid black;*/
 /*}*/
+@media (max-width: 768px) {
+  .skill-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+}
+@media (min-width: 768px) {
+  .skill-image {
+    height: 260px;
+  }
+}
+@media (min-width: 1200px) {
+  .skill-image {
+    height: 420px;
+  }
+}
 </style>
