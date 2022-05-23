@@ -28,29 +28,37 @@
   </div>
   <div class="container mt-5 pt-5">
     <div class="row justify-content-center">
-      <div class="col-4">
-        <div class="container d-flex justify-content-end">
-          <div class="card bg-dark rounded-2" style="width: 18rem">
-            <div class="card-body rounded-2 bg-lightblue-1">
-              <div
-                class="container d-flex justify-content-center bg-transparent"
-              >
-                <h1>
-                  <em class="bi bi-telephone"></em>
-                </h1>
-              </div>
+      <div class="col-9 col-md-3 my-3">
+        <div class="card bg-dark rounded-3">
+          <div class="card-header rounded-3 bg-lightblue-1">
+            <div class="container d-flex justify-content-center bg-transparent">
+              <h1>
+                <em class="bi bi-telephone"></em>
+              </h1>
             </div>
+          </div>
+          <div class="card-body bg-lightblue-1 opacity-75 rounded-3">
+            <p class="text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="card bg-dark rounded-2" style="width: 18rem">
-          <div class="card-body rounded-2 bg-lightblue-1">
+      <div class="col-9 col-md-3 my-3">
+        <div class="card bg-dark rounded-3">
+          <div class="card-header rounded-3 bg-lightblue-1">
             <div class="container d-flex justify-content-center bg-transparent">
               <h1>
                 <em class="bi bi-envelope"></em>
               </h1>
             </div>
+          </div>
+          <div class="card-body bg-lightblue-1 opacity-75 rounded-3">
+            <p class="text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
           </div>
         </div>
       </div>
