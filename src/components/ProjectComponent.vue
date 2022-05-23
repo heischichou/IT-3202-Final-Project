@@ -3,35 +3,58 @@
     class="card project-card pull-up shadow border-0"
     :style="{ background: projectColor }"
   >
-    <div class="container no-bgColor">
-      <img
-        class="card-img project-image mt-4 mb-4 bg-light"
-        :src="projectItem.project_img"
-        :alt="projectItem.project_name"
-      />
-      <div class="row justify-content-start no-bgColor pb-3">
-        <div
-          class="col-sm-auto no-bgColor px-1 pb-2"
-          v-for="(tag, index) in projectItem.project_tags"
-          :key="index"
-        >
-          <ProjectTag :text="tag" />
+    <a @click="toggleModal">
+      <div class="container no-bgColor">
+        <img
+          class="card-img project-image mt-4 mb-4 bg-light"
+          :src="projectItem.project_img"
+          :alt="projectItem.project_name"
+        />
+        <div class="row justify-content-start no-bgColor pb-3">
+          <div
+            class="col-sm-auto no-bgColor px-1 pb-2"
+            v-for="(tag, index) in projectItem.project_tags"
+            :key="index"
+          >
+            <ProjectTag :text="tag" tagColor="#F8F9FA" />
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
+  <ProjectModal
+    :isVisible="showModal"
+    @closeModal="closeModal"
+    :projectDetails="projectItem"
+    :modalColor="projectColor"
+  />
 </template>
 
 <script>
 import ProjectTag from "./ProjectTag";
+import ProjectModal from "./ProjectModal";
 export default {
   name: "ProjectComponent",
   components: {
     ProjectTag,
+    ProjectModal,
   },
   props: {
     projectColor: String,
     projectItem: Object,
+  },
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  methods: {
+    closeModal() {
+      this.showModal = false;
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
   },
 };
 </script>
