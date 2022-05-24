@@ -86,7 +86,8 @@ import SkillsComponent from "@/components/SkillsList/SkillsComponent";
 export default {
   name: "SkillsView",
   components: {
-    TechnologyList, SkillsComponent
+    TechnologyList,
+    SkillsComponent,
   },
   data() {
     return {
