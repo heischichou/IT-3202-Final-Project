@@ -2,11 +2,7 @@
   <!-- Header -->
   <div class="container-fluid d-flex flex-row p-0">
     <div class="col-md-3"></div>
-    <div
-      class="col bg-dark rounded-1 me-0"
-      id="main"
-      style="height: 400px; margin-top: 80px; margin-bottom: -410px"
-    ></div>
+    <div class="col bg-dark rounded-start me-0" id="main"></div>
   </div>
   <div class="container bg-transparent mb-5">
     <div class="row align-items-end bg-transparent mb-4">
@@ -302,5 +298,27 @@ export default {
 <style scoped>
 #tech-skill-section > .row > div {
   background: none;
+}
+@media (max-width: 768px) {
+  #main {
+    height: 500px;
+    margin-top: -80px;
+    margin-bottom: -360px;
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 768px) {
+  #main {
+    height: 300px;
+    margin-top: 80px;
+    margin-bottom: -280px;
+  }
+}
+@media (min-width: 1200px) {
+  #main {
+    height: 400px;
+    margin-top: 80px;
+    margin-bottom: -410px;
+  }
 }
 </style>
