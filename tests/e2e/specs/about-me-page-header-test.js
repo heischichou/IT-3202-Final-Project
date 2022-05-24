@@ -1,4 +1,4 @@
-// const path = require("path");
+const path = require("path");
 
 describe("About Me page", () => {
   beforeEach(() => {
@@ -33,9 +33,9 @@ describe("About Me page", () => {
       .children(".social-link")
       .should("exist");
   });
-  // it("should verify if the cv is successfully downloaded", () => {
-  //   const downloads = Cypress.config("downloadsFolder");
-  //   cy.contains("a[href='resume.pdf']", "DOWNLOAD CV").should("exist").click();
-  //   cy.readFile(path.join(downloads, "Pantonial Resume.pdf")).should("exist");
-  // });
+  it("should verify if the cv is successfully downloaded", () => {
+    const downloads = Cypress.config("downloadsFolder");
+    cy.contains("a[href='resume.pdf']", "DOWNLOAD CV").should("exist").click();
+    cy.readFile(path.join(downloads, "Pantonial Resume.pdf")).should("exist");
+  });
 });
