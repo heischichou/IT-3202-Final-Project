@@ -289,8 +289,8 @@ export default {
       for (let y = scales.children.length; y < 5; y++) {
         const scale = document.createElement("div");
         scale.className = "bg-secondary rounded-pill";
-        scale.style.width = "27.5px";
-        scale.style.height = "27.5px";
+        scale.style.width = "25px";
+        scale.style.height = "25px";
         scales.appendChild(scale);
       }
     }
