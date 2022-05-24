@@ -11,7 +11,7 @@
   <div class="container bg-transparent mb-5">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
-        <div class="row bg-transparent mt-5">
+        <div class="row bg-transparent mt-n5">
           <h1 class="text-primary text-center text-md-start fw-bolder fs-xxl">
             My <br />
             Technical <br />
@@ -37,8 +37,8 @@
     </div>
   </div>
   <!-- Technology Stack Component -->
-  <div class="my-0 py-0 my-md-3 py-md-3"></div>
-  <div class="container py-5" id="tech-skill-section">
+  <div class="my-0 py-0 py-md-6"></div>
+  <div class="container pt-5" id="tech-skill-section">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-3">
       Technology Stack
     </h1>
@@ -77,7 +77,7 @@
     :item="item"
     :index="index"
   />
-  <div class="my-0 py-0 py-md-6"></div>
+  <div class="my-0 py-0 py-md-5"></div>
 </template>
 
 <script>
