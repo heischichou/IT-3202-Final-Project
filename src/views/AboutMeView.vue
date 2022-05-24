@@ -1,16 +1,12 @@
 <template>
   <!-- Header -->
   <div class="container-fluid d-flex flex-row p-0">
-    <div class="col-md-3"></div>
-    <div
-      class="col bg-dark me-0"
-      id="main"
-      style="height: 520px; margin-top: -100px; margin-bottom: -410px"
-    ></div>
+    <div class="col-lg-3"></div>
+    <div class="col bg-dark me-0" id="main"></div>
   </div>
   <div class="container bg-transparent mb-5" id="header">
     <div class="row align-items-end bg-transparent mb-4">
-      <div class="col-md-auto container-fluid bg-transparent">
+      <div class="col-lg-auto container-fluid bg-transparent">
         <div class="row bg-transparent">
           <h1 class="text-primary fw-bolder fs-xxl">
             Hello, <br />
@@ -19,7 +15,7 @@
           </h1>
         </div>
       </div>
-      <div class="col-md container-fluid bg-transparent ms-md-6">
+      <div class="col-lg container-fluid bg-transparent ms-lg-6">
         <div class="row bg-transparent my-2">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -28,7 +24,7 @@
             aliquip ex ea commodo consequa.
           </p>
         </div>
-        <div class="row gap-4 fw-bold bg-transparent mt-2 my-md-4">
+        <div class="row gap-4 fw-bold bg-transparent mt-2 my-lg-4">
           <a class="col-1 text-decoration-none text-body social-link" href="#"
             >TW.</a
           >
@@ -42,7 +38,7 @@
       </div>
     </div>
     <div class="row bg-transparent">
-      <div class="col-md-1 bg-transparent"></div>
+      <div class="col-lg-1 bg-transparent"></div>
       <div class="col-auto bg-transparent">
         <a href="resume.pdf" download="Pantonial Resume.pdf">
           <button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button>
@@ -51,7 +47,7 @@
     </div>
   </div>
   <!-- Experience Component -->
-  <div class="container py-5" id="experience-section">
+  <div class="container pt-5 pb-3 py-md-5" id="experience-section">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-5">
       Experience
     </h1>
@@ -64,7 +60,7 @@
     />
   </div>
   <!-- Expertise Component -->
-  <div class="container py-5" id="expertise-section">
+  <div class="container py-3 py-md-5" id="expertise-section">
     <h1 class="text-primary text-center fw-bolder text-md-start fs-l mb-5">
       Expertise
     </h1>
@@ -292,5 +288,19 @@ export default {
 <style scoped>
 .social-link:hover {
   text-decoration: underline !important;
+}
+@media (max-width: 992px) {
+  #main {
+    height: 620px;
+    margin-top: -100px;
+    margin-bottom: -510px;
+  }
+}
+@media (min-width: 992px) {
+  #main {
+    height: 520px;
+    margin-top: -100px;
+    margin-bottom: -410px;
+  }
 }
 </style>
