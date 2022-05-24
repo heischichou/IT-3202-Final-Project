@@ -8,7 +8,7 @@
       style="height: 520px; margin-top: -100px; margin-bottom: -410px"
     ></div>
   </div>
-  <div class="container bg-transparent mb-5">
+  <div class="container bg-transparent mb-5" id="header">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
         <div class="row bg-transparent">
@@ -44,9 +44,9 @@
     <div class="row bg-transparent">
       <div class="col-md-1 bg-transparent"></div>
       <div class="col-auto bg-transparent">
-        <a href="resume.pdf" download="Pantonial Resume.pdf"
-          ><button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button></a
-        >
+        <a href="resume.pdf" download="Pantonial Resume.pdf">
+          <button class="btn btn-secondary px-4 py-3">DOWNLOAD CV</button>
+        </a>
       </div>
     </div>
   </div>
