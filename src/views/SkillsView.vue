@@ -69,16 +69,25 @@
       </div>
     </div>
   </div>
-  <!-- This is just to add space between the footer and content; delete later. -->
-  <div class="my-5">&nbsp;</div>
+  <!-- Skills Component -->
+  <SkillsComponent
+    class="mb-5 mb-md-4"
+    v-for="(item, index) in skills"
+    :key="item.skill_id"
+    :item="item"
+    :index="index"
+  />
 </template>
 
 <script>
 import TechnologyList from "@/components/SkillsList/TechnologyList";
+import SkillsComponent from "@/components/SkillsList/SkillsComponent";
 
 export default {
   name: "SkillsView",
-  components: { TechnologyList },
+  components: {
+    TechnologyList, SkillsComponent
+  },
   data() {
     return {
       languages: [],
@@ -227,6 +236,39 @@ export default {
           name: "Wordpress",
           scale: 3,
           type: "Framework",
+        },
+      ],
+      skills: [
+        {
+          skill_id: 1,
+          skill_name: "Personal Skills",
+          skill_list: [
+            "Understand the business requirements",
+            "Communicate client's needs to the team",
+            "Determine the needed tasks to be done",
+            "Follow up on each member's progress",
+            "Create a team from prospective candidates",
+            "Collaborate with team on blocking issues",
+            "Basic skills in project management",
+          ],
+          image_url: "null",
+        },
+        {
+          skill_id: 2,
+          skill_name: "Technical Skills",
+          skill_list: [
+            "Inter-branch VPN Configuration",
+            "Linux Server Administration",
+            "NAS Server Deployment",
+            "Reactive Programming",
+            "Rack Mounted Server Deployment",
+            "Cisco Networking",
+            "PFSense Network Configuration",
+            "Functional Programming",
+            "GitFlow and Semantic Versioning",
+            "Subversion",
+          ],
+          image_url: "null",
         },
       ],
     };
