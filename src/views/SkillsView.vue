@@ -77,6 +77,7 @@
     :item="item"
     :index="index"
   />
+  <div class="my-0 py-0 py-md-6"></div>
 </template>
 
 <script>
