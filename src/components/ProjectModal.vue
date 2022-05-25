@@ -2,7 +2,7 @@
   <teleport to="body">
     <div
       ref="modal"
-      class="modal fade bg-black bg-opacity-25"
+      class="modal fade bg-black bg-opacity-50"
       :class="{ show: active, 'd-block': active }"
       :id="projectDetails.project_id"
       tabindex="-1"
@@ -25,9 +25,17 @@
               >
                 <div class="container info-section bg-light p-0">
                   <div class="d-flex flex-column p-4">
-                    <h5 class="text-uppercase fw-bold text-black m-0">
-                      {{ projectDetails.project_name }}
-                    </h5>
+                    <div class="d-inline-flex justify-content-between">
+                      <h5 class="text-uppercase fw-bold text-black m-0">
+                        {{ projectDetails.project_name }}
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        aria-label="Close"
+                        @click="$emit('closeModal')"
+                      ></button>
+                    </div>
                     <hr class="my-3" />
                     <div class="row justify-content-start no-bgColor pb-3">
                       <div
