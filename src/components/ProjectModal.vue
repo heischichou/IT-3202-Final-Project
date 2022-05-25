@@ -2,12 +2,12 @@
   <teleport to="body">
     <div
       ref="modal"
-      class="modal fade"
+      class="modal fade bg-black bg-opacity-25"
       :class="{ show: active, 'd-block': active }"
       :id="projectDetails.project_id"
       tabindex="-1"
     >
-      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
         <div class="modal-content border-0">
           <div class="modal-body" :style="{ background: modalColor }">
             <div class="row justify-content-center no-bgColor">
