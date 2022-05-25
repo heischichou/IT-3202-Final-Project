@@ -68,25 +68,24 @@
     <h3 class="text-secondary fw-bold mb-2">Send A Message</h3>
   </div>
   <div class="container d-flex justify-content-center mt-5">
-    <div class="col-9 col-md-4">
-      <div class="card bg-lightblue-1 opacity-75 rounded-2">
-        <div class="card-body bg-transparent mt-3">
+    <div class="col-10 col-md-4">
+      <div class="card bg-lightblue-1 opacity-75 rounded-3 border-0">
+        <div class="card-body bg-transparent m-3">
           <form
             action="mailto:help@pantonial.dev"
             method="GET"
             enctype="text/plain"
           >
-            <div class="form-floating mb-2 rounded-2">
+            <div class="mb-2 rounded-2">
               <input
                 type="text"
                 name="subject"
                 class="form-control"
                 id="floatingInput"
-                placeholder="subject"
+                placeholder="Subject"
               />
-              <label for="floatingInput">Subject</label>
             </div>
-            <div class="form-floating mb-2 rounded-2">
+            <div class="mb-2 rounded-2">
               <input
                 type="email"
                 name="email"
@@ -94,18 +93,23 @@
                 id="floatingEmail"
                 placeholder="Email"
               />
-              <label for="floatingEmail">Email</label>
             </div>
             <div class="mb-4 rounded-2">
               <textarea
                 name="body"
                 class="form-control"
                 id="floatingDetails"
-                rows="8"
-                placeholder="Details"
+                rows="15"
+                placeholder="Write your message here..."
               ></textarea>
             </div>
-            <input type="submit" value="Send" />
+            <div class="d-flex justify-content-center bg-transparent">
+              <input
+                class="bg-secondary border-0 rounded-2 px-5 py-2"
+                type="submit"
+                value="SUBMIT"
+              />
+            </div>
           </form>
         </div>
       </div>
@@ -120,7 +124,7 @@
       v-for="QnA in QnAData"
       :key="QnA.QnA_id"
     >
-      <div class="col-2 col-md-4">
+      <div class="col-3 col-md-4">
         <div class="text-end text-darkblue fs-4">Q</div>
       </div>
       <div class="col-9 col-md-6">
