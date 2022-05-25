@@ -17,7 +17,7 @@
         class="roles text-nowrap overflow-hidden py-1"
       >
         <div
-          class="d-inline bg-backdrop rounded-pill me-2 px-2 py-1"
+          class="d-inline user-select-none bg-backdrop rounded-pill me-2 px-2 py-1"
           style="cursor: default"
           v-for="(role, index) in item.roles"
           :key="index"
