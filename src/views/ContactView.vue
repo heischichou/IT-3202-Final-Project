@@ -66,7 +66,50 @@
   </div>
   <div class="container d-flex justify-content-center mt-5 pt-5">
     <h3 class="text-secondary fw-bold mb-2">Send A Message</h3>
-    <div class="card bg-lightblue-1 opacity-75 rounded-2">EMAIL HERE</div>
+  </div>
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="col-9 col-md-4">
+      <div class="card bg-lightblue-1 opacity-75 rounded-2">
+        <div class="card-body bg-transparent mt-3">
+          <form
+            action="mailto:help@pantonial.dev"
+            method="GET"
+            enctype="text/plain"
+          >
+            <div class="form-floating mb-2 rounded-2">
+              <input
+                type="text"
+                name="subject"
+                class="form-control"
+                id="floatingInput"
+                placeholder="subject"
+              />
+              <label for="floatingInput">Subject</label>
+            </div>
+            <div class="form-floating mb-2 rounded-2">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="floatingEmail"
+                placeholder="Email"
+              />
+              <label for="floatingEmail">Email</label>
+            </div>
+            <div class="mb-4 rounded-2">
+              <textarea
+                name="body"
+                class="form-control"
+                id="floatingDetails"
+                rows="8"
+                placeholder="Details"
+              ></textarea>
+            </div>
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="container text-center mt-5 pt-5">
     <h2 class="text-secondary fw-bold">Frequently Asked Questions</h2>
