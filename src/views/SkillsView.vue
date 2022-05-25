@@ -33,7 +33,7 @@
     </div>
   </div>
   <!-- Technology Stack Component -->
-  <div class="my-0 py-0 py-md-6"></div>
+  <div class="my-0 py-0 py-lg-5"></div>
   <div class="container pt-5" id="tech-skill-section">
     <h1 class="text-primary text-center text-md-start fw-bolder fs-l mb-3">
       Technology Stack
@@ -65,6 +65,7 @@
       </div>
     </div>
   </div>
+  <div class="py-4 py-md-0"></div>
   <!-- Skills Component -->
   <SkillsComponent
     class="mb-5 mb-md-4"
@@ -249,7 +250,8 @@ export default {
             "Collaborate with team on blocking issues",
             "Basic skills in project management",
           ],
-          image_url: "null",
+          image_url:
+            "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
         {
           skill_id: 2,
@@ -266,7 +268,8 @@ export default {
             "GitFlow and Semantic Versioning",
             "Subversion",
           ],
-          image_url: "null",
+          image_url:
+            "https://images.unsplash.com/photo-1618477388954-7852f32655ec?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964",
         },
       ],
     };
@@ -281,6 +284,8 @@ export default {
   },
   mounted() {
     let skills = document.getElementsByClassName("technology");
+    let toggler = document.getElementById("navbarNav");
+    let main = document.getElementById("main");
     for (let x = 0, count = skills.length; x < count; x++) {
       let scales = skills[x].lastChild;
       for (let y = scales.children.length; y < 5; y++) {
@@ -291,6 +296,31 @@ export default {
         scales.appendChild(scale);
       }
     }
+    toggler.addEventListener("show.bs.collapse", function () {
+      main.style.transition = "none";
+      main.classList.add("mt-0");
+    });
+    toggler.addEventListener("hidden.bs.collapse", function () {
+      main.style.transition = "all .5s";
+      main.classList.remove("mt-0");
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 768) {
+        if (
+          main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.remove("mt-0");
+        }
+      } else {
+        if (
+          !main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.add("mt-0");
+        }
+      }
+    });
   },
 };
 </script>

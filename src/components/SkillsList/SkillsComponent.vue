@@ -13,7 +13,7 @@
       >
         <img
           class="rounded-2 skill-image"
-          src="../../../src/assets/logo.png"
+          :src="`${item.image_url}`"
           alt="Skill Image"
         />
       </div>
@@ -46,23 +46,24 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*}*/
+.skill-image {
+  object-fit: cover;
+}
 @media (max-width: 768px) {
   .skill-image {
     width: 100%;
     height: 240px;
-    object-fit: cover;
   }
 }
 @media (min-width: 768px) {
   .skill-image {
+    width: 260px;
     height: 260px;
   }
 }
 @media (min-width: 1200px) {
   .skill-image {
+    width: 420px;
     height: 420px;
   }
 }
