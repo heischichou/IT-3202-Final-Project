@@ -6,7 +6,7 @@
       <div
         class="expertise-image w-50 my-0 mx-auto rounded-pill bg-subtitle"
         :style="{
-          'background-image': 'url(' + item.image_url + ');',
+          'background-image': `url(${item.image_url})`,
         }"
       ></div>
     </div>
