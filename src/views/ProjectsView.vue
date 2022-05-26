@@ -144,20 +144,43 @@ export default {
     this.projects = [
       {
         project_id: 1,
-        project_name: "Project 1",
+        project_name: "POSTNORD CENTRAL EVENT MANAGER",
         project_img:
           "https://assets.asana.biz/m/5d7a4c4d0c33d68/original/article-project-management-how-project-status-reports-2x.png",
-        description: "Project 1 sample description...",
-        project_tags: ["HTML", "CSS", "Javascript"],
+        description:
+          "This system receives events from multiple external systems that is not handled by the company. Those events are then compiled and stored to output a cohesive history of the delivery of a parcel.",
+        project_tags: [
+          "Spring Boot",
+          "Java",
+          "DynamoDb",
+          "Severless",
+          "CloudFormation",
+          "CloudWatch",
+          "Kibana",
+          "Kubernetes",
+        ],
         project_type: "Major",
       },
       {
         project_id: 2,
-        project_name: "Project 2",
+        project_name: "FLAT X REALTY WEBSITE",
         project_img:
           "https://images.ctfassets.net/gg4ddi543f5b/6KSggHBfL67iQEcIXYS1vO/ace931866fe1adea8f584e6cedec90c8/project-management-methodologies-lean-methodology.png",
-        description: "Project 2 sample description...",
-        project_tags: ["HTML", "CSS", "Vue"],
+        description:
+          "This system aims to have a free listing site for real estate with premium features for property management. This is an ongoing project where new features are added monthly based on user reviews and new ideas by management.",
+        project_tags: [
+          "Spring",
+          "Boot",
+          "Kotlin",
+          "GraphQl",
+          "Microservices",
+          "Angular",
+          "GCP",
+          "Kubernetes",
+          "PostGIS",
+          "Elasticsearch",
+          "Algolia",
+        ],
         project_type: "Major",
       },
       {
@@ -189,11 +212,29 @@ export default {
       },
       {
         project_id: 6,
-        project_name: "Project 6",
+        project_name: "ODOO HELPMATE WATER SYSTEM",
         project_img:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
-        description: "Project 3 sample description...",
-        project_tags: ["HTML", "CSS", "Kotlin", "SQL"],
+        description:
+          "This system replaces the desktop based water system with an online based water system that links to different ERP technologies for seamless processing of account management, billing, employee management, reporting,accounting, and most other concerns.",
+        project_tags: [
+          "Python",
+          "XML RPC",
+          "Odoo",
+          "PostgreSQL",
+          "Android",
+          "Java",
+        ],
+        project_type: "Major",
+      },
+      {
+        project_id: 7,
+        project_name: "CEBU CCTV WEBSITE",
+        project_img:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
+        description:
+          "Update of Cebu CCTV Website to its initial wordpress version.",
+        project_tags: ["WordPress", "MySQL", "LAMP"],
         project_type: "Major",
       },
     ];
