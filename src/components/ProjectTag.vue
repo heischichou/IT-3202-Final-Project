@@ -1,7 +1,7 @@
 <template>
-  <button class="btn btn-sm p-tag" :style="{ background: tagColor }">
+  <div class="btn btn-sm p-tag" :style="{ background: tagColor }">
     {{ text }}
-  </button>
+  </div>
 </template>
 
 <script>
