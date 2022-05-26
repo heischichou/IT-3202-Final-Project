@@ -3,24 +3,28 @@
     class="card project-card pull-up shadow border-0"
     :style="{ background: projectColor }"
   >
-    <a @click="toggleModal">
-      <div class="container no-bgColor">
+    <div class="container no-bgColor">
+      <a @click="toggleModal">
         <img
           class="card-img project-image mt-4 mb-4 bg-light"
           :src="projectItem.project_img"
           :alt="projectItem.project_name"
         />
-        <div class="row justify-content-start no-bgColor pb-3">
-          <div
-            class="col-sm-auto no-bgColor px-1 pb-2"
-            v-for="(tag, index) in projectItem.project_tags"
-            :key="index"
-          >
-            <ProjectTag :text="tag" tagColor="#F8F9FA" />
-          </div>
+      </a>
+      <div
+        :id="'tags' + projectItem.project_id"
+        class="text-nowrap overflow-hidden bg-transparent pb-4"
+        @mouseenter="enableSideScroll('#tags' + projectItem.project_id)"
+      >
+        <div
+          class="d-inline no-bgColor px-1 pb-2"
+          v-for="(tag, index) in projectItem.project_tags"
+          :key="index"
+        >
+          <ProjectTag :text="tag" tagColor="#F8F9FA" />
         </div>
       </div>
-    </a>
+    </div>
   </div>
   <ProjectModal
     :isVisible="showModal"
@@ -54,6 +58,31 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
     },
   },
 };
