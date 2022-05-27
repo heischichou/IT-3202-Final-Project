@@ -54,9 +54,9 @@
     <ExperienceList
       class="mb-5 mb-md-4"
       v-for="item in experience"
-      :key="item.experience_id"
+      :key="item.experienceId"
       :item="item"
-      @mouseenter="enableSideScroll('#roles' + item.experience_id)"
+      @mouseenter="enableSideScroll('#roles' + item.experienceId)"
     />
   </div>
   <!-- Expertise Component -->
@@ -69,7 +69,7 @@
       v-for="(item, index) in expertise"
       :key="index"
       :item="item"
-      :item_id="index"
+      :itemId="index"
     />
   </div>
 </template>
@@ -87,7 +87,7 @@ export default {
     return {
       experience: [
         {
-          experience_id: 1,
+          experienceId: 1,
           title: "Web Developer",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
@@ -103,7 +103,7 @@ export default {
           year: "PRESENT",
         },
         {
-          experience_id: 2,
+          experienceId: 2,
           title: "Team Leader",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
@@ -125,7 +125,7 @@ export default {
           year: "2018",
         },
         {
-          experience_id: 3,
+          experienceId: 3,
           title: "Senior Programmer",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
@@ -148,7 +148,7 @@ export default {
           year: "2015",
         },
         {
-          experience_id: 4,
+          experienceId: 4,
           title: "Junior Programmer",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
@@ -165,35 +165,35 @@ export default {
       ],
       expertise: [
         {
-          expertise_id: 1,
+          expertiseId: 1,
           title: "Networking Training",
           description:
             "Studied protocols like RIP and VOIP. Implemented Subnetworking and Fire wall Techniques. Deployed the technology learned to the company network. Studied VPN and applied to inter-branch communication.",
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1612045194743-877419047a35?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
         {
-          expertise_id: 2,
+          expertiseId: 2,
           title: "Advanced Project Management",
           description:
             "Applied soft tools to create the right mix of team members in a project. Learned how to use Project Libre advance techniques to track project costs. Used WBS to manage an ongoing project. Determined the effects of corporate decisions on a current project.",
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
         {
-          expertise_id: 3,
+          expertiseId: 3,
           title: "Big Data Analytics Training 101",
           description:
             "Used PostgreSQL to analyze big data sets. Combined multiple data sources into one dashboard. Converted corporate data into readily readable KPIS.",
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1599658880436-c61792e70672?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
         {
-          expertise_id: 4,
+          expertiseId: 4,
           title: "Financial Statement Analysis",
           description:
             "Learned how to create a financial statement based on a transaction table. Optimize the cost of company taxes through correct labelling of transactions. Learned techniques to optimize the chart of accounts, Applied seminar to current project.",
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
       ],
@@ -260,15 +260,15 @@ export default {
     let toggler = document.getElementById("navbarNav");
     let main = document.getElementById("main");
 
-    toggler.addEventListener("show.bs.collapse", function () {
+    toggler.addEventListener("show.bs.collapse", () => {
       main.style.transition = "none";
       main.classList.add("mt-0");
     });
-    toggler.addEventListener("hidden.bs.collapse", function () {
+    toggler.addEventListener("hidden.bs.collapse", () => {
       main.style.transition = "all .5s";
       main.classList.remove("mt-0");
     });
-    window.addEventListener("resize", function () {
+    window.addEventListener("resize", () => {
       if (window.innerWidth >= 768) {
         if (
           main.classList.contains("mt-0") &&

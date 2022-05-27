@@ -13,7 +13,7 @@
         {{ item.description }}
       </p>
       <div
-        :id="'roles' + item.experience_id"
+        :id="'roles' + item.experienceId"
         class="roles text-nowrap overflow-hidden py-1"
       >
         <div
@@ -38,8 +38,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*}*/
-</style>
+<style scoped></style>
