@@ -148,6 +148,7 @@ export default {
 
 .modal-img {
   width: 314px;
+  min-height: 390px;
   height: 100%;
   align-self: center;
   object-fit: cover;
@@ -156,6 +157,7 @@ export default {
 .info-section {
   width: 396px;
   height: 100%;
+  min-height: 390px;
 }
 
 .no-bgColor {
