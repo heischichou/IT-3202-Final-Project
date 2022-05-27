@@ -1,7 +1,7 @@
 <template>
   <div class="mt-md-6 pt-md-5 container">
     <h1 class="text-secondary fw-bold text-center mb-4 mb-md-6">
-      {{ item.skill_name }}
+      {{ item.skillName }}
     </h1>
     <div
       class="d-flex flex-column justify-content-center p-0"
@@ -13,7 +13,7 @@
       >
         <img
           class="rounded-2 skill-image"
-          :src="`${item.image_url}`"
+          :src="`${item.imageUrl}`"
           alt="Skill Image"
         />
       </div>
@@ -24,7 +24,7 @@
         <ul class="m-0">
           <li
             class="py-2"
-            v-for="(skill, index) in item.skill_list"
+            v-for="(skill, index) in item.skillList"
             :key="index"
           >
             {{ skill }}

@@ -47,7 +47,7 @@
         </h1>
         <TechnologyList
           v-for="item in languages"
-          :key="item.tech_skill_id"
+          :key="item.techSkillId"
           :item="item"
         />
       </div>
@@ -59,7 +59,7 @@
         </h1>
         <TechnologyList
           v-for="item in frameworks"
-          :key="item.tech_skill_id"
+          :key="item.techSkillId"
           :item="item"
         />
       </div>
@@ -70,7 +70,7 @@
   <SkillsComponent
     class="mb-5 mb-md-4"
     v-for="(item, index) in skills"
-    :key="item.skill_id"
+    :key="item.skillId"
     :item="item"
     :index="index"
   />
@@ -93,145 +93,145 @@ export default {
       frameworks: [],
       tech_skills: [
         {
-          tech_skill_id: 1,
+          techSkillId: 1,
           name: "Java",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 2,
+          techSkillId: 2,
           name: "Kotlin",
           scale: 4,
           type: "Language",
         },
         {
-          tech_skill_id: 3,
+          techSkillId: 3,
           name: "PHP",
           scale: 3,
           type: "Language",
         },
         {
-          tech_skill_id: 4,
+          techSkillId: 4,
           name: "SCSS",
           scale: 4,
           type: "Language",
         },
         {
-          tech_skill_id: 5,
+          techSkillId: 5,
           name: "CSS",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 6,
+          techSkillId: 6,
           name: "HTML",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 7,
+          techSkillId: 7,
           name: "JavaScript",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 8,
+          techSkillId: 8,
           name: "TypeScript",
           scale: 3,
           type: "Language",
         },
         {
-          tech_skill_id: 9,
+          techSkillId: 9,
           name: "SQL",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 10,
+          techSkillId: 10,
           name: "C",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 11,
+          techSkillId: 11,
           name: "Python",
           scale: 5,
           type: "Language",
         },
         {
-          tech_skill_id: 12,
+          techSkillId: 12,
           name: "GraphQL",
           scale: 3,
           type: "Language",
         },
         {
-          tech_skill_id: 13,
+          techSkillId: 13,
           name: "Android",
           scale: 3,
           type: "Framework",
         },
         {
-          tech_skill_id: 14,
+          techSkillId: 14,
           name: "Spring Boot",
           scale: 4,
           type: "Framework",
         },
         {
-          tech_skill_id: 15,
+          techSkillId: 15,
           name: "Odoo",
           scale: 5,
           type: "Framework",
         },
         {
-          tech_skill_id: 16,
+          techSkillId: 16,
           name: "Angular",
           scale: 5,
           type: "Framework",
         },
         {
-          tech_skill_id: 17,
+          techSkillId: 17,
           name: "JQueryUI",
           scale: 5,
           type: "Framework",
         },
         {
-          tech_skill_id: 18,
+          techSkillId: 18,
           name: "Laravel",
           scale: 1,
           type: "Framework",
         },
         {
-          tech_skill_id: 19,
+          techSkillId: 19,
           name: "Algolia",
           scale: 1,
           type: "Framework",
         },
         {
-          tech_skill_id: 20,
+          techSkillId: 20,
           name: "Heroku",
           scale: 3,
           type: "Framework",
         },
         {
-          tech_skill_id: 21,
+          techSkillId: 21,
           name: "JHipster",
           scale: 5,
           type: "Framework",
         },
         {
-          tech_skill_id: 22,
+          techSkillId: 22,
           name: "Kubernetes",
           scale: 3,
           type: "Framework",
         },
         {
-          tech_skill_id: 23,
+          techSkillId: 23,
           name: "Docker",
           scale: 3,
           type: "Framework",
         },
         {
-          tech_skill_id: 24,
+          techSkillId: 24,
           name: "Wordpress",
           scale: 3,
           type: "Framework",
@@ -239,9 +239,9 @@ export default {
       ],
       skills: [
         {
-          skill_id: 1,
-          skill_name: "Personal Skills",
-          skill_list: [
+          skillId: 1,
+          skillName: "Personal Skills",
+          skillList: [
             "Understand the business requirements",
             "Communicate client's needs to the team",
             "Determine the needed tasks to be done",
@@ -250,13 +250,13 @@ export default {
             "Collaborate with team on blocking issues",
             "Basic skills in project management",
           ],
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
         },
         {
-          skill_id: 2,
-          skill_name: "Technical Skills",
-          skill_list: [
+          skillId: 2,
+          skillName: "Technical Skills",
+          skillList: [
             "Inter-branch VPN Configuration",
             "Linux Server Administration",
             "NAS Server Deployment",
@@ -268,17 +268,17 @@ export default {
             "GitFlow and Semantic Versioning",
             "Subversion",
           ],
-          image_url:
+          imageUrl:
             "https://images.unsplash.com/photo-1618477388954-7852f32655ec?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964",
         },
       ],
     };
   },
   beforeMount() {
-    this.languages = this.tech_skills.filter(function (item) {
+    this.languages = this.tech_skills.filter((item) => {
       return item.type.localeCompare("Language") === 0;
     });
-    this.frameworks = this.tech_skills.filter(function (item) {
+    this.frameworks = this.tech_skills.filter((item) => {
       return item.type.localeCompare("Framework") === 0;
     });
   },
@@ -296,15 +296,15 @@ export default {
         scales.appendChild(scale);
       }
     }
-    toggler.addEventListener("show.bs.collapse", function () {
+    toggler.addEventListener("show.bs.collapse", () => {
       main.style.transition = "none";
       main.classList.add("mt-0");
     });
-    toggler.addEventListener("hidden.bs.collapse", function () {
+    toggler.addEventListener("hidden.bs.collapse", () => {
       main.style.transition = "all .5s";
       main.classList.remove("mt-0");
     });
-    window.addEventListener("resize", function () {
+    window.addEventListener("resize", () => {
       if (window.innerWidth >= 768) {
         if (
           main.classList.contains("mt-0") &&
