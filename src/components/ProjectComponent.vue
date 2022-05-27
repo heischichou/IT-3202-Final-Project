@@ -89,10 +89,6 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  outline: red solid;*/
-/*}*/
-
 .project-card {
   width: 264px;
   height: 100%;

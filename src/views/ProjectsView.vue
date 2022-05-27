@@ -273,11 +273,6 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px;*/
-/*  outline: solid black;*/
-/*}*/
-
 .btn:focus {
   outline: none;
   box-shadow: none;
