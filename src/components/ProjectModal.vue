@@ -10,53 +10,65 @@
       <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
         <div class="modal-content border-0">
           <div class="modal-body" :style="{ background: modalColor }">
-            <div class="row justify-content-center no-bgColor">
-              <div
-                class="col-md-auto justify-content-center no-bgColor px-0 mx-3 my-2"
-              >
-                <img
-                  class="modal-img bg-light"
-                  :src="projectDetails.project_img"
-                  :alt="projectDetails.project_name"
-                />
-              </div>
-              <div
-                class="col-md-auto justify-content-center no-bgColor px-0 mx-3 ms-2 my-2"
-              >
-                <div class="container info-section bg-light p-0">
-                  <div class="d-flex flex-column p-4">
-                    <div class="d-inline-flex justify-content-between">
-                      <h5 class="text-uppercase fw-bold text-black m-0">
-                        {{ projectDetails.project_name }}
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        aria-label="Close"
-                        @click="$emit('closeModal')"
-                      ></button>
-                    </div>
-                    <hr class="my-3" />
-                    <div class="row justify-content-start no-bgColor pb-3">
+            <div class="container-fluid bg-transparent">
+              <div class="row justify-content-center no-bgColor">
+                <div
+                  class="col-md-auto justify-content-center no-bgColor px-0 mx-3 my-2"
+                >
+                  <img
+                    class="modal-img bg-light"
+                    :src="projectDetails.project_img"
+                    :alt="projectDetails.project_name"
+                  />
+                </div>
+                <div
+                  class="col-md-auto justify-content-center no-bgColor px-0 mx-3 ms-2 my-2"
+                >
+                  <div class="info-section bg-light p-0">
+                    <div class="container p-4">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="text-uppercase fw-bold text-black m-0">
+                          {{ projectDetails.project_name }}
+                        </h6>
+                        <button
+                          type="button"
+                          class="btn-close ps-2"
+                          aria-label="Close"
+                          @click="$emit('closeModal')"
+                        ></button>
+                      </div>
+                      <hr class="my-3" />
                       <div
-                        class="col-sm-auto no-bgColor px-1 pb-2"
-                        v-for="(tag, index) in projectDetails.project_tags"
-                        :key="index"
+                        :id="'modalTags' + projectDetails.project_id"
+                        class="text-nowrap overflow-hidden bg-transparent"
+                        @mouseenter="
+                          enableSideScroll(
+                            '#modalTags' + projectDetails.project_id
+                          )
+                        "
                       >
-                        <ProjectTag :text="tag" tagColor="#CEE8FA" />
+                        <div
+                          class="d-inline no-bgColor px-1"
+                          v-for="(tag, index) in projectDetails.project_tags"
+                          :key="index"
+                        >
+                          <ProjectTag :text="tag" tagColor="#CEE8FA" />
+                        </div>
+                      </div>
+                      <p class="text-wrap text-justify fw-light pt-4">
+                        <small>{{ projectDetails.description }}</small>
+                      </p>
+
+                      <hr class="mb-auto" />
+                      <div class="d-flex justify-content-center">
+                        <button
+                          class="btn btn-sm modal-btn bg-secondary border-secondary p-2 px-3 my-3"
+                          type="button"
+                        >
+                          Learn More
+                        </button>
                       </div>
                     </div>
-                    <p class="fw-light pt-4">
-                      {{ projectDetails.description }}
-                    </p>
-
-                    <hr class="mb-auto" />
-                    <button
-                      class="btn btn-sm modal-btn bg-secondary border-secondary align-self-center p-2 px-3 my-3"
-                      type="button"
-                    >
-                      Learn More
-                    </button>
                   </div>
                 </div>
               </div>
@@ -99,6 +111,33 @@ export default {
       active: this.isVisible,
     };
   },
+  methods: {
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    },
+  },
 };
 </script>
 
@@ -109,14 +148,14 @@ export default {
 
 .modal-img {
   width: 314px;
-  height: 390px;
+  height: 100%;
   align-self: center;
   object-fit: cover;
 }
 
 .info-section {
   width: 396px;
-  height: 390px;
+  height: 100%;
 }
 
 .no-bgColor {
@@ -125,5 +164,10 @@ export default {
 
 .modal-btn {
   border-radius: 8px;
+}
+
+.text-justify {
+  margin: 0;
+  text-align: justify;
 }
 </style>
