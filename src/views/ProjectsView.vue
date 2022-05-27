@@ -16,7 +16,7 @@
       My<br />Projects
     </h1>
   </div>
-  <div class="container my-5" style="width: 1000px">
+  <div class="container my-5" style="max-width: 60rem">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div
@@ -61,7 +61,7 @@
     <!--  MAJOR PROJECTS DIV  -->
     <div v-show="major" class="row justify-content-start pt-2 pb-4">
       <div
-        class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
+        class="col-12 col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in majorProjects"
         :key="project.project_id"
       >
@@ -129,7 +129,7 @@ export default {
   components: {
     ProjectComponent,
   },
-  data: function () {
+  data() {
     return {
       major: true,
       minor: false,
