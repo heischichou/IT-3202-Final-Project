@@ -109,14 +109,15 @@
         </p>
       </div>
       <div class="d-flex justify-content-center mb-5">
-        <button
-          class="bg-secondary border-secondary mt-3 me-3 mb-5 p-3"
-          type="button"
-        >
-          <router-link to="/contact" class="nav-link text-body"
-            >CONTACT ME</router-link
+        <router-link to="/contact" class="nav-link text-body"
+          ><button
+            class="btn bg-secondary border-secondary mt-3 mb-5 p-4"
+            type="button"
+            style="border-radius: 8px"
           >
-        </button>
+            CONTACT ME
+          </button></router-link
+        >
       </div>
     </div>
   </div>
