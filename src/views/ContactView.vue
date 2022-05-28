@@ -34,69 +34,54 @@
     <SendAMessage />
   </div>
   <!-- FAQ Section -->
-  <div class="container text-center mt-5 pt-5">
-    <h2 class="text-secondary fw-bold">Frequently Asked Questions</h2>
-  </div>
-  <div class="container mb-5 p-5">
-    <div
-      class="row g-2 mt-4 ms-4 align-items-center"
-      v-for="QnA in QnAData"
-      :key="QnA.QnA_id"
-    >
-      <div class="col-2 col-md-4">
-        <div class="text-end text-darkblue fs-4">Q</div>
-      </div>
-      <div class="col-9 col-md-6">
-        <div class="ps-5 text-darkblue">{{ QnA.Question }}</div>
-      </div>
-      <div class="col-2 col-md-4">
-        <div class="text-end text-secondary fs-4 mt-0">A</div>
-      </div>
-      <div class="col-9 col-md-6 mt-0">
-        <div class="ps-5 text-secondary">{{ QnA.Answer }}</div>
-      </div>
-    </div>
+  <div class="container pt-5 pb-3 py-md-5">
+    <h2 class="text-secondary text-center fw-bold">
+      Frequently Asked Questions
+    </h2>
+    <FAQList v-for="(faq, index) in faqs" :key="index" :faq="faq" />
   </div>
 </template>
 
 <script>
 import ContactDetails from "../components/Contact/ContactDetails";
 import SendAMessage from "../components/Contact/SendAMessage";
+import FAQList from "../components/Contact/FAQList";
 
 export default {
   name: "ContactView",
   components: {
     ContactDetails,
     SendAMessage,
+    FAQList,
   },
   data() {
     return {
-      QnAData: [
+      faqs: [
         {
-          QnA_id: 1,
-          Question: "What are you best at?",
-          Answer: "Java",
+          faqId: 1,
+          question: "What are you best at?",
+          answer: "Java",
         },
         {
-          QnA_id: 2,
-          Question: "Are you for hire?",
-          Answer: "Not at the moment",
+          faqId: 2,
+          question: "Are you for hire?",
+          answer: "Not at the moment",
         },
         {
-          QnA_id: 3,
-          Question: "Are you available for consultations?",
-          Answer: "Yes",
+          faqId: 3,
+          question: "Are you available for consultations?",
+          answer: "Yes",
         },
         {
-          QnA_id: 4,
-          Question:
+          faqId: 4,
+          question:
             "What are the bleeding edge technologies you are familiar on? ",
-          Answer: "Federation GraphQL, Kotlin, AWS CDK",
+          answer: "Federation GraphQL, Kotlin, AWS CDK",
         },
         {
-          QnA_id: 5,
-          Question: "What do you do on your free time?",
-          Answer: "Sort",
+          faqId: 5,
+          question: "What do you do on your free time?",
+          answer: "Sort",
         },
       ],
     };
