@@ -1,4 +1,4 @@
-describe("Tests the functionality of the Skills List page's Technology List component", () => {
+describe("Tests the functionality of the Skills List page's Technology Stack component", () => {
   beforeEach(() => {
     cy.visit("http://localhost:8081/#/skills");
   });
