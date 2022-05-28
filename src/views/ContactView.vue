@@ -43,7 +43,7 @@
   </div>
   <!-- FAQ Section -->
   <div class="container pt-5 pb-3 py-md-5" id="faq-section">
-    <h2 class="text-secondary text-center fw-bold">
+    <h2 class="text-secondary text-center fw-bold mb-5">
       Frequently Asked Questions
     </h2>
     <FAQList v-for="(faq, index) in faqs" :key="index" :faq="faq" />
@@ -94,8 +94,7 @@ export default {
         },
         {
           faqId: 4,
-          question:
-            "What are the bleeding edge technologies you are familiar on? ",
+          question: "What bleeding edge technologies you are familiar with? ",
           answer: "Federation GraphQL, Kotlin, AWS CDK",
         },
         {

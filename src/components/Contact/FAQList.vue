@@ -1,16 +1,20 @@
 <template>
-  <div class="row g-2 mt-4 ms-4 align-items-center">
-    <div class="col-2 col-md-4">
-      <div class="text-end text-darkblue fs-4">Q.</div>
+  <div class="container-fluid mb-4">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-3 col-md-2 col-xl-1">
+        <p class="text-darkblue fs-4 fw-bold text-center">Q.</p>
+      </div>
+      <div class="col col-md-6 col-xl-4">
+        <p class="text-darkblue fs-5">{{ faq.question }}</p>
+      </div>
     </div>
-    <div class="col-9 col-md-6">
-      <div class="ps-5 text-darkblue">{{ faq.question }}</div>
-    </div>
-    <div class="col-2 col-md-4">
-      <div class="text-end text-secondary fs-4 mt-0">A.</div>
-    </div>
-    <div class="col-9 col-md-6 mt-0">
-      <div class="ps-5 text-secondary">{{ faq.answer }}</div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-3 col-md-2 col-xl-1">
+        <p class="text-secondary fs-4 fw-bold text-center">A.</p>
+      </div>
+      <div class="col col-md-6 col-xl-4">
+        <p class="text-secondary fs-5">{{ faq.answer }}</p>
+      </div>
     </div>
   </div>
 </template>
