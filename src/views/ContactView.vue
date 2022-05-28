@@ -1,13 +1,9 @@
 <template>
   <!-- Header -->
-  <div id="main" class="container-fluid d-flex flex-row bg-dark p-0 mb-md-4">
+  <div id="header" class="container-fluid d-flex flex-row bg-dark p-0 mb-md-4">
     <div class="container d-flex flex-column bg-dark justify-content-center">
       <div class="row bg-transparent">
-        <div
-          id="heading"
-          class="bg-transparent text-center"
-          style="margin-top: 80px"
-        >
+        <div class="bg-transparent text-center" style="margin-top: 80px">
           <h1 class="text-primary fw-bolder fs-xxl">Get in touch</h1>
         </div>
       </div>
@@ -114,13 +110,13 @@ export default {
 /*  outline: solid black;*/
 /*}*/
 @media (max-width: 992px) {
-  #main {
+  #header {
     height: 350px;
     margin-top: -100px;
   }
 }
 @media (min-width: 992px) {
-  #main {
+  #header {
     height: 600px;
     margin-top: -100px;
   }
