@@ -1,5 +1,6 @@
 <template>
-  <div id="main" class="container-fluid d-flex flex-row bg-dark p-0">
+  <!-- Header -->
+  <div id="main" class="container-fluid d-flex flex-row bg-dark p-0 mb-md-4">
     <div class="container d-flex flex-column bg-dark justify-content-center">
       <div class="row bg-transparent">
         <div
@@ -20,38 +21,11 @@
       </div>
     </div>
   </div>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-9 col-md-4 my-3">
-        <div class="card bg-lightblue-2 rounded-3 border-0">
-          <div class="card-header rounded-3 bg-lightblue-1">
-            <div class="container d-flex justify-content-center bg-transparent">
-              <h1>
-                <em class="bi bi-telephone-x"></em>
-              </h1>
-            </div>
-          </div>
-          <div class="card-body bg-lightblue-2 rounded-3">
-            <p class="text-center">Currently not available</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-9 col-md-4 my-3">
-        <div class="card bg-lightblue-2 rounded-3 border-0">
-          <div class="card-header rounded-3 bg-lightblue-1">
-            <div class="container d-flex justify-content-center bg-transparent">
-              <h1>
-                <em class="bi bi-envelope"></em>
-              </h1>
-            </div>
-          </div>
-          <div class="card-body bg-lightblue-2 rounded-3">
-            <p class="text-center">help@pantonial.dev</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Contact Details Component -->
+  <div class="container pt-5 pb-3 py-md-5" id="contact-details-section">
+    <ContactDetails />
   </div>
+  <!-- Send A Message Component -->
   <div class="container d-flex justify-content-center mt-5 pt-5">
     <h3 class="text-secondary fw-bold mb-2">Send A Message</h3>
   </div>
@@ -130,8 +104,13 @@
 </template>
 
 <script>
+import ContactDetails from "../components/Contact/ContactDetails";
+
 export default {
   name: "ContactView",
+  components: {
+    ContactDetails,
+  },
   data() {
     return {
       QnAData: [
