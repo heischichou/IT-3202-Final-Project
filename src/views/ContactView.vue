@@ -38,11 +38,11 @@
     class="container d-flex flex-column justify-content-center pt-5 pb-3 py-md-5"
     id="send-a-message-section"
   >
-    <h3 class="text-secondary text-center fw-bold mb-5">Send A Message</h3>
+    <h2 class="text-secondary text-center fw-bold mb-5">Send A Message</h2>
     <SendAMessage />
   </div>
   <!-- FAQ Section -->
-  <div class="container pt-5 pb-3 py-md-5">
+  <div class="container pt-5 pb-3 py-md-5" id="faq-section">
     <h2 class="text-secondary text-center fw-bold">
       Frequently Asked Questions
     </h2>
