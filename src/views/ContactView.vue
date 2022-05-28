@@ -29,24 +29,21 @@
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-9 col-md-4 my-3">
-        <div class="card bg-dark rounded-3">
+        <div class="card bg-lightblue-2 rounded-3 border-0">
           <div class="card-header rounded-3 bg-lightblue-1">
             <div class="container d-flex justify-content-center bg-transparent">
               <h1>
-                <em class="bi bi-telephone"></em>
+                <em class="bi bi-telephone-x"></em>
               </h1>
             </div>
           </div>
-          <div class="card-body bg-lightblue-1 opacity-75 rounded-3">
-            <p class="text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor
-            </p>
+          <div class="card-body bg-lightblue-2 rounded-3">
+            <p class="text-center">Currently not available</p>
           </div>
         </div>
       </div>
       <div class="col-9 col-md-4 my-3">
-        <div class="card bg-dark rounded-3">
+        <div class="card bg-lightblue-2 rounded-3 border-0">
           <div class="card-header rounded-3 bg-lightblue-1">
             <div class="container d-flex justify-content-center bg-transparent">
               <h1>
@@ -54,11 +51,8 @@
               </h1>
             </div>
           </div>
-          <div class="card-body bg-lightblue-1 opacity-75 rounded-3">
-            <p class="text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor
-            </p>
+          <div class="card-body bg-lightblue-2 rounded-3">
+            <p class="text-center">help@pantonial.dev</p>
           </div>
         </div>
       </div>
@@ -67,8 +61,8 @@
   <div class="container d-flex justify-content-center mt-5 pt-5">
     <h3 class="text-secondary fw-bold mb-2">Send A Message</h3>
   </div>
-  <div class="container d-flex justify-content-center mt-5">
-    <div class="col-10 col-md-4">
+  <div class="container mt-5">
+    <div class="container-sm" style="width: 35%; min-width: 22rem">
       <div class="card bg-lightblue-1 opacity-75 rounded-3 border-0">
         <div class="card-body bg-transparent m-3">
           <form
@@ -101,6 +95,7 @@
                 id="floatingDetails"
                 rows="15"
                 placeholder="Write your message here..."
+                style="resize: none"
               ></textarea>
             </div>
             <div class="d-flex justify-content-center bg-transparent">
@@ -124,7 +119,7 @@
       v-for="QnA in QnAData"
       :key="QnA.QnA_id"
     >
-      <div class="col-3 col-md-4">
+      <div class="col-2 col-md-4">
         <div class="text-end text-darkblue fs-4">Q</div>
       </div>
       <div class="col-9 col-md-6">
