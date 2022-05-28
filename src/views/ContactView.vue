@@ -26,58 +26,14 @@
     <ContactDetails />
   </div>
   <!-- Send A Message Component -->
-  <div class="container d-flex justify-content-center mt-5 pt-5">
-    <h3 class="text-secondary fw-bold mb-2">Send A Message</h3>
+  <div
+    class="container d-flex flex-column justify-content-center pt-5 pb-3 py-md-5"
+    id="send-a-message-section"
+  >
+    <h3 class="text-secondary text-center fw-bold mb-5">Send A Message</h3>
+    <SendAMessage />
   </div>
-  <div class="container mt-5">
-    <div class="container-sm" style="width: 35%; min-width: 22rem">
-      <div class="card bg-lightblue-1 opacity-75 rounded-3 border-0">
-        <div class="card-body bg-transparent m-3">
-          <form
-            action="mailto:help@pantonial.dev"
-            method="GET"
-            enctype="text/plain"
-          >
-            <div class="mb-2 rounded-2">
-              <input
-                type="text"
-                name="subject"
-                class="form-control"
-                id="floatingInput"
-                placeholder="Subject"
-              />
-            </div>
-            <div class="mb-2 rounded-2">
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                id="floatingEmail"
-                placeholder="Email"
-              />
-            </div>
-            <div class="mb-4 rounded-2">
-              <textarea
-                name="body"
-                class="form-control"
-                id="floatingDetails"
-                rows="15"
-                placeholder="Write your message here..."
-                style="resize: none"
-              ></textarea>
-            </div>
-            <div class="d-flex justify-content-center bg-transparent">
-              <input
-                class="bg-secondary border-0 rounded-2 px-5 py-2"
-                type="submit"
-                value="SUBMIT"
-              />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- FAQ Section -->
   <div class="container text-center mt-5 pt-5">
     <h2 class="text-secondary fw-bold">Frequently Asked Questions</h2>
   </div>
@@ -105,11 +61,13 @@
 
 <script>
 import ContactDetails from "../components/Contact/ContactDetails";
+import SendAMessage from "../components/Contact/SendAMessage";
 
 export default {
   name: "ContactView",
   components: {
     ContactDetails,
+    SendAMessage,
   },
   data() {
     return {
