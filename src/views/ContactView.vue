@@ -1,27 +1,21 @@
 <template>
-  <div
-    class="container-fluid d-flex flex-row bg-dark p-0"
-    style="height: 500px; margin-top: -100px"
-  >
-    <div class="container d-flex bg-dark justify-content-center">
+  <div id="main" class="container-fluid d-flex flex-row bg-dark p-0">
+    <div class="container d-flex flex-column bg-dark justify-content-center">
       <div class="row bg-transparent">
-        <div class="row bg-transparent align-items-end">
-          <div class="bg-transparent text-center" style="margin-top: 200px">
-            <h1
-              class="font-weight-bolder text-primary fw-bold"
-              style="font-size: 4.5rem"
-            >
-              Get in touch
-            </h1>
-          </div>
+        <div
+          id="heading"
+          class="bg-transparent text-center"
+          style="margin-top: 80px"
+        >
+          <h1 class="text-primary fw-bolder fs-xxl">Get in touch</h1>
         </div>
-        <div class="row bg-transparent align-items-start">
-          <div class="col bg-transparent p-0 text-center">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempory
-            </p>
-          </div>
+      </div>
+      <div class="row bg-transparent align-items-start">
+        <div class="col bg-transparent p-0 mt-3 text-center">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempory
+          </p>
         </div>
       </div>
     </div>
@@ -178,4 +172,16 @@ export default {
 /*  border: 1px;*/
 /*  outline: solid black;*/
 /*}*/
+@media (max-width: 992px) {
+  #main {
+    height: 350px;
+    margin-top: -100px;
+  }
+}
+@media (min-width: 992px) {
+  #main {
+    height: 600px;
+    margin-top: -100px;
+  }
+}
 </style>
