@@ -23,7 +23,15 @@
   </div>
   <!-- Contact Details Component -->
   <div class="container pt-5 pb-3 py-md-5" id="contact-details-section">
-    <ContactDetails />
+    <div
+      class="d-flex flex-md-wrap flex-column flex-md-row align-items-center justify-content-center"
+    >
+      <ContactDetails
+        v-for="(info, index) in contactDetails"
+        :key="index"
+        :info="info"
+      />
+    </div>
   </div>
   <!-- Send A Message Component -->
   <div
@@ -56,6 +64,18 @@ export default {
   },
   data() {
     return {
+      contactDetails: [
+        {
+          infoId: 1,
+          icon: "bi bi-telephone",
+          info: "09123456789",
+        },
+        {
+          infoId: 2,
+          icon: "bi bi-envelope",
+          info: "rodney@pantonial.dev",
+        },
+      ],
       faqs: [
         {
           faqId: 1,
