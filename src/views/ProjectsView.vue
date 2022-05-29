@@ -34,7 +34,9 @@
               <button
                 @click="showProjectDiv(true, false, false)"
                 class="btn btn-link text-black"
-                :class="[major === true ? showLine : noLine]"
+                :class="[
+                  major ? 'text-decoration-underline' : 'text-decoration-none',
+                ]"
               >
                 MAJOR PROJECTS
               </button>
@@ -43,7 +45,9 @@
               <button
                 @click="showProjectDiv(false, true, false)"
                 class="btn btn-link text-black"
-                :class="[minor === true ? showLine : noLine]"
+                :class="[
+                  minor ? 'text-decoration-underline' : 'text-decoration-none',
+                ]"
               >
                 MINOR PROJECTS
               </button>
@@ -52,7 +56,11 @@
               <button
                 @click="showProjectDiv(false, false, true)"
                 class="btn btn-link text-black"
-                :class="[personal === true ? showLine : noLine]"
+                :class="[
+                  personal
+                    ? 'text-decoration-underline'
+                    : 'text-decoration-none',
+                ]"
               >
                 PERSONAL PROJECTS
               </button>
@@ -135,10 +143,13 @@ export default {
       major: true,
       minor: false,
       personal: false,
-      showLine: "text-decoration-underline",
-      noLine: "text-decoration-none",
       projects: [],
-      project_colors: ["#B8B9C8", "#B9BFE1", "#B9D0FC", "#B4C9E7"],
+      project_colors: [
+        "periwinkle-1",
+        "periwinkle-2",
+        "lightblue-1",
+        "lightblue-2",
+      ],
     };
   },
   created() {

@@ -1,7 +1,7 @@
 <template>
   <div
     class="card project-card pull-up shadow border-0"
-    :style="{ background: projectColor }"
+    :class="'bg-' + projectColor"
   >
     <div class="container no-bgColor">
       <a @click="toggleModal">

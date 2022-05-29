@@ -9,7 +9,7 @@
     >
       <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
         <div class="modal-content border-0">
-          <div class="modal-body" :style="{ background: modalColor }">
+          <div class="modal-body" :class="'bg-' + modalColor">
             <div class="container-fluid bg-transparent">
               <div class="row justify-content-center no-bgColor">
                 <div
