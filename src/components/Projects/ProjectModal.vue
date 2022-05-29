@@ -148,7 +148,7 @@ export default {
 
 .modal-img {
   width: 100%;
-  max-width: 314px;
+  max-width: 355px;
   min-height: 390px;
   height: 100%;
   border-radius: 8px;
@@ -157,7 +157,7 @@ export default {
 }
 
 .info-section {
-  width: 396px;
+  width: 355px;
   height: 100%;
   min-height: 390px;
 }
