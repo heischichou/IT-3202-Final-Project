@@ -1,4 +1,4 @@
-describe("Footer Content", () => {
+describe("Test Contact Section functionality", () => {
   beforeEach(() => {
     cy.visit("http://localhost:8081/#/projects");
   });
