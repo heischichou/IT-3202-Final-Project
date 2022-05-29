@@ -21,7 +21,7 @@
   </div>
 
   <!-- Navbar -->
-  <div class="container my-5" style="max-width: 60rem">
+  <div class="container my-5 pt-3" style="max-width: 60rem">
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div
         class="container d-flex flex-row flex-row-reverse bg-transparent mt-5"
@@ -33,7 +33,7 @@
             <li class="col-auto nav-item px-4">
               <button
                 @click="showProjectDiv(true, false, false)"
-                class="btn btn-link text-decoration-none text-black"
+                class="btn btn-link text-black"
                 :class="[major === true ? showLine : noLine]"
               >
                 MAJOR PROJECTS
@@ -42,7 +42,7 @@
             <li class="col-auto nav-item px-4">
               <button
                 @click="showProjectDiv(false, true, false)"
-                class="btn btn-link text-decoration-none text-black"
+                class="btn btn-link text-black"
                 :class="[minor === true ? showLine : noLine]"
               >
                 MINOR PROJECTS
@@ -51,7 +51,7 @@
             <li class="col-auto nav-item px-4">
               <button
                 @click="showProjectDiv(false, false, true)"
-                class="btn btn-link text-decoration-none text-black"
+                class="btn btn-link text-black"
                 :class="[personal === true ? showLine : noLine]"
               >
                 PERSONAL PROJECTS
@@ -274,6 +274,9 @@ export default {
 </script>
 
 <style scoped>
+.btn-link:hover {
+  text-decoration: underline !important;
+}
 .btn:focus {
   outline: none;
   box-shadow: none;
