@@ -101,14 +101,40 @@ export default {
       ],
     };
   },
+  mounted() {
+    let toggler = document.getElementById("navbarNav");
+    let main = document.getElementById("header");
+
+    toggler.addEventListener("show.bs.collapse", () => {
+      main.style.transition = "none";
+      main.classList.add("mt-0");
+    });
+    toggler.addEventListener("hidden.bs.collapse", () => {
+      main.style.transition = "all .5s";
+      main.classList.remove("mt-0");
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        if (
+          main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.remove("mt-0");
+        }
+      } else {
+        if (
+          !main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.add("mt-0");
+        }
+      }
+    });
+  },
 };
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px;*/
-/*  outline: solid black;*/
-/*}*/
 @media (max-width: 992px) {
   #header {
     height: 350px;
