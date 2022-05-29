@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-12 col-md">
         <h1
-          class="d-block text-secondary text-center text-md-start fw-bolder my-4"
+          class="d-block text-secondary text-center text-md-start fw-bold my-4"
         >
           Languages
         </h1>
@@ -55,7 +55,7 @@
       </div>
       <div class="col-12 col-md">
         <h1
-          class="d-block text-secondary text-center text-md-start fw-bolder my-4"
+          class="d-block text-secondary text-center text-md-start fw-bold my-4"
         >
           Frameworks
         </h1>
