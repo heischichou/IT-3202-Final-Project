@@ -4,7 +4,7 @@
       ref="modal"
       class="modal fade bg-black bg-opacity-50"
       :class="{ show: active, 'd-block': active }"
-      :id="projectDetails.project_id"
+      :id="projectDetails.projectID"
       tabindex="-1"
     >
       <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
@@ -17,8 +17,8 @@
                 >
                   <img
                     class="modal-img"
-                    :src="projectDetails.project_img"
-                    :alt="projectDetails.project_name"
+                    :src="projectDetails.projectImage"
+                    :alt="projectDetails.projectName"
                   />
                 </div>
                 <div
@@ -28,7 +28,7 @@
                     <div class="container bg-transparent p-4">
                       <div class="d-flex justify-content-between">
                         <h6 class="text-uppercase fw-bold text-black m-0">
-                          {{ projectDetails.project_name }}
+                          {{ projectDetails.projectName }}
                         </h6>
                         <button
                           type="button"
@@ -39,24 +39,24 @@
                       </div>
                       <hr class="my-3" />
                       <div
-                        :id="'modalTags' + projectDetails.project_id"
+                        :id="'modalTags' + projectDetails.projectID"
                         class="text-nowrap overflow-hidden bg-transparent"
                         @mouseenter="
                           enableSideScroll(
-                            '#modalTags' + projectDetails.project_id
+                            '#modalTags' + projectDetails.projectID
                           )
                         "
                       >
                         <div
                           class="d-inline no-bgColor px-1"
-                          v-for="(tag, index) in projectDetails.project_tags"
+                          v-for="(tag, index) in projectDetails.projectTags"
                           :key="index"
                         >
                           <ProjectTag :text="tag" tagColor="#CEE8FA" />
                         </div>
                       </div>
                       <p class="text-wrap text-justify fw-light pt-4">
-                        <small>{{ projectDetails.description }}</small>
+                        <small>{{ projectDetails.projectDesc }}</small>
                       </p>
 
                       <hr class="mb-auto" />

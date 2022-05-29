@@ -7,18 +7,18 @@
       <a @click="toggleModal">
         <img
           class="card-img project-image mt-4 mb-4 bg-light"
-          :src="projectItem.project_img"
-          :alt="projectItem.project_name"
+          :src="projectItem.projectImage"
+          :alt="projectItem.projectName"
         />
       </a>
       <div
-        :id="'tags' + projectItem.project_id"
+        :id="'tags' + projectItem.projectID"
         class="text-nowrap overflow-hidden bg-transparent pb-4"
-        @mouseenter="enableSideScroll('#tags' + projectItem.project_id)"
+        @mouseenter="enableSideScroll('#tags' + projectItem.projectID)"
       >
         <div
           class="d-inline no-bgColor px-1 pb-2"
-          v-for="(tag, index) in projectItem.project_tags"
+          v-for="(tag, index) in projectItem.projectTags"
           :key="index"
         >
           <ProjectTag :text="tag" tagColor="#F8F9FA" />

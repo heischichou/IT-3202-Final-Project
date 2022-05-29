@@ -75,7 +75,7 @@
       <div
         class="col-12 col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in majorProjects"
-        :key="project.project_id"
+        :key="project.projectID"
       >
         <ProjectComponent
           :projectColor="selectColor(index)"
@@ -88,7 +88,7 @@
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in minorProjects"
-        :key="project.project_id"
+        :key="project.projectID"
       >
         <ProjectComponent
           :projectColor="selectColor(index)"
@@ -101,7 +101,7 @@
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in personalProjects"
-        :key="project.project_id"
+        :key="project.projectID"
       >
         <ProjectComponent
           :projectColor="selectColor(index)"
@@ -155,13 +155,13 @@ export default {
   created() {
     this.projects = [
       {
-        project_id: 1,
-        project_name: "POSTNORD CENTRAL EVENT MANAGER",
-        project_img:
+        projectID: 1,
+        projectName: "POSTNORD CENTRAL EVENT MANAGER",
+        projectImage:
           "https://assets.asana.biz/m/5d7a4c4d0c33d68/original/article-project-management-how-project-status-reports-2x.png",
-        description:
+        projectDesc:
           "This system receives events from multiple external systems that is not handled by the company. Those events are then compiled and stored to output a cohesive history of the delivery of a parcel.",
-        project_tags: [
+        projectTags: [
           "Spring Boot",
           "Java",
           "DynamoDb",
@@ -171,16 +171,16 @@ export default {
           "Kibana",
           "Kubernetes",
         ],
-        project_type: "Major",
+        projectType: "Major",
       },
       {
-        project_id: 2,
-        project_name: "FLAT X REALTY WEBSITE",
-        project_img:
+        projectID: 2,
+        projectName: "FLAT X REALTY WEBSITE",
+        projectImage:
           "https://images.ctfassets.net/gg4ddi543f5b/6KSggHBfL67iQEcIXYS1vO/ace931866fe1adea8f584e6cedec90c8/project-management-methodologies-lean-methodology.png",
-        description:
+        projectDesc:
           "This system aims to have a free listing site for real estate with premium features for property management. This is an ongoing project where new features are added monthly based on user reviews and new ideas by management.",
-        project_tags: [
+        projectTags: [
           "Spring",
           "Boot",
           "Kotlin",
@@ -193,43 +193,43 @@ export default {
           "Elasticsearch",
           "Algolia",
         ],
-        project_type: "Major",
+        projectType: "Major",
       },
       {
-        project_id: 3,
-        project_name: "Project 3",
-        project_img:
+        projectID: 3,
+        projectName: "Project 3",
+        projectImage:
           "https://www.proofhub.com/wp-content/uploads/2017/10/Project-Manager-Roles-And-Responsibilities.jpg",
-        description: "Project 3 sample description...",
-        project_tags: ["HTML", "CSS", "PHP", "MySQL"],
-        project_type: "Minor",
+        projectDesc: "Project 3 sample description...",
+        projectTags: ["HTML", "CSS", "PHP", "MySQL"],
+        projectType: "Minor",
       },
       {
-        project_id: 4,
-        project_name: "Project 4",
-        project_img:
+        projectID: 4,
+        projectName: "Project 4",
+        projectImage:
           "https://idapgroup.com/blog/blog/wp-content/uploads/2018/07/PM-01-1.jpg",
-        description: "Project 1 sample description...",
-        project_tags: ["HTML", "CSS", "Laravel", "Vue"],
-        project_type: "Minor",
+        projectDesc: "Project 1 sample description...",
+        projectTags: ["HTML", "CSS", "Laravel", "Vue"],
+        projectType: "Minor",
       },
       {
-        project_id: 5,
-        project_name: "Project 5",
-        project_img:
+        projectID: 5,
+        projectName: "Project 5",
+        projectImage:
           "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvamVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
-        description: "Project 2 sample description...",
-        project_tags: ["HTML", "React", "Bootstrap"],
-        project_type: "Personal",
+        projectDesc: "Project 2 sample description...",
+        projectTags: ["HTML", "React", "Bootstrap"],
+        projectType: "Personal",
       },
       {
-        project_id: 6,
-        project_name: "ODOO HELPMATE WATER SYSTEM",
-        project_img:
+        projectID: 6,
+        projectName: "ODOO HELPMATE WATER SYSTEM",
+        projectImage:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
-        description:
+        projectDesc:
           "This system replaces the desktop based water system with an online based water system that links to different ERP technologies for seamless processing of account management, billing, employee management, reporting,accounting, and most other concerns.",
-        project_tags: [
+        projectTags: [
           "Python",
           "XML RPC",
           "Odoo",
@@ -237,17 +237,17 @@ export default {
           "Android",
           "Java",
         ],
-        project_type: "Major",
+        projectType: "Major",
       },
       {
-        project_id: 7,
-        project_name: "CEBU CCTV WEBSITE",
-        project_img:
+        projectID: 7,
+        projectName: "CEBU CCTV WEBSITE",
+        projectImage:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
-        description:
+        projectDesc:
           "Update of Cebu CCTV Website to its initial wordpress version.",
-        project_tags: ["WordPress", "MySQL", "LAMP"],
-        project_type: "Major",
+        projectTags: ["WordPress", "MySQL", "LAMP"],
+        projectType: "Major",
       },
     ];
   },
@@ -267,17 +267,17 @@ export default {
   computed: {
     majorProjects: function () {
       return this.projects.filter(function (project) {
-        return project.project_type === "Major";
+        return project.projectType === "Major";
       });
     },
     minorProjects: function () {
       return this.projects.filter(function (project) {
-        return project.project_type === "Minor";
+        return project.projectType === "Minor";
       });
     },
     personalProjects: function () {
       return this.projects.filter(function (project) {
-        return project.project_type === "Personal";
+        return project.projectType === "Personal";
       });
     },
   },
