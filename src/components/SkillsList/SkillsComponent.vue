@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-md-6 pt-md-5 container">
+  <div class="mt-md-6 pt-md-5 container skills-list-component">
     <h1 class="text-secondary fw-bold text-center mb-4 mb-md-6">
       {{ item.skillName }}
     </h1>
