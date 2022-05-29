@@ -7,18 +7,18 @@
       :id="projectDetails.projectID"
       tabindex="-1"
     >
-      <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
+      <div class="modal-dialog modal-xl modal-dialog-centered bg-transparent">
         <div class="modal-content border-0">
           <div class="rounded-3 py-3" :class="'bg-' + modalColor">
             <div class="container-fluid bg-transparent">
               <div class="row justify-content-center bg-transparent px-3">
                 <div
-                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 me-3 my-2"
+                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 mx-3 my-2"
                 >
                   <img
                     class="mx-auto d-block h-100 w-100 rounded-2"
                     style="
-                      max-width: 355px;
+                      max-width: 520px;
                       min-height: 390px;
                       object-fit: cover;
                     "
@@ -27,11 +27,11 @@
                   />
                 </div>
                 <div
-                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 ms-3 my-2"
+                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 mx-3 my-2"
                 >
                   <div
                     class="card h-100 bg-light border-0 p-0"
-                    style="width: 355px; min-height: 390px"
+                    style="width: 520px; min-height: 390px"
                   >
                     <div class="container bg-transparent p-4">
                       <div class="d-flex justify-content-between">
