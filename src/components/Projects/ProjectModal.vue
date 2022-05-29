@@ -16,7 +16,7 @@
                   class="col-md-auto d-flex justify-content-center no-bgColor px-0 mx-3 my-2"
                 >
                   <img
-                    class="modal-img bg-light"
+                    class="modal-img"
                     :src="projectDetails.project_img"
                     :alt="projectDetails.project_name"
                   />
@@ -25,7 +25,7 @@
                   class="col-md-auto d-flex justify-content-center no-bgColor px-0 mx-3 ms-2 my-2"
                 >
                   <div class="card info-section bg-light p-0">
-                    <div class="container p-4">
+                    <div class="container bg-transparent p-4">
                       <div class="d-flex justify-content-between">
                         <h6 class="text-uppercase fw-bold text-black m-0">
                           {{ projectDetails.project_name }}
