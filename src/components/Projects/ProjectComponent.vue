@@ -90,7 +90,7 @@ export default {
 
 <style scoped>
 .project-card {
-  width: 264px;
+  width: 280px;
   height: 100%;
   mix-blend-mode: normal;
   border-radius: 24px;
@@ -99,7 +99,6 @@ export default {
 .project-image {
   width: 100%;
   height: 284px;
-
   align-self: center;
   object-fit: cover;
 }

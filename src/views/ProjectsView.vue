@@ -71,7 +71,7 @@
     </nav>
 
     <!--  MAJOR PROJECTS DIV  -->
-    <div v-show="major" class="row justify-content-start pt-2 pb-4">
+    <div v-show="major" class="row justify-content-center pt-2 pb-4">
       <div
         class="col-12 col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in majorProjects"
@@ -84,7 +84,7 @@
       </div>
     </div>
     <!--  MINOR PROJECTS DIV  -->
-    <div v-show="minor" class="row justify-content-start pt-2 pb-4">
+    <div v-show="minor" class="row justify-content-center pt-2 pb-4">
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in minorProjects"
@@ -97,7 +97,7 @@
       </div>
     </div>
     <!--  PERSONAL PROJECTS DIV  -->
-    <div v-show="personal">
+    <div v-show="personal" class="row justify-content-center pt-2 pb-4">
       <div
         class="col-xl-4 col-md-6 d-flex justify-content-center py-4"
         v-for="(project, index) in personalProjects"
