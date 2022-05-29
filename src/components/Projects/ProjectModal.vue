@@ -9,22 +9,30 @@
     >
       <div class="modal-dialog modal-lg modal-dialog-centered bg-transparent">
         <div class="modal-content border-0">
-          <div class="modal-body" :class="'bg-' + modalColor">
+          <div class="rounded-3 py-3" :class="'bg-' + modalColor">
             <div class="container-fluid bg-transparent">
-              <div class="row justify-content-center no-bgColor">
+              <div class="row justify-content-center bg-transparent px-3">
                 <div
-                  class="col-md-auto d-flex justify-content-center no-bgColor px-0 me-3 my-2"
+                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 me-3 my-2"
                 >
                   <img
-                    class="modal-img"
+                    class="mx-auto d-block h-100 w-100 rounded-2"
+                    style="
+                      max-width: 355px;
+                      min-height: 390px;
+                      object-fit: cover;
+                    "
                     :src="projectDetails.projectImage"
                     :alt="projectDetails.projectName"
                   />
                 </div>
                 <div
-                  class="col-md-auto d-flex justify-content-center no-bgColor px-0 ms-3 my-2"
+                  class="col-md-auto d-flex justify-content-center bg-transparent px-0 ms-3 my-2"
                 >
-                  <div class="card info-section bg-light border-0 p-0">
+                  <div
+                    class="card h-100 bg-light border-0 p-0"
+                    style="width: 355px; min-height: 390px"
+                  >
                     <div class="container bg-transparent p-4">
                       <div class="d-flex justify-content-between">
                         <h6 class="text-uppercase fw-bold text-black m-0">
@@ -48,21 +56,24 @@
                         "
                       >
                         <div
-                          class="d-inline no-bgColor px-1"
+                          class="d-inline bg-transparent px-1"
                           v-for="(tag, index) in projectDetails.projectTags"
                           :key="index"
                         >
                           <ProjectTag :text="tag" tagColor="#CEE8FA" />
                         </div>
                       </div>
-                      <p class="text-wrap text-justify fw-light pt-4">
+                      <p
+                        class="text-wrap m-0 fw-light pt-4"
+                        style="text-align: justify"
+                      >
                         <small>{{ projectDetails.projectDesc }}</small>
                       </p>
 
                       <hr class="mb-auto" />
                       <div class="d-flex justify-content-center">
                         <button
-                          class="btn btn-sm modal-btn bg-secondary border-secondary p-2 px-3 my-3"
+                          class="btn btn-sm bg-secondary border-secondary rounded-1 p-2 px-3 my-3"
                           type="button"
                         >
                           Learn More
@@ -141,37 +152,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.modal-body {
-  border-radius: 24px;
-}
-
-.modal-img {
-  width: 100%;
-  max-width: 355px;
-  min-height: 390px;
-  height: 100%;
-  border-radius: 8px;
-  align-self: center;
-  object-fit: cover;
-}
-
-.info-section {
-  width: 355px;
-  height: 100%;
-  min-height: 390px;
-}
-
-.no-bgColor {
-  background: none;
-}
-
-.modal-btn {
-  border-radius: 8px;
-}
-
-.text-justify {
-  margin: 0;
-  text-align: justify;
-}
-</style>
+<style scoped></style>
