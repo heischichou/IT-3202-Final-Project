@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-md-8 col-lg-6">
+  <div class="container col-md-8 col-lg-6" id="send-a-message-component">
     <div class="card bg-lightblue-1 opacity-75 rounded-3 border-0">
       <div class="card-body bg-transparent p-3 m-3 pb-2">
         <form
