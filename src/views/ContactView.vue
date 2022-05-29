@@ -18,7 +18,7 @@
     </div>
   </div>
   <!-- Contact Details Component -->
-  <div class="container pt-5 pb-3 py-md-5" id="contact-details-section">
+  <div class="container pt-5 pb-md-3 py-md-5" id="contact-details-section">
     <div
       class="d-flex flex-md-wrap flex-column flex-md-row align-items-center justify-content-center"
     >
@@ -38,7 +38,7 @@
     <SendAMessage />
   </div>
   <!-- FAQ Section -->
-  <div class="container pt-5 pb-3 py-md-5" id="faq-section">
+  <div class="container pt-5 pb-3 pt-md-6 pb-md-5" id="faq-section">
     <h2 class="text-secondary text-center fw-bold mb-5">
       Frequently Asked Questions
     </h2>
