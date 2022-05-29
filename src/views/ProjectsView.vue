@@ -19,6 +19,7 @@
       </div>
     </div>
   </div>
+
   <!-- Navbar -->
   <div class="container my-5" style="max-width: 60rem">
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
@@ -102,25 +103,21 @@
     </div>
   </div>
 
-  <!-- Contacts Section -->
-  <div class="container mb-5">
-    <div class="d-flex flex-column">
-      <div>
+  <!-- Contact Section -->
+  <div class="container py-5 my-5">
+    <div class="d-flex flex-column align-items-center">
+      <div class="col-md-6 col-lg-4">
         <p class="text-center">
-          I'd be delighted to answer any questions,<br />
-          plan collaborations, or collaborate on new projects with you.
+          I'd love to answer any questions you have, plan collaborations, or
+          work on new projects with you.
         </p>
       </div>
-      <div class="d-flex justify-content-center mb-5">
-        <router-link to="/contact" class="nav-link text-body"
-          ><button
-            class="btn bg-secondary border-secondary mt-3 mb-5 p-4"
-            type="button"
-            style="border-radius: 8px"
-          >
+      <div class="d-flex justify-content-center">
+        <router-link to="/contact" class="nav-link text-body">
+          <button class="btn btn-secondary mt-3 py-3 px-4" type="button">
             CONTACT ME
-          </button></router-link
-        >
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
