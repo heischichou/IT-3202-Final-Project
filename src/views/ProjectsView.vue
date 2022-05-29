@@ -124,7 +124,7 @@
 </template>
 
 <script>
-import ProjectComponent from "../components/ProjectComponent";
+import ProjectComponent from "../components/Projects/ProjectComponent";
 export default {
   name: "ProjectsView",
   components: {
