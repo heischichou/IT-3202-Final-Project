@@ -4,7 +4,7 @@
     <div class="col-md-3"></div>
     <div class="col bg-dark rounded-start me-0" id="main"></div>
   </div>
-  <div class="container bg-transparent mb-5">
+  <div class="container bg-transparent mb-5" id="header">
     <div class="row align-items-end bg-transparent mb-4">
       <div class="col-md-auto container-fluid bg-transparent">
         <div class="row bg-transparent mt-n5">
@@ -27,7 +27,9 @@
         <div
           class="col-auto text-center text-md-start bg-transparent mt-4 mt-md-auto"
         >
-          <button class="btn btn-secondary px-4 py-3">CONTACT ME</button>
+          <router-link to="/contact" class="btn btn-secondary px-4 py-3"
+            >CONTACT</router-link
+          >
         </div>
       </div>
     </div>
