@@ -1,14 +1,16 @@
 <template>
   <div
-    class="card project-card pull-up shadow border-0"
+    class="card pull-up shadow h-100 border-0 rounded-3"
     :class="'bg-' + projectColor"
+    style="width: 280px; mix-blend-mode: normal"
   >
-    <div class="container no-bgColor">
+    <div class="container bg-transparent">
       <a @click="toggleModal">
         <img
-          class="card-img project-image mt-4 mb-4 bg-light"
+          class="card-img align-self-center mt-4 mb-4 bg-light"
           :src="projectItem.projectImage"
           :alt="projectItem.projectName"
+          style="height: 284px; object-fit: cover"
         />
       </a>
       <div
@@ -17,7 +19,7 @@
         @mouseenter="enableSideScroll('#tags' + projectItem.projectID)"
       >
         <div
-          class="d-inline no-bgColor px-1 pb-2"
+          class="d-inline bg-transparent px-1 pb-2"
           v-for="(tag, index) in projectItem.projectTags"
           :key="index"
         >
@@ -89,24 +91,6 @@ export default {
 </script>
 
 <style scoped>
-.project-card {
-  width: 280px;
-  height: 100%;
-  mix-blend-mode: normal;
-  border-radius: 24px;
-}
-
-.project-image {
-  width: 100%;
-  height: 284px;
-  align-self: center;
-  object-fit: cover;
-}
-
-.no-bgColor {
-  background: none;
-}
-
 .pull-up {
   transition: all 0.25s ease;
 }
