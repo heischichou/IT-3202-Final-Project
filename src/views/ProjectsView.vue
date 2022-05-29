@@ -112,7 +112,7 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="container py-5 my-5">
+  <div class="container py-5 my-5" id="contact-section">
     <div class="d-flex flex-column align-items-center">
       <div class="col-md-6 col-lg-4">
         <p class="text-center">
@@ -121,10 +121,11 @@
         </p>
       </div>
       <div class="d-flex justify-content-center">
-        <router-link to="/contact" class="nav-link text-body">
-          <button class="btn btn-secondary mt-3 py-3 px-4" type="button">
-            CONTACT ME
-          </button>
+        <router-link
+          to="/contact"
+          class="btn btn-secondary mt-3 py-3 px-4 text-body"
+        >
+          CONTACT ME
         </router-link>
       </div>
     </div>
