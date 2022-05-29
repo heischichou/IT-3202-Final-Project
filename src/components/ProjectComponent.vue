@@ -4,43 +4,91 @@
     :style="{ background: projectColor }"
   >
     <div class="container no-bgColor">
-      <img
-        class="card-img project-image mt-4 mb-4 bg-light"
-        :src="projectItem.project_img"
-        :alt="projectItem.project_name"
-      />
-      <div class="row justify-content-start no-bgColor pb-3">
+      <a @click="toggleModal">
+        <img
+          class="card-img project-image mt-4 mb-4 bg-light"
+          :src="projectItem.project_img"
+          :alt="projectItem.project_name"
+        />
+      </a>
+      <div
+        :id="'tags' + projectItem.project_id"
+        class="text-nowrap overflow-hidden bg-transparent pb-4"
+        @mouseenter="enableSideScroll('#tags' + projectItem.project_id)"
+      >
         <div
-          class="col-sm-auto no-bgColor px-1 pb-2"
+          class="d-inline no-bgColor px-1 pb-2"
           v-for="(tag, index) in projectItem.project_tags"
           :key="index"
         >
-          <ProjectTag :text="tag" />
+          <ProjectTag :text="tag" tagColor="#F8F9FA" />
         </div>
       </div>
     </div>
   </div>
+  <ProjectModal
+    :isVisible="showModal"
+    @closeModal="closeModal"
+    :projectDetails="projectItem"
+    :modalColor="projectColor"
+  />
 </template>
 
 <script>
 import ProjectTag from "./ProjectTag";
+import ProjectModal from "./ProjectModal";
 export default {
   name: "ProjectComponent",
   components: {
     ProjectTag,
+    ProjectModal,
   },
   props: {
     projectColor: String,
     projectItem: Object,
   },
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  methods: {
+    closeModal() {
+      this.showModal = false;
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+    enableSideScroll(list) {
+      const slider = document.querySelector(list);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
-/*div {*/
-/*  outline: red solid;*/
-/*}*/
-
 .project-card {
   width: 264px;
   height: 100%;

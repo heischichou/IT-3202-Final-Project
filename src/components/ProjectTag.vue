@@ -1,5 +1,7 @@
 <template>
-  <button class="btn btn-sm p-tag bg-light">{{ text }}</button>
+  <div class="btn btn-sm p-tag" :style="{ background: tagColor }">
+    {{ text }}
+  </div>
 </template>
 
 <script>
@@ -7,6 +9,7 @@ export default {
   name: "ProjectTag",
   props: {
     text: String,
+    tagColor: String,
   },
 };
 </script>
