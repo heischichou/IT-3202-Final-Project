@@ -69,7 +69,7 @@ export default {
         {
           infoId: 2,
           icon: "bi bi-envelope",
-          info: "rodney@pantonial.dev",
+          info: "help@pantonial.dev",
         },
       ],
       faqs: [
