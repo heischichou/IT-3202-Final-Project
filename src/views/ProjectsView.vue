@@ -1,23 +1,26 @@
 <template>
-  <div class="container-fluid">
-    <div class="row mt-5 pt-5">
-      <div class="col-md-3"></div>
+  <!-- Header -->
+  <div class="container-fluid d-flex flex-row p-0">
+    <div class="col-md-3"></div>
+    <div class="col bg-dark rounded-start me-0" id="main"></div>
+  </div>
+  <div class="container bg-transparent mb-5">
+    <div class="row align-items-end bg-transparent mb-4">
+      <div class="col-md-auto container-fluid bg-transparent"></div>
       <div
-        class="col bg-dark me-0 mb-3 rounded-start"
-        style="height: 300px; margin-top: -100px"
-      ></div>
+        class="col-md container-fluid bg-transparent ms-md-6 mt-3 mt-md-auto"
+      >
+        <div class="row bg-transparent mt-n5">
+          <h1 class="text-primary text-center text-md-end fw-bolder fs-xxl">
+            My <br />
+            Projects
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="container text-end bg-transparent">
-    <h1
-      class="text-primary font-weight-bolder"
-      style="font-size: 4.5rem; margin-top: -250px"
-    >
-      My<br />Projects
-    </h1>
-  </div>
+  <!-- Navbar -->
   <div class="container my-5" style="max-width: 60rem">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
       <div
         class="container d-flex flex-row flex-row-reverse bg-transparent mt-5"
@@ -277,5 +280,27 @@ export default {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+@media (max-width: 768px) {
+  #main {
+    height: 320px;
+    margin-top: -80px;
+    margin-bottom: -180px;
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 768px) {
+  #main {
+    height: 320px;
+    margin-top: 40px;
+    margin-bottom: -210px;
+  }
+}
+@media (min-width: 1200px) {
+  #main {
+    height: 400px;
+    margin-top: 40px;
+    margin-bottom: -280px;
+  }
 }
 </style>
