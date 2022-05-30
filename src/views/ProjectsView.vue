@@ -149,7 +149,7 @@ export default {
       minor: false,
       personal: false,
       projects: [],
-      project_colors: [
+      projectColors: [
         "periwinkle-1",
         "periwinkle-2",
         "lightblue-1",
@@ -266,23 +266,53 @@ export default {
       while (index > 3) {
         index -= 4;
       }
-      return this.project_colors[index];
+      return this.projectColors[index];
     },
+  },
+  mounted() {
+    let toggler = document.getElementById("navbarNav");
+    let main = document.getElementById("main");
+
+    toggler.addEventListener("show.bs.collapse", () => {
+      main.style.transition = "none";
+      main.classList.add("mt-0");
+    });
+    toggler.addEventListener("hidden.bs.collapse", () => {
+      main.style.transition = "all .5s";
+      main.classList.remove("mt-0");
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        if (
+          main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.remove("mt-0");
+        }
+      } else {
+        if (
+          !main.classList.contains("mt-0") &&
+          toggler.classList.contains("show")
+        ) {
+          main.classList.add("mt-0");
+        }
+      }
+    });
   },
   computed: {
     majorProjects: function () {
-      return this.projects.filter(function (project) {
-        return project.projectType === "Major";
+      return this.projects.filter((project) => {
+        return project.projectType.localeCompare("Major") === 0;
       });
     },
     minorProjects: function () {
-      return this.projects.filter(function (project) {
-        return project.projectType === "Minor";
+      return this.projects.filter((project) => {
+        return project.projectType.localeCompare("Minor") === 0;
       });
     },
     personalProjects: function () {
-      return this.projects.filter(function (project) {
-        return project.projectType === "Personal";
+      return this.projects.filter((project) => {
+        return project.projectType.localeCompare("Personal") === 0;
       });
     },
   },
