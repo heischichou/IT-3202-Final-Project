@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card pull-up shadow h-100 border-0 rounded-3"
+    class="project-card card pull-up shadow h-100 border-0 rounded-3"
     :class="'bg-' + projectColor"
     style="width: 280px; mix-blend-mode: normal"
   >

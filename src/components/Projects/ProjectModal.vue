@@ -2,7 +2,7 @@
   <teleport to="body">
     <div
       ref="modal"
-      class="modal fade bg-black bg-opacity-50"
+      class="project-modal modal fade bg-black bg-opacity-50"
       :class="{ show: active, 'd-block': active }"
       :id="projectDetails.projectID"
       tabindex="-1"
@@ -56,7 +56,7 @@
                         "
                       >
                         <div
-                          class="d-inline bg-transparent px-1"
+                          class="project-tag d-inline bg-transparent px-1"
                           v-for="(tag, index) in projectDetails.projectTags"
                           :key="index"
                         >
