@@ -1,4 +1,4 @@
-describe("Check Projects Navbar", () => {
+describe("Check Project component", () => {
   beforeEach(() => {
     cy.visit("http://localhost:8081/#/projects");
   });
