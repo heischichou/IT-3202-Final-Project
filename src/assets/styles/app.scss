@@ -8,11 +8,13 @@ $secondary:       #82B1FF;
 $light:           #F8F9FA;
 $dark:            #C9CFE1;
 $body:            #6D6D6D;
+$subtitle:        #7E7C7C;
 $darkblue:        #23408E;
 $periwinkle-1:    #B8B9C8;
 $periwinkle-2:    #B9BFE1;
 $lightblue-1:     #B9D0FC;
 $lightblue-2:     #B4C9E7;
+$backdrop:        #EDEDED;
 
 $theme-colors: (
   "primary":        $primary,
@@ -20,11 +22,13 @@ $theme-colors: (
   "light":          $light,
   "dark":           $dark,
   "body":           $body,
+  "subtitle":       $subtitle,
   "darkblue":       $darkblue,
   "periwinkle-1":   $periwinkle-1,
   "periwinkle-2":   $periwinkle-2,
   "lightblue-1":    $lightblue-1,
   "lightblue-2":    $lightblue-2,
+  "backdrop":       $backdrop,
 );
 
 // Font
