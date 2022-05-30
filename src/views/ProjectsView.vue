@@ -116,7 +116,7 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="container py-5 my-5" id="contact-section">
+  <div class="container pt-3 pb-5 my-5" id="contact-section">
     <div class="d-flex flex-column align-items-center">
       <div class="col-md-6 col-lg-4">
         <p class="text-center">
