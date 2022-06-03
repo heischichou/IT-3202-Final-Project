@@ -298,6 +298,7 @@ export default {
         }
       }
     });
+    window.dispatchEvent(new Event("resize"));
   },
   computed: {
     majorProjects: function () {
