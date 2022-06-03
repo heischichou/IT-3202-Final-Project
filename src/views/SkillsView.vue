@@ -288,6 +288,7 @@ export default {
     let skills = document.getElementsByClassName("technology");
     let toggler = document.getElementById("navbarNav");
     let main = document.getElementById("main");
+
     for (let x = 0, count = skills.length; x < count; x++) {
       let scales = skills[x].lastChild;
       for (let y = scales.children.length; y < 5; y++) {
@@ -323,6 +324,7 @@ export default {
         }
       }
     });
+    window.dispatchEvent(new Event("resize"));
   },
 };
 </script>

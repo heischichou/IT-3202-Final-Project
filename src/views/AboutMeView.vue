@@ -285,6 +285,7 @@ export default {
         }
       }
     });
+    window.dispatchEvent(new Event("resize"));
   },
 };
 </script>
