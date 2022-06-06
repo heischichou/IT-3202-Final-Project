@@ -25,6 +25,21 @@ const routes: Array<RouteRecordRaw> = [
     name: "contact",
     component: ContactView,
   },
+  {
+    path: "/projects/major",
+    name: "major",
+    component: ProjectsView,
+  },
+  {
+    path: "/projects/minor",
+    name: "minor",
+    component: ProjectsView,
+  },
+  {
+    path: "/projects/personal",
+    name: "personal",
+    component: ProjectsView,
+  },
 ];
 
 const router = createRouter({

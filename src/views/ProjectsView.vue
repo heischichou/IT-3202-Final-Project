@@ -31,7 +31,9 @@
         >
           <ul class="row navbar-nav mx-n4 mt-3">
             <li class="col-auto nav-item px-4">
-              <button
+              <router-link
+                to="/projects/major"
+                name="major"
                 @click="showProjectDiv(true, false, false)"
                 class="btn btn-link text-black"
                 :class="[
@@ -39,10 +41,12 @@
                 ]"
               >
                 MAJOR PROJECTS
-              </button>
+              </router-link>
             </li>
             <li class="col-auto nav-item px-4">
-              <button
+              <router-link
+                to="/projects/minor"
+                name="minor"
                 @click="showProjectDiv(false, true, false)"
                 class="btn btn-link text-black"
                 :class="[
@@ -50,10 +54,12 @@
                 ]"
               >
                 MINOR PROJECTS
-              </button>
+              </router-link>
             </li>
             <li class="col-auto nav-item px-4">
-              <button
+              <router-link
+                to="/projects/personal"
+                name="personal"
                 @click="showProjectDiv(false, false, true)"
                 class="btn btn-link text-black"
                 :class="[
@@ -63,7 +69,7 @@
                 ]"
               >
                 PERSONAL PROJECTS
-              </button>
+              </router-link>
             </li>
           </ul>
         </div>
