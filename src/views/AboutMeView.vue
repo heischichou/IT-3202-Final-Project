@@ -169,32 +169,36 @@ export default {
           title: "Networking Training",
           description:
             "Studied protocols like RIP and VOIP. Implemented Subnetworking and Fire wall Techniques. Deployed the technology learned to the company network. Studied VPN and applied to inter-branch communication.",
-          imageUrl:
-            "https://images.unsplash.com/photo-1612045194743-877419047a35?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
+          imageUrl: {
+            default: require("@/assets/images/AboutMe/photo-1612045194743-877419047a35.png"),
+          },
         },
         {
           expertiseId: 2,
           title: "Advanced Project Management",
           description:
             "Applied soft tools to create the right mix of team members in a project. Learned how to use Project Libre advance techniques to track project costs. Used WBS to manage an ongoing project. Determined the effects of corporate decisions on a current project.",
-          imageUrl:
-            "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
+          imageUrl: {
+            default: require("@/assets/images/AboutMe/photo-1531403009284-440f080d1e12.png"),
+          },
         },
         {
           expertiseId: 3,
           title: "Big Data Analytics Training 101",
           description:
             "Used PostgreSQL to analyze big data sets. Combined multiple data sources into one dashboard. Converted corporate data into readily readable KPIS.",
-          imageUrl:
-            "https://images.unsplash.com/photo-1599658880436-c61792e70672?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
+          imageUrl: {
+            default: require("@/assets/images/AboutMe/photo-1599658880436-c61792e70672.png"),
+          },
         },
         {
           expertiseId: 4,
           title: "Financial Statement Analysis",
           description:
             "Learned how to create a financial statement based on a transaction table. Optimize the cost of company taxes through correct labelling of transactions. Learned techniques to optimize the chart of accounts, Applied seminar to current project.",
-          imageUrl:
-            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070",
+          imageUrl: {
+            default: require("@/assets/images/AboutMe/photo-1454165804606-c3d57bc86b40.png"),
+          },
         },
       ],
     };
