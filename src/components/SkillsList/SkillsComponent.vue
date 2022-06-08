@@ -13,7 +13,7 @@
       >
         <img
           class="rounded-2 skill-image"
-          :src="`${item.imageUrl}`"
+          :src="`${item.imageUrl.default}`"
           alt="Skill Image"
         />
       </div>
