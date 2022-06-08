@@ -276,6 +276,21 @@ export default {
       ],
     };
   },
+  methods: {
+    reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+
+      for (const element of reveals) {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add("active");
+        }
+      }
+    },
+  },
   beforeMount() {
     this.languages = this.tech_skills.filter((item) => {
       return item.type.localeCompare("Language") === 0;
@@ -325,6 +340,10 @@ export default {
       }
     });
     window.dispatchEvent(new Event("resize"));
+    window.addEventListener("scroll", this.reveal);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.reveal);
   },
 };
 </script>
