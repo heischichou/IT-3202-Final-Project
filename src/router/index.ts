@@ -11,11 +11,6 @@ const routes: Array<RouteRecordRaw> = [
     component: AboutMeView,
   },
   {
-    path: "/projects",
-    name: "projects",
-    component: ProjectsView,
-  },
-  {
     path: "/skills",
     name: "skills",
     component: SkillsView,
