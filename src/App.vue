@@ -32,14 +32,18 @@
           </li>
           <li
             class="col-auto text-decoration-underline nav-item px-4"
-            v-if="$route.path === '/projects'"
+            v-if="
+              $route.path === '/projects/major' ||
+              $route.path === '/projects/minor' ||
+              $route.path === '/projects/personal'
+            "
           >
             <router-link to="/projects" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
           <li class="col-auto nav-item px-4" v-else>
-            <router-link to="/projects" class="nav-link text-black"
+            <router-link to="/projects/major" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
