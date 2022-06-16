@@ -20,16 +20,17 @@ public class AwsCdkStack extends Stack {
 
     public AwsCdkStack(final App scope, final String id, final StackProps props) {
         super(scope, id, props);
+        String domainName = "pantonial.dev";
 
         try {
             IHostedZone zone = HostedZone.fromLookup(this, "zone", HostedZoneProviderProps.builder()
-                    .domainName("pantonial.dev")
+                    .domainName(domainName)
                     .privateZone(false)
                     .build());
 
             // S3 Bucket Creation
             Bucket bucket = Bucket.Builder.create(this, "PantonialDevBucket")
-                    .bucketName("pantonial.dev")
+                    .bucketName(domainName)
                     .websiteIndexDocument("index.html")
                     .publicReadAccess(false)
                     .removalPolicy(RemovalPolicy.DESTROY)
@@ -37,7 +38,7 @@ public class AwsCdkStack extends Stack {
 
             // TLS Certificate
             final ICertificate certificate = DnsValidatedCertificate.Builder.create(this, "SiteCertificate")
-                    .domainName("pantonial.dev")
+                    .domainName(domainName)
                     .hostedZone(zone)
                     .region("us-east-1")
                     .validation(CertificateValidation.fromDns(zone))
@@ -51,7 +52,7 @@ public class AwsCdkStack extends Stack {
             // CloudFront Distribution
             CloudFrontWebDistribution cloudFrontDistribution = CloudFrontWebDistribution.Builder.create(this, "PantonialDevCloudfrontDistrib")
                 .viewerCertificate(ViewerCertificate.fromAcmCertificate(certificate, ViewerCertificateOptions.builder()
-                    .aliases(Collections.singletonList("pantonial.dev"))
+                    .aliases(Collections.singletonList(domainName))
                     .sslMethod(SSLMethod.SNI)
                     .securityPolicy(SecurityPolicyProtocol.TLS_V1_2_2021)
                     .build()
