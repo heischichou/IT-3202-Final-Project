@@ -32,13 +32,12 @@ public class AwsCdkStack extends Stack {
     public AwsCdkStack(final App scope, final String id, final StackProps props) {
         super(scope, id, props);
         var baseDomainName = "pantonial.dev";
-        var domainName = "example.pantonial.dev";
+        var domainName = "rodney.pantonial.dev";
 
-        var wwwDomainName = "www.example.pantonial.dev";
+        var wwwDomainName = "www.rodney.pantonial.dev";
 
         try {
-            // Collection of DNS Records (Domain Name Server)
-            // IP(1.1.1.1 or 192.168.10.1) <-> Domain Name (facebook.com or pantonial.dev)
+            // Collection of DNS (Domain Name Server) Records
             var zone = HostedZone.fromLookup(this, "zone", HostedZoneProviderProps.builder()
                     .domainName(baseDomainName)
                     .privateZone(false)
@@ -49,12 +48,11 @@ public class AwsCdkStack extends Stack {
                     .bucketName(domainName)
                     .autoDeleteObjects(true)
                     .blockPublicAccess(BlockPublicAccess.BLOCK_ACLS)
-                    // TODO: check if this is the correct one
                     .websiteIndexDocument("index.html")
                     .removalPolicy(RemovalPolicy.DESTROY)
                     .build();
 
-            // security to allow access to the bucket for cloudfront user
+            // S3 Bucket Access Configuration
             var accessIdentity = OriginAccessIdentity.Builder.create(this, "CloudfrontAccess")
                     .build();
 
@@ -100,8 +98,7 @@ public class AwsCdkStack extends Stack {
                                     .s3OriginSource(S3OriginConfig.builder()
                                             .originAccessIdentity(accessIdentity)
                                             .s3BucketSource(bucket)
-                                            // TODO: determine origin path
-                                            // .originPath("")
+                                            .originPath("/web/static")
                                             .build())
                                     .behaviors(Collections.singletonList(
                                             Behavior.builder()
@@ -113,20 +110,20 @@ public class AwsCdkStack extends Stack {
                     .build();
 
             // Route 53 Record
-            ARecord.Builder.create(this, "ExamplePantonialDevRecord")
+            ARecord.Builder.create(this, "RodneyPantonialDevRecord")
                     .recordName(domainName)
                     .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
                     .zone(zone)
                     .build();
 
             // Route 53 Record
-            ARecord.Builder.create(this, "WwwExamplePantonialDevRecord")
+            ARecord.Builder.create(this, "WwwRodneyPantonialDevRecord")
                     .recordName(wwwDomainName)
                     .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
                     .zone(zone)
                     .build();
 
-            var sources = List.of(Source.asset("src/main/resources"));
+            var sources = List.of(Source.asset("../dist"));
 
             // Deploy site contents to S3 Bucket
             BucketDeployment.Builder.create(this, "DeployWithInvalidation")
