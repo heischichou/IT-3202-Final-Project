@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container d-flex flex-row flex-row-reverse bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+    <div class="container d-flex flex-row flex-row-reverse bg-transparent">
       <button
         class="navbar-toggler border-primary mt-3 me-3"
         type="button"
@@ -13,7 +13,7 @@
         <em class="bi bi-list text-primary d-flex fs-3"></em>
       </button>
       <div
-        class="flex-row-reverse collapse navbar-collapse text-center bg-dark m-3"
+        class="flex-row-reverse collapse navbar-collapse text-center bg-transparent m-3"
         id="navbarNav"
       >
         <ul class="row navbar-nav mx-n4">
@@ -32,14 +32,18 @@
           </li>
           <li
             class="col-auto text-decoration-underline nav-item px-4"
-            v-if="$route.path === '/projects'"
+            v-if="
+              $route.path === '/projects/major' ||
+              $route.path === '/projects/minor' ||
+              $route.path === '/projects/personal'
+            "
           >
             <router-link to="/projects" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
           <li class="col-auto nav-item px-4" v-else>
-            <router-link to="/projects" class="nav-link text-black"
+            <router-link to="/projects/major" class="nav-link text-black"
               >PROJECTS</router-link
             >
           </li>
@@ -57,14 +61,14 @@
             >
           </li>
           <li
-            class="col-auto text-decoration-underline nav-item px-4"
+            class="col-auto text-decoration-underline nav-item px-4 pe-md-0"
             v-if="$route.path === '/contact'"
           >
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
           </li>
-          <li class="col-auto nav-item px-4" v-else>
+          <li class="col-auto nav-item px-4 pe-md-0" v-else>
             <router-link to="/contact" class="nav-link text-black"
               >CONTACT</router-link
             >
@@ -75,10 +79,14 @@
   </nav>
   <router-view />
   <footer class="bg-dark text-center p-3">
-    <h6 class="mt-3">Developed by <strong>Team Ednifran</strong></h6>
-    <h6 class="my-3">&copy; 2022</h6>
+    <p class="mt-3">Developed by <strong>Team Ednifran</strong></p>
+    <p class="my-3">&copy; 2022</p>
   </footer>
 </template>
 
 <!-- Global styles -->
-<style lang="scss"></style>
+<style lang="scss">
+.nav-link:hover {
+  text-decoration: underline !important;
+}
+</style>
