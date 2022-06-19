@@ -1,7 +1,6 @@
 package dev.pantonial.cdk;
 
 import software.amazon.awscdk.App;
-import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.RemovalPolicy;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
@@ -12,10 +11,12 @@ import software.amazon.awscdk.services.iam.PolicyStatement;
 import software.amazon.awscdk.services.route53.ARecord;
 import software.amazon.awscdk.services.route53.HostedZone;
 import software.amazon.awscdk.services.route53.HostedZoneProviderProps;
+import software.amazon.awscdk.services.route53.IHostedZone;
 import software.amazon.awscdk.services.route53.RecordTarget;
 import software.amazon.awscdk.services.route53.targets.CloudFrontTarget;
 import software.amazon.awscdk.services.s3.BlockPublicAccess;
 import software.amazon.awscdk.services.s3.Bucket;
+import software.amazon.awscdk.services.s3.IBucket;
 import software.amazon.awscdk.services.s3.deployment.BucketDeployment;
 import software.amazon.awscdk.services.s3.deployment.Source;
 
@@ -24,118 +25,161 @@ import java.util.List;
 
 public class AwsCdkStack extends Stack {
 
+    private static final String BASE_DOMAIN_NAME = "pantonial.dev";
+    private static final String SITE_DOMAIN_NAME = "rodney." + BASE_DOMAIN_NAME;
+    private static final String WWW_SITE_DOMAIN_NAME = "www." + SITE_DOMAIN_NAME;
+
+    private IHostedZone zone;
+    private IBucket bucket;
+    private ViewerCertificate viewerCertificate;
+    private IOriginAccessIdentity accessIdentity;
+    private IDistribution cloudFrontDistribution;
+
     @SuppressWarnings("unused")
     public AwsCdkStack(final App scope, final String id) {
         this(scope, id, null);
     }
 
+    private void createHostedZone() {
+        zone = HostedZone.fromLookup(this, "zone", HostedZoneProviderProps.builder()
+                .domainName(BASE_DOMAIN_NAME)
+                .privateZone(false)
+                .build());
+    }
+
+    private void buildBucket() {
+        // S3 Bucket Creation
+        bucket = Bucket.Builder.create(this, "PantonialDevBucket")
+                .bucketName(SITE_DOMAIN_NAME)
+                .autoDeleteObjects(true)
+                .blockPublicAccess(BlockPublicAccess.BLOCK_ACLS)
+                .websiteIndexDocument("index.html")
+                .removalPolicy(RemovalPolicy.DESTROY)
+                .build();
+
+    }
+
+    private void buildViewerCertificate() {
+
+        // TLS Certificate
+        var certificate = DnsValidatedCertificate.Builder.create(this, "SiteCertificate")
+                .domainName(BASE_DOMAIN_NAME)
+                .hostedZone(zone)
+                .region("us-east-1")
+                .subjectAlternativeNames(List.of(WWW_SITE_DOMAIN_NAME, SITE_DOMAIN_NAME))
+                .validation(CertificateValidation.fromDns(zone))
+                .build();
+
+        var viewerCertificateOptions = ViewerCertificateOptions.builder()
+                .aliases(List.of(BASE_DOMAIN_NAME, SITE_DOMAIN_NAME, WWW_SITE_DOMAIN_NAME))
+                .sslMethod(SSLMethod.SNI)
+                .securityPolicy(SecurityPolicyProtocol.TLS_V1_2_2021)
+                .build();
+
+        viewerCertificate = ViewerCertificate.fromAcmCertificate(certificate, viewerCertificateOptions);
+
+    }
+
+    private void buildAccessIdentity() {
+
+        // S3 Bucket Access Configuration
+        accessIdentity = OriginAccessIdentity.Builder.create(this, "CloudfrontAccess")
+                .build();
+
+        var cloudfrontUserAccessPolicy = PolicyStatement.Builder.create()
+                .actions(List.of("s3:GetObject"))
+                .principals(List.of(accessIdentity.getGrantPrincipal()))
+                .resources(List.of(bucket.arnForObjects("*")))
+                .build();
+
+        bucket.addToResourcePolicy(cloudfrontUserAccessPolicy);
+
+    }
+
+    private void buildCloudfrontDistribution() {
+
+        var sourceConfiguration =
+                SourceConfiguration.builder()
+                        .s3OriginSource(S3OriginConfig.builder()
+                                .originAccessIdentity(accessIdentity)
+                                .s3BucketSource(bucket)
+                                .originPath("/web/static")
+                                .build())
+                        .behaviors(Collections.singletonList(
+                                Behavior.builder()
+                                        .compress(true)
+                                        .isDefaultBehavior(true)
+                                        .build()))
+                        .build()
+                ;
+
+        // CloudFront Distribution
+        cloudFrontDistribution = CloudFrontWebDistribution.Builder
+                .create(this, "PantonialDevCloudfrontDistrib")
+                .viewerCertificate(viewerCertificate)
+                .defaultRootObject("index.html")
+                .viewerProtocolPolicy(ViewerProtocolPolicy.REDIRECT_TO_HTTPS)
+                .httpVersion(HttpVersion.HTTP2)
+                .priceClass(PriceClass.PRICE_CLASS_100)
+                .originConfigs(List.of(sourceConfiguration))
+                .build();
+
+    }
+
+    private void buildDnsRecords() {
+
+        // Route 53 Record
+        ARecord.Builder.create(this, "RodneyPantonialDevRecord")
+                .recordName(SITE_DOMAIN_NAME)
+                .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
+                .zone(zone)
+                .build();
+
+        // Route 53 Record
+        ARecord.Builder.create(this, "WwwRodneyPantonialDevRecord")
+                .recordName(WWW_SITE_DOMAIN_NAME)
+                .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
+                .zone(zone)
+                .build();
+
+    }
+
+    private void buildAssetDeployment() {
+        var sources = List.of(Source.asset("../dist"));
+
+        // Deploy site contents to S3 Bucket
+        BucketDeployment.Builder.create(this, "DeployWithInvalidation")
+                .sources(sources)
+                .destinationKeyPrefix("web/static")
+                .destinationBucket(bucket)
+                .distribution(cloudFrontDistribution)
+                .build();
+
+    }
+
     public AwsCdkStack(final App scope, final String id, final StackProps props) {
         super(scope, id, props);
-        var baseDomainName = "pantonial.dev";
-        var domainName = "rodney.pantonial.dev";
 
-        var wwwDomainName = "www.rodney.pantonial.dev";
+        // Collection of DNS (Domain Name Server) Records
+        createHostedZone();
 
-        try {
-            // Collection of DNS (Domain Name Server) Records
-            var zone = HostedZone.fromLookup(this, "zone", HostedZoneProviderProps.builder()
-                    .domainName(baseDomainName)
-                    .privateZone(false)
-                    .build());
+        // S3 Bucket Creation
+        buildBucket();
 
-            // S3 Bucket Creation
-            var bucket = Bucket.Builder.create(this, "PantonialDevBucket")
-                    .bucketName(domainName)
-                    .autoDeleteObjects(true)
-                    .blockPublicAccess(BlockPublicAccess.BLOCK_ACLS)
-                    .websiteIndexDocument("index.html")
-                    .removalPolicy(RemovalPolicy.DESTROY)
-                    .build();
+        // S3 Bucket Access Configuration
+        buildAccessIdentity();
 
-            // S3 Bucket Access Configuration
-            var accessIdentity = OriginAccessIdentity.Builder.create(this, "CloudfrontAccess")
-                    .build();
+        // Certificate to use for SSL
+        buildViewerCertificate();
 
-            var cloudfrontUserAccessPolicy = PolicyStatement.Builder.create()
-                    .actions(List.of("s3:GetObject"))
-                    .principals(List.of(accessIdentity.getGrantPrincipal()))
-                    .resources(List.of(bucket.arnForObjects("*")))
-                    .build();
+        // CDN
+        buildCloudfrontDistribution();
 
-            bucket.addToResourcePolicy(cloudfrontUserAccessPolicy);
+        // Point the DNS to the CDN
+        buildDnsRecords();
 
-            // TLS Certificate
-            var certificate = DnsValidatedCertificate.Builder.create(this, "SiteCertificate")
-                    .domainName(baseDomainName)
-                    .hostedZone(zone)
-                    .region("us-east-1")
-                    .subjectAlternativeNames(List.of(wwwDomainName, domainName))
-                    .validation(CertificateValidation.fromDns(zone))
-                    .build();
-
-            CfnOutput.Builder.create(this, "Certificate")
-                    .description("Certificate ARN")
-                    .value(certificate.getCertificateArn())
-                    .build();
-
-            var viewerCertificateOptions = ViewerCertificateOptions.builder()
-                    .aliases(List.of(baseDomainName, domainName, wwwDomainName))
-                    .sslMethod(SSLMethod.SNI)
-                    .securityPolicy(SecurityPolicyProtocol.TLS_V1_2_2021)
-                    .build();
-            var viewerCertificate = ViewerCertificate.fromAcmCertificate(certificate, viewerCertificateOptions);
-
-            // CloudFront Distribution
-            var cloudFrontDistribution = CloudFrontWebDistribution.Builder
-                    .create(this, "PantonialDevCloudfrontDistrib")
-                    .viewerCertificate(viewerCertificate)
-                    .defaultRootObject("index.html")
-                    .viewerProtocolPolicy(ViewerProtocolPolicy.REDIRECT_TO_HTTPS)
-                    .httpVersion(HttpVersion.HTTP2)
-                    .priceClass(PriceClass.PRICE_CLASS_100)
-                    .originConfigs(List.of(
-                            SourceConfiguration.builder()
-                                    .s3OriginSource(S3OriginConfig.builder()
-                                            .originAccessIdentity(accessIdentity)
-                                            .s3BucketSource(bucket)
-                                            .originPath("/web/static")
-                                            .build())
-                                    .behaviors(Collections.singletonList(
-                                            Behavior.builder()
-                                                    .compress(true)
-                                                    .isDefaultBehavior(true)
-                                                    .build()))
-                                    .build()
-                    ))
-                    .build();
-
-            // Route 53 Record
-            ARecord.Builder.create(this, "RodneyPantonialDevRecord")
-                    .recordName(domainName)
-                    .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
-                    .zone(zone)
-                    .build();
-
-            // Route 53 Record
-            ARecord.Builder.create(this, "WwwRodneyPantonialDevRecord")
-                    .recordName(wwwDomainName)
-                    .target(RecordTarget.fromAlias(new CloudFrontTarget(cloudFrontDistribution)))
-                    .zone(zone)
-                    .build();
-
-            var sources = List.of(Source.asset("../dist"));
-
-            // Deploy site contents to S3 Bucket
-            BucketDeployment.Builder.create(this, "DeployWithInvalidation")
-                    .sources(sources)
-                    .destinationKeyPrefix("web/static")
-                    .destinationBucket(bucket)
-                    .distribution(cloudFrontDistribution)
-                    .build();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // Deploy the source code here
+        buildAssetDeployment();
     }
 }
 
