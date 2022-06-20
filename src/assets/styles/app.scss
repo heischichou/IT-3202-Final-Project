@@ -8,11 +8,13 @@ $secondary:       #82B1FF;
 $light:           #F8F9FA;
 $dark:            #C9CFE1;
 $body:            #6D6D6D;
+$subtitle:        #7E7C7C;
 $darkblue:        #23408E;
 $periwinkle-1:    #B8B9C8;
 $periwinkle-2:    #B9BFE1;
 $lightblue-1:     #B9D0FC;
 $lightblue-2:     #B4C9E7;
+$backdrop:        #EDEDED;
 
 $theme-colors: (
   "primary":        $primary,
@@ -20,11 +22,13 @@ $theme-colors: (
   "light":          $light,
   "dark":           $dark,
   "body":           $body,
+  "subtitle":       $subtitle,
   "darkblue":       $darkblue,
   "periwinkle-1":   $periwinkle-1,
   "periwinkle-2":   $periwinkle-2,
   "lightblue-1":    $lightblue-1,
   "lightblue-2":    $lightblue-2,
+  "backdrop":       $backdrop,
 );
 
 // Font
@@ -39,8 +43,21 @@ $input-btn-focus-width:       .1rem;
 $font-weight-lighter:       200;
 $font-weight-light:         300;
 $font-weight-normal:        400;
-$font-weight-bold:          500;
-$font-weight-bolder:        600;
+$font-weight-bold:          600;
+$font-weight-bolder:        700;
+
+$h1-font-size:                $font-size-base * 3;
+$h2-font-size:                $font-size-base * 2.5;
+$h3-font-size:                $font-size-base * 2;
+$h4-font-size:                $font-size-base * 1.75;
+$h5-font-size:                $font-size-base * 1.5;
+$h6-font-size:                $font-size-base * 1.25;
+
+$font-sizes: (
+    l: $h1-font-size * 1.25,
+    xl: $h1-font-size * 1.5,
+    xxl: $h1-font-size * 2
+);
 
 // Spacing
 $spacer: 1rem;
@@ -86,22 +103,8 @@ html, body, div {
   font-family: 'Poppins', sans-serif;
 }
 
-// Scrollbar
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: $primary;
-  border-radius: 100px;
-}
-
 // Main SCSS
 @import "~bootstrap/scss/bootstrap";
 
 // font-family: 'Poppins', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');

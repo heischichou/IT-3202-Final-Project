@@ -1,0 +1,14 @@
+describe("Check Projects Navbar", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:8081/#/projects");
+  });
+  it("should redirect you to Major Projects when clicked", () => {
+    cy.contains(".btn", "MAJOR PROJECTS").click();
+  });
+  it("should redirect you to Minor Projects when clicked", () => {
+    cy.contains(".btn", "MINOR PROJECTS").click();
+  });
+  it("should redirect you to Personal Projects when clicked", () => {
+    cy.contains(".btn", "PERSONAL PROJECTS").click();
+  });
+});
