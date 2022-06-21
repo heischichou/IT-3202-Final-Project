@@ -12,7 +12,7 @@ pipelines:
         - step:
             oidc: true
             script:
-              - export AWS_REGION=us-west-2
+              - export AWS_REGION=ap-southeast-1
               - export AWS_ROLE_ARN=arn:aws:iam::328403503746:role/BitbucketPipelineRole
               - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
               - echo $BITBUCKET_STEP_OIDC_TOKEN > $(pwd)/web-identity-token
