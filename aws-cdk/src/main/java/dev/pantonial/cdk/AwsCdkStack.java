@@ -40,7 +40,7 @@ public class AwsCdkStack extends Stack {
         this(scope, id, null);
     }
 
-    private void createHostedZone() {
+    private void buildHostedZone() {
         zone = HostedZone.fromLookup(this, "zone", HostedZoneProviderProps.builder()
                 .domainName(BASE_DOMAIN_NAME)
                 .privateZone(false)
@@ -161,7 +161,7 @@ public class AwsCdkStack extends Stack {
         super(scope, id, props);
 
         // Collection of DNS (Domain Name Server) Records
-        createHostedZone();
+        buildHostedZone();
 
         // S3 Bucket Creation
         buildBucket();
