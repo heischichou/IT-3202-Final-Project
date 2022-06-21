@@ -4,13 +4,12 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 
 # TODO: make amazon/aws-cli as the base image, then install npm
-image: teddzyb/pantonialdev:latest
+image: amazon/aws-cli:latest
 
 pipelines:
   default:
     - parallel:
         - step:
-
             oidc: true
             script:
               - export AWS_REGION=us-west-2
