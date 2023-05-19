@@ -7,10 +7,6 @@
   - Francine Menchavez
   - Niña Therese Ybas
 
-## Project Status
-📝 Ongoing
-# Pantonial.Dev - Sample Project
-
 ## Project setup
 
 ### Node
@@ -25,15 +21,6 @@ npm run serve
 Note: `serve` uses port `8080` by default.
 3. Access app on http://localhost:8080/
 
-### Docker [deprecated]
-###### Note: Docker is deprecated due to unresolved issue of Vue hot reload not working inside Docker container.
-1. Install node modules
-```
-npm install
-```
-2. Run services in `docker-compose.yml`<br>
-3. Access app on http://localhost:8080/
-
 ## Testing
 ### Unit tests
 ```
@@ -45,3 +32,6 @@ Note: Integration testing uses port `8081` by default.
 ```
 npm run test:e2e
 ```
+
+## Project Status
+📝 Ongoing
