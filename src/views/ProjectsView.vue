@@ -210,7 +210,7 @@ export default {
         projectID: 3,
         projectName: "Project 3",
         projectImage:
-          "https://www.proofhub.com/wp-content/uploads/2017/10/Project-Manager-Roles-And-Responsibilities.jpg",
+          "https://images.worthwhile.com/uploads/zinnia/2017/06/05/istock-542822578.jpg.1155x0_q85.jpg",
         projectDesc: "Project 3 sample description...",
         projectTags: ["HTML", "CSS", "PHP", "MySQL"],
         projectType: "Minor",
