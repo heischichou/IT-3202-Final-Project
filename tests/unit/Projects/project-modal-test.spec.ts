@@ -21,6 +21,11 @@ const factory = () => {
         projectDetails: details(),
         modalColor: "periwinkle-1",
       },
+      data() {
+        return {
+          active: true,
+        };
+      },
     });
   };
 
@@ -53,6 +58,11 @@ const factory = () => {
     it("projectDetails prop is not null", () => {     
         const wrapper = factory();
         expect(wrapper.props().projectDetails).not.toBeNull();
+    });
+
+    it("active variable value is true", () => {
+        const wrapper = factory();
+        expect(wrapper.vm.active).toBe(true);
     });
 
   });
