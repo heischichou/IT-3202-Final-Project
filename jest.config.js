@@ -4,11 +4,11 @@ module.exports = {
   verbose: true,
   transform: {
     "^.+\\.vue$": "@vue/vue3-jest",
-    "^.+\\.js$": "babel-jest",
+    "^.+\\.jsx?$": "babel-jest",
     "^.+\\.tsx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "js", "vue"],
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
   // collectCoverageFrom: [ 'src/components/**/*.{ts,vue}' ],
   coverageReporters: ["text"],
