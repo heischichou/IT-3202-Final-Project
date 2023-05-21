@@ -254,7 +254,7 @@ export default {
         projectID: 7,
         projectName: "CEBU CCTV WEBSITE",
         projectImage:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3p3yVs1M0pTseaNkTJxbfpgfiFDCgHO1ag&usqp=CAU",
+          "https://mk0mitraissited2cion.kinstacdn.com/wp-content/uploads/2019/11/software-project.jpg",
         projectDesc:
           "Update of Cebu CCTV Website to its initial wordpress version.",
         projectTags: ["WordPress", "MySQL", "LAMP"],
