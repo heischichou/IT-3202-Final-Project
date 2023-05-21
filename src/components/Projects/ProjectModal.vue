@@ -91,8 +91,8 @@
   </teleport>
 </template>
 
-<script>
-import ProjectTag from "./ProjectTag";
+<script lang="ts">
+import ProjectTag from "./ProjectTag.vue";
 export default {
   name: "ProjectModal",
   components: {

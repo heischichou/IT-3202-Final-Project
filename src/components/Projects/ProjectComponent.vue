@@ -36,9 +36,9 @@
   />
 </template>
 
-<script>
-import ProjectTag from "./ProjectTag";
-import ProjectModal from "./ProjectModal";
+<script lang="ts">
+import ProjectTag from "./ProjectTag.vue";
+import ProjectModal from "./ProjectModal.vue";
 export default {
   name: "ProjectComponent",
   components: {
