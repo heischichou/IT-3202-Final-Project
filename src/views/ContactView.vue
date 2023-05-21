@@ -101,7 +101,23 @@ export default {
       ],
     };
   },
+  methods: {
+    reveal() {
+      const reveals = Array.from(document.querySelectorAll(".reveal"));
+
+      for (const element of reveals) {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add("active");
+        }
+      }
+    },
+  },
   mounted() {
+    window.addEventListener("scroll", this.reveal);
     const toggler = document.getElementById("navbarNav");
     const main = document.getElementById("header");
 
