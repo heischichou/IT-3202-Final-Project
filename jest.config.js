@@ -8,7 +8,7 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "js", "vue"],
-  testEnvironment: "jest-environment-jsdom",
+  testEnvironment: "jsdom",
   collectCoverage: true,
   // collectCoverageFrom: [ 'src/components/**/*.{ts,vue}' ],
   coverageReporters: ["text"],
