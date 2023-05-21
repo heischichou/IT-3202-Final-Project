@@ -1,14 +1,17 @@
-import { mount, shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import ExperienceList from "@/components/AboutMe/ExperienceList.vue";
 
+const title = "Web Developer";
 const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.";
+const organization = "Xlr8 Ventures Inc";
+const year = "PRESENT";
 
 const item = () => {
   return {
     experienceId: 1,
-    title: "Web Developer",
+    title: title,
     description: description,
-    organization: "Xlr8 Ventures Inc",
+    organization: organization,
     roles: [
       "AWS Infrastructure",
       "AWS Lambda System",
@@ -17,7 +20,7 @@ const item = () => {
       "Retro Planning",
       "Systems Development",
     ],
-    year: "PRESENT",
+    year: year,
   };
 };
 
@@ -41,18 +44,25 @@ describe("Experience List", () => {
     expect(wrapper.props('item')).toStrictEqual(item());
   });
 
-  it("renders a title successfully", () => {
+  it("renders title successfully", () => {
     const wrapper = factory();
-    expect(wrapper.props().text()).toEqual("Web Developer");
+    expect(wrapper.html().includes(title)).toBe(true);
   });
 
-  it("renders a description successfully", () => {
+  it("renders organization position successfully", () => {
     const wrapper = factory();
     expect(wrapper.html().includes(description)).toBe(true);
+    expect(wrapper.html().includes(year)).toBe(true);
+  });
+
+  it("renders description successfully", () => {
+    const wrapper = factory();
+    expect(wrapper.html().includes(organization)).toBe(true);
   });
 
   it("renders the roles successfully", () => {
     const wrapper = factory();
-    expect(wrapper.html().includes(description)).toBe(true);
+    const roles_wrapper = wrapper.find('.roles');
+    expect(roles_wrapper.findAll('.rounded-pill').length).toBe(item().roles.length);
   });
 });
