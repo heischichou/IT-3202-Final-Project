@@ -27,25 +27,7 @@ export default {
   props: {
     faq: Object,
   },
-  methods: {
-    reveal() {
-      const reveals = document.querySelectorAll(".reveal");
-
-      for (const element of reveals) {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 100;
-
-        if (elementTop < windowHeight - elementVisible) {
-          element.classList.add("active");
-        }
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.reveal);
-  },
-};
+}
 </script>
 
 <style scoped>
