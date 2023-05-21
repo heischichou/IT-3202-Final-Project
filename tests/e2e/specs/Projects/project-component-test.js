@@ -1,6 +1,6 @@
 describe("Check Project component", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:8081/#/projects");
+    cy.visit("http://localhost:8081/#/projects/major");
   });
   it("should redirect you to Major Projects when clicked", () => {
     cy.contains(".btn", "MAJOR PROJECTS").click();

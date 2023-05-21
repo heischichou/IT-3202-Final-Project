@@ -1,6 +1,6 @@
 describe("Test Contact Section functionality", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:8081/#/projects");
+    cy.visit("http://localhost:8081/#/projects/major");
   });
   it("should check if contact section exists", () => {
     cy.get("#contact-section").should("exist");

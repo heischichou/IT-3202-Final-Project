@@ -1,6 +1,6 @@
 describe("My Projects page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:8081/#/projects");
+    cy.visit("http://localhost:8081/#/projects/major");
   });
   it("should contain a page header", () => {
     cy.get("#header").should("exist");

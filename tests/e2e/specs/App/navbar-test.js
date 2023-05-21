@@ -8,7 +8,7 @@ describe("Header navigation links", () => {
   });
   it("should redirect to the Projects page successfully when PROJECTS is clicked", function () {
     cy.contains(".nav-link", "PROJECTS").click();
-    cy.url().should("eq", "http://localhost:8081/#/projects");
+    cy.url().should("eq", "http://localhost:8081/#/projects/major");
   });
   it("should redirect to the Skills page successfully when SKILLS is clicked", function () {
     cy.contains(".nav-link", "SKILLS").click();

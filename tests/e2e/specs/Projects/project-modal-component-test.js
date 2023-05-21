@@ -1,6 +1,6 @@
 describe("Tests the functionality of the Project page's Project Modal component", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:8081/#/projects");
+    cy.visit("http://localhost:8081/#/projects/major");
   });
   it("should display a modal when a project is clicked", function () {
     cy.get(".project-card").first().find(".card-img").click();
