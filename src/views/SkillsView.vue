@@ -306,9 +306,9 @@ export default {
     const toggler = document.getElementById("navbarNav");
     const main = document.getElementById("main");
 
-    for (const x = 0, count = skills.length; x < count; x++) {
+    for (let x = 0, count = skills.length; x < count; x++) {
       const scales = skills[x].lastChild;
-      for (const y = scales.children.length; y < 5; y++) {
+      for (let y = scales.children.length; y < 5; y++) {
         const scale = document.createElement("div");
         scale.className = "bg-secondary rounded-pill";
         scale.style.width = "25px";

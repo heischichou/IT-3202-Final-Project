@@ -206,9 +206,9 @@ export default {
   methods: {
     enableSideScroll(list) {
       const slider = document.querySelector(list);
-      const isDown = false;
-      const startX;
-      const scrollLeft;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
       slider.addEventListener("mousedown", (e) => {
         isDown = true;
@@ -232,7 +232,7 @@ export default {
     onResize() {
       const rows = document.getElementsByClassName("expertise");
       if (window.innerWidth < 768) {
-        for (const i = 0, count = rows.length; i < count; i++) {
+        for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-row", "flex-column");
           const cols = rows[i].children;
           cols[0].classList.replace("order-last", "order-first");
@@ -241,7 +241,7 @@ export default {
           cols[1].classList.add("mx-1");
         }
       } else {
-        for (const i = 0, count = rows.length; i < count; i++) {
+        for (let i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-column", "flex-row");
           const cols = rows[i].children;
           i % 2 !== 0
