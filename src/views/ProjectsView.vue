@@ -276,8 +276,8 @@ export default {
     },
   },
   mounted() {
-    let toggler = document.getElementById("navbarNav");
-    let main = document.getElementById("main");
+    const toggler = document.getElementById("navbarNav");
+    const main = document.getElementById("main");
 
     toggler.addEventListener("show.bs.collapse", () => {
       main.style.transition = "none";

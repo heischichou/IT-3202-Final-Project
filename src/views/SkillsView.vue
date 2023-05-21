@@ -302,13 +302,13 @@ export default {
     });
   },
   mounted() {
-    let skills = document.getElementsByClassName("technology");
-    let toggler = document.getElementById("navbarNav");
-    let main = document.getElementById("main");
+    const skills = document.getElementsByClassName("technology");
+    const toggler = document.getElementById("navbarNav");
+    const main = document.getElementById("main");
 
-    for (let x = 0, count = skills.length; x < count; x++) {
-      let scales = skills[x].lastChild;
-      for (let y = scales.children.length; y < 5; y++) {
+    for (const x = 0, count = skills.length; x < count; x++) {
+      const scales = skills[x].lastChild;
+      for (const y = scales.children.length; y < 5; y++) {
         const scale = document.createElement("div");
         scale.className = "bg-secondary rounded-pill";
         scale.style.width = "25px";

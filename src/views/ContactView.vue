@@ -102,8 +102,8 @@ export default {
     };
   },
   mounted() {
-    let toggler = document.getElementById("navbarNav");
-    let main = document.getElementById("header");
+    const toggler = document.getElementById("navbarNav");
+    const main = document.getElementById("header");
 
     toggler.addEventListener("show.bs.collapse", () => {
       main.style.transition = "none";

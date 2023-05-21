@@ -206,9 +206,9 @@ export default {
   methods: {
     enableSideScroll(list) {
       const slider = document.querySelector(list);
-      let isDown = false;
-      let startX;
-      let scrollLeft;
+      const isDown = false;
+      const startX;
+      const scrollLeft;
 
       slider.addEventListener("mousedown", (e) => {
         isDown = true;
@@ -230,20 +230,20 @@ export default {
       });
     },
     onResize() {
-      let rows = document.getElementsByClassName("expertise");
+      const rows = document.getElementsByClassName("expertise");
       if (window.innerWidth < 768) {
-        for (let i = 0, count = rows.length; i < count; i++) {
+        for (const i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-row", "flex-column");
-          let cols = rows[i].children;
+          const cols = rows[i].children;
           cols[0].classList.replace("order-last", "order-first");
           cols[1].classList.replace("order-first", "order-last");
           cols[0].classList.add("mb-5");
           cols[1].classList.add("mx-1");
         }
       } else {
-        for (let i = 0, count = rows.length; i < count; i++) {
+        for (const i = 0, count = rows.length; i < count; i++) {
           rows[i].classList.replace("flex-column", "flex-row");
-          let cols = rows[i].children;
+          const cols = rows[i].children;
           i % 2 !== 0
             ? cols[0].classList.replace("order-first", "order-last")
             : cols[0].classList.replace("order-last", "order-first");
@@ -261,8 +261,8 @@ export default {
   },
   mounted() {
     this.onResize();
-    let toggler = document.getElementById("navbarNav");
-    let main = document.getElementById("main");
+    const toggler = document.getElementById("navbarNav");
+    const main = document.getElementById("main");
 
     toggler.addEventListener("show.bs.collapse", () => {
       main.style.transition = "none";
