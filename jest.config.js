@@ -8,6 +8,9 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "js", "vue"],
+  moduleNameMapper: {
+    '\\.(css|less|scss)$': '<rootDir>/styleMock.ts',
+  },
   testEnvironment: "jsdom",
   clearMocks: true,
   coverageProvider: "v8",
