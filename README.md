@@ -1,4 +1,5 @@
-# IT 3202 Final Project
+# Pantonial.Dev Web App Software Quality Assurance Audit
+A comprehensive Software Quality Assurance audit of the Pantonial.Dev web application. This group project is in partial fulfillment with the final requirements of the team's college course, IT 3202 - Software Quality Assurance.
 
 ## Contributors
   - Kristian Ayam
@@ -24,7 +25,7 @@ Note: `serve` uses port `8080` by default.
 ## Testing
 ### Unit tests
 ```
-npm run test:unit
+npm test
 ```
 
 ### Integration tests
@@ -34,4 +35,4 @@ npm run test:e2e
 ```
 
 ## Project Status
-📝 Ongoing
+✅ Completed May 22, 2023
