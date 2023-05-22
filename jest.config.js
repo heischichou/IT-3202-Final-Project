@@ -15,11 +15,11 @@ module.exports = {
   clearMocks: true,
   coverageProvider: "v8",
   collectCoverage: true,
-  // collectCoverageFrom: [ 
-  //   'src/components/**/*.{ts,vue}',
-  //   "./tests/unit/**/*.{js,jsx,ts,tsx,vue}",
-  //   "!./tests/unit/**/_*.{js,jsx,ts,tsx,vue}",
-  // ],  
+  collectCoverageFrom: [ 
+    'src/components/**/*.{ts,vue}',
+    "./tests/unit/**/*.{js,jsx,ts,tsx,vue}",
+    "!./tests/unit/**/_*.{js,jsx,ts,tsx,vue}",
+  ],  
   coverageReporters: ["text"],
   globals: {
     "ts-jest": {
